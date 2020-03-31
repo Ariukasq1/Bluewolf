@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Trips",
+    "link": "/tours",
+    "megaMenu": false,
+    "subMenu": false
+  },
+  {
+    "id": 2,
+    "title": "Accomodation",
+    "link": "/accomodation",
+    "megaMenu": false,
+    "subMenu": false
+  },
+  {
+    "id": 3,
+    "title": "Transport",
+    "link": "#",
+    "megaMenu": false,
+    "subMenu": [
+      {
+        "id": 3.1,
+        "title": "Car Rental",
+        "link": "/car-rental"
+      },
+      {
+        "id": 3.2,
+        "title": "Flight",
+        "link": "/flight"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Travel tools",
+    "link": "#",
+    "megaMenu": false,
+    "subMenu": [
+      {
+        "id": 4.1,
+        "title": "Plan your trip",
+        "link": "/plan-trip"
+      },
+      {
+        "id": 4.2,
+        "title": "Faq",
+        "link": "/faq"
+      },
+      {
+        "id": 4.4,
+        "title": "What to pack",
+        "link": "/what-to-pack"
+      },
+      {
+        "id": 4.5,
+        "title": "Travel insurance",
+        "link": "/travel-insurance"
+      },
+      {
+        "id": 4.6,
+        "title": "Weather forecast",
+        "link": "/weather-forecast"
+      },
+      {
+        "id": 4.7,
+        "title": "Brochures",
+        "link": "/brochures"
+      },
+      {
+        "id": 4.8,
+        "title": "Booking form",
+        "link": "/booking-form"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Blog",
+    "link": "/blog",
+    "megaMenu": false,
+    "subMenu": false
+  },
+  {
+    "id": 6,
+    "title": "About us",
+    "link": "/about",
+    "megaMenu": false,
+    "subMenu": [
+      {
+        "id": 6.1,
+        "title": "Terms and Conditions",
+        "link": "/terms-conditions"
+      },
+      {
+        "id": 6.2,
+        "title": "Why travel with BWT?",
+        "link": "/who-we-are"
+      },
+      {
+        "id": 6.3,
+        "title": "Golden Eagle",
+        "link": "/golden-eagle"
+      },
+      {
+        "id": 6.4,
+        "title": "CBT-Responsible Tourism",
+        "link": "/cbt-responsible-tourism"
+      }
+    ]
+  }
+]
