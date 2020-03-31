@@ -3,7 +3,6 @@ import SidebarItem from "./Sidebar/SidebarItem";
 import Sidebar from "./Sidebar";
 import List from "../UI/List";
 class AboutCategories extends React.Component {
-
   render() {
     return (
       <>

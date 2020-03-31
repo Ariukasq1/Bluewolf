@@ -33,7 +33,6 @@ class TourSidebar extends React.Component {
           )}
         </Sidebar>
       )
-
     }
 
     return (

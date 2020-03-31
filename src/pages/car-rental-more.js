@@ -1,25 +1,21 @@
 import React, { Fragment } from 'react';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
-import AccomoSidebar from "../components/AccomoSidebar";
 import MobileMenu from "../components/MobileMenu";
 import CallToAction from "../components/CallToAction";
 import Layout from '../components/Layout';
-import List from "../UI/List";
-import LI from "../UI/List/Item";
 import SlickSlider from "../UI/Slick";
 import Config from "../config";
 import WPAPI from 'wpapi';
 import { defaultCoverImage } from "../components/layouts/constants";
-import Text from "../UI/Text";
 import { prefixer, getData } from "../utils";
+import RentCarSidebar from '../components/RentCarSidebar';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 export default class extends React.Component {
   static async getInitialProps(context) {
     const slug = context.query.slug;
-    console.log('slug:', slug);
 
     let apiMethod = wp.posts();
 
@@ -40,7 +36,7 @@ export default class extends React.Component {
       return <Error statusCode={404} />;
     }
 
-    const { content, cover_image, max_passenger, car_type, car_door } = post.acf;
+    const { content, cover_image, max_passenger, car_type, car_door, top_speed, price, cash, gear_box, wheel_position, air_condition, car_engine } = post.acf;
 
     return (
       <Fragment>
@@ -63,13 +59,10 @@ export default class extends React.Component {
                     <img src={getData(post._embedded, 'image')} />
                   </SlickSlider>
                 </div>
-
                 <div className="car-rental-more mt-50 mt-sm-35">
-                  <h4>Specifications</h4>
-                  <Text styles={{ marginBottom: 20 }}>
-                    Neque porro quisquam est, qui dolorem ipsum
-                        </Text>
-
+                  <div className='row'>
+                    <h4>Specifications</h4>
+                  </div>
                   <div className="car-rental-content service-details-page">
                     <div className="row">
                       <div className="col-md-6">
@@ -78,7 +71,7 @@ export default class extends React.Component {
                             <img src={prefixer('/images/car-rental/rule.png')} alt='rule' />
                           </div>
                           <div className="icon-box__info">
-                            <p>{car_type}</p>
+                            <p>Category: {car_type}</p>
                           </div>
                         </div>
                         <div className="icon-box-item">
@@ -86,7 +79,7 @@ export default class extends React.Component {
                             <img src={prefixer('/images/car-rental/human.png')} alt='human' />
                           </div>
                           <div className="icon-box__info">
-                            <p>{max_passenger}</p>
+                            <p>Maximum passenger:  {max_passenger}</p>
                           </div>
                         </div>
                         <div className="icon-box-item">
@@ -94,9 +87,63 @@ export default class extends React.Component {
                             <img src={prefixer('/images/car-rental/doors.png')} alt='doors' />
                           </div>
                           <div className="icon-box__info">
-                            <p>{car_door}</p>
+                            <p>Door: {car_door}</p>
                           </div>
                         </div>
+                        <div className="icon-box-item">
+                          <div className="icon-box__icon">
+                            <img src={prefixer('/images/car-rental/mile.png')} alt='mile' />
+                          </div>
+                          <div className="icon-box__info">
+                            <p> Top speed: {top_speed} km/h</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="icon-box-item">
+                          <div className="icon-box__icon">
+                            <img src={prefixer('/images/car-rental/gear.png')} alt='gear' />
+                          </div>
+                          <div className="icon-box__info">
+                            <p>Gear box: {gear_box}</p>
+                          </div>
+                        </div>
+                        <div className="icon-box-item">
+                          <div className="icon-box__icon">
+                            <img src={prefixer('/images/car-rental/rule.png')} alt='rule1' />
+                          </div>
+                          <div className="icon-box__info">
+                            <p>Wheel position: {wheel_position}</p>
+                          </div>
+                        </div>
+                        <div className="icon-box-item">
+                          <div className="icon-box__icon">
+                            <img src={prefixer('/images/car-rental/condition.png')} alt='condition' />
+                          </div>
+                          <div className="icon-box__info">
+                            <p>{air_condition}</p>
+                          </div>
+                        </div>
+                        <div className="icon-box-item">
+                          <div className="icon-box__icon">
+                            <img src={prefixer('/images/car-rental/engine.png')} alt='engine' />
+                          </div>
+                          <div className="icon-box__info">
+                            <p>Engine: {car_engine}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="car-rental-more mt-50 mt-sm-35">
+                  <div className="car-rental-content service-details-page">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <h4>Price</h4>
+                      </div>
+                      <div className="col-md-6">
+                        <h5>Avg price per day {cash} {price}</h5>
                       </div>
                     </div>
                   </div>
@@ -104,7 +151,7 @@ export default class extends React.Component {
               </div>
             </div>
 
-            <AccomoSidebar />
+            {/* <RentCarSidebar /> */}
           </PageWrapper>
           <CallToAction />
         </Layout >

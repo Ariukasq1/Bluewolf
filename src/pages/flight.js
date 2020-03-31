@@ -82,9 +82,6 @@ class Flight extends React.Component {
                             <LI>Avg.Two way: {post.acf.avgtwo_way}</LI>
                           </List>
                         </div>
-                        <div className="flight-plan-footer">
-                          <a href="/" className="btn-outline">see more</a>
-                        </div>
                       </div>
                     </div>
                   ))

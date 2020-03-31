@@ -49,7 +49,7 @@ class Category extends React.Component {
 
     if (posts.length === 0) {
       return (
-        <div className="post-item centered">
+        <div className="col-lg-9 null">
           <div className="empty-state">
             <h3>
               Sorry
@@ -71,7 +71,7 @@ class Category extends React.Component {
                     <div key={post.id} className='col-md-6'>
                       <div className="post-item">
                         <figure className="post-thumb">
-                          <Link href={prefixer(`/tour/${post.slug}`)}>
+                          <Link href={prefixer(`/tour-more/${post.slug}`)}>
                             <a>
                               <img src={getData(post._embedded, 'image')} alt={post.title} />
                             </a>
@@ -79,7 +79,7 @@ class Category extends React.Component {
                         </figure>
                         <div className="post-content">
                           <h2 className="h6">
-                            <Link href={prefixer(`/tour/${post.slug}`)}>
+                            <Link href={prefixer(`/tour-more/${post.slug}`)}>
                               <a>
                                 <div
                                   dangerouslySetInnerHTML={{
@@ -95,11 +95,11 @@ class Category extends React.Component {
                               }} />
                           </LIST>
                           <div className="post-meta">
-                            <Link href={prefixer(`/tour/${post.slug}`)}>
+                            <Link href={prefixer(`/tour-more/${post.slug}`)}>
                               <a>
                                 <p>From: {post.acf.price}</p></a>
                             </Link>
-                            <Link href={prefixer(`/tour/${post.slug}`)}>
+                            <Link href={prefixer(`/tour-more/${post.slug}`)}>
                               <a>Group size: {post.acf.group_size}</a>
                             </Link>
                           </div>

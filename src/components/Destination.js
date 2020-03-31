@@ -7,8 +7,8 @@ import Config from "../config";
 import WPAPI from 'wpapi';
 
 const settings = {
-  slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToShow: 3,
+  slidesToScroll: 3,
   arrows: false,
   autoplay: false,
   dots: true,
@@ -72,7 +72,7 @@ class Destination extends React.Component {
                   <div key={post.slug}>
                     <div className="destination-item">
                       <figure className="tours-pic">
-                        <Link href={`${prefixer('/category/' + post.slug)}`}>
+                        <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
                           <a>
                             <img src={getData(post._embedded, 'image')} alt={post.name} />
                           </a>
@@ -80,7 +80,7 @@ class Destination extends React.Component {
                       </figure>
                       <div className="tours-info">
                         <h5>
-                          <Link href={`${prefixer('/category/' + post.slug)}`} className="stretched-link"><a>{post.title.rendered}</a>
+                          <Link href={`${prefixer('/tour-category/' + post.slug)}`} className="stretched-link"><a>{post.title.rendered}</a>
                           </Link>
                         </h5>
                       </div>
