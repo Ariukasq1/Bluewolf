@@ -7,7 +7,7 @@ import Link from "next/link";
 import Config from "../config";
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class FlightContent extends React.Component {
   static async getInitialProps() {

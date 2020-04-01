@@ -32,7 +32,7 @@ const settings = {
   ]
 };
 
-// const wp = new WPAPI({ endpoint: Config.apiUrl });
+// const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Slider extends React.Component {
   constructor(props) {

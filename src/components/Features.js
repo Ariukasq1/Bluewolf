@@ -4,7 +4,7 @@ import React from 'react';
 import { getData } from '../utils';
 import axios from 'axios';
 
-// const wp = new WPAPI({ endpoint: Config.apiUrl });
+// const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Features extends React.Component {
     constructor(props) {
