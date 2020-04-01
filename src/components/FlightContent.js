@@ -58,7 +58,6 @@ class FlightContent extends React.Component {
                         <span className="img">
                           <Link href={prefixer('/posts/' + post.slug)}>
                             <a>
-                              {console.log(post.acf.logo)}
                               {post.acf.logo && <img src={post.acf.logo} alt={post.title} />}
                             </a>
                           </Link>

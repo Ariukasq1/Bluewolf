@@ -12,7 +12,7 @@ import Config from "../config";
 import WPAPI from 'wpapi';
 
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class WhatToPack extends React.Component {
   static async getInitialProps() {

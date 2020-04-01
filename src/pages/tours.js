@@ -6,7 +6,7 @@ import Config from "../config";
 import WPAPI from 'wpapi';
 import Destination from '../components/Destination';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Tours extends React.Component {
   static async getInitialProps() {

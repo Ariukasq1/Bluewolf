@@ -10,7 +10,7 @@ import { prefixer, getData } from '../utils';
 import Config from "../config";
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Accomodation extends React.Component {
   static async getInitialProps() {

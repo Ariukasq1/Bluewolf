@@ -7,7 +7,7 @@ import ErrorPage from 'next/error';
 import WPAPI from 'wpapi'
 import Config from "../config";
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class BlogPage extends React.Component {
   static async getInitialProps() {

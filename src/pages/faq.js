@@ -8,7 +8,7 @@ import SectionTitle from '../UI/SectionTitle'
 import Config from "../config";
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Faq extends React.Component {
   static async getInitialProps() {

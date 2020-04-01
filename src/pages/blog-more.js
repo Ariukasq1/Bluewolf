@@ -11,7 +11,7 @@ import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer } from "../utils";
 import SidebarList from '../components/Blog/SidebarList';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 export default class extends React.Component {
   static async getInitialProps(context) {

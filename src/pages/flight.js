@@ -12,7 +12,7 @@ import Link from "next/link";
 import Config from "../config";
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Flight extends React.Component {
   static async getInitialProps() {
@@ -67,7 +67,6 @@ class Flight extends React.Component {
                             <span className="img">
                               <Link href={prefixer('/posts/' + post.slug)}>
                                 <a>
-                                  {console.log(post.acf.logo)}
                                   {post.acf.logo && <img src={post.acf.logo} alt={post.title} />}
                                 </a>
                               </Link>

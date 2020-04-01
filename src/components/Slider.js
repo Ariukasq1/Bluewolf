@@ -53,7 +53,6 @@ class Slider extends React.Component {
 
   render() {
     const { posts } = this.state;
-    console.log('slider posts: ', posts);
 
     return (
       <div className={'slider-area'} >

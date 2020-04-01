@@ -25,7 +25,6 @@ class Features extends React.Component {
 
     render() {
         const { posts } = this.state;
-        console.log('post:', posts);
 
         return (
             <div className={`feature-area-wrapper sp-top`}>

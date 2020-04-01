@@ -8,7 +8,7 @@ import SectionTitle from "../UI/SectionTitle";
 import Config from "../config";
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 export default class extends React.Component {
   static async getInitialProps(context) {
