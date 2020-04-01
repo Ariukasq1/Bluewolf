@@ -3,7 +3,6 @@ const routes = (module.exports = nextRoutes())
 
 // Setup router.
 routes.add('index', '/');
-routes.add('about');
 routes.add('tours');
 routes.add('accomodation');
 routes.add('blog');
@@ -22,6 +21,7 @@ routes.add('golden-eagle');
 routes.add('cbt-responsible-tourism');
 routes.add('tour-category', '/tour-category/:slug');
 routes.add('tour-more', '/tour-more/:slug');
+routes.add('blog-more', '/blog-more/:slug');
 routes.add('car-rental-more', '/car-rental-more/:slug');
 routes.add('accomodation-more', '/accomodation-more/:slug');
 routes.add('book-now');

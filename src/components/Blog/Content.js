@@ -47,7 +47,7 @@ class Content extends React.Component {
                     <div key={post.id} className='col-md-6'>
                       <div className="blog-item">
                         <figure className="blog-thumb">
-                          <Link href={prefixer("/posts/" + post.slug)}>
+                          <Link href={prefixer(`/blog-more/${post.slug}`)}>
                             <a>
                               <img src={getData(post._embedded, 'image')} alt={post.title} />
                             </a>
@@ -55,7 +55,7 @@ class Content extends React.Component {
                         </figure>
                         <div className="blog-content">
                           <h2 className="h6">
-                            <Link href={prefixer("/posts/" + post.slug)}>
+                            <Link href={prefixer(`/blog-more/${post.slug}`)}>
                               <a>
                                 <div
                                   className={"post-content"}
@@ -73,12 +73,12 @@ class Content extends React.Component {
                             }}
                           />
                           <div className="blog-meta">
-                            <Link href={prefixer("/posts/" + post.slug)}>
+                            <Link href={prefixer(`/blog-more/${post.slug}`)}>
                               <a>
                                 By: {getData(post._embedded, 'author').name}
                               </a>
                             </Link>
-                            <Link href={prefixer("/posts/" + post.slug)}>
+                            <Link href={prefixer(`/blog-more/${post.slug}`)}>
                               <a>
                                 {moment(post.date).format('ll')}
                               </a>

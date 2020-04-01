@@ -3,8 +3,9 @@ import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
 import Link from "next/Link";
-import Config from "../config";
-import WPAPI from 'wpapi';
+// import Config from "../config";
+// import WPAPI from 'wpapi';
+import axios from 'axios';
 
 const settings = {
   slidesToShow: 3,
@@ -35,26 +36,27 @@ const settings = {
   ]
 };
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+// const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 class Destination extends React.Component {
-  static async getInitialProps() {
-    const categories = await wp
-      .categories()
-      .slug('sliders')
-      .embed();
+  constructor(props) {
+    super(props);
 
-
-    const posts = await wp
-      .posts()
-      .category(categories[0].id)
-      .embed();
-
-    return { posts, categories };
+    this.state = {
+      posts: []
+    };
   }
 
+  componentDidMount() {
+    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?categories=55`)
+      .then(res => this.setState({
+        posts: res.data
+      }))
+      .catch(err => console.log(err));
+  };
+
   render = () => {
-    const { posts } = this.props;
+    const { posts } = this.state;
 
     return (
       <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/ub_city.png')})` }}>

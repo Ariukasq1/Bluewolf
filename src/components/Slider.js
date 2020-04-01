@@ -1,9 +1,8 @@
 import React from 'react';
 import SlickSlider from '../UI/Slick'
 import Link from "next/link";
-import Config from "../config";
-import WPAPI from 'wpapi';
 import { getData } from "../utils";
+import axios from 'axios';
 
 const NextArrow = ({ className, onClick }) => {
   return (
@@ -33,27 +32,28 @@ const settings = {
   ]
 };
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+// const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 class Slider extends React.Component {
-  static async getInitialProps() {
-    const categories = await wp
-      .categories()
-      .slug('sliders')
-      .embed();
+  constructor(props) {
+    super(props);
 
-
-    const posts = await wp
-      .posts()
-      .category(categories[0].id)
-      .perPage(40)
-      .embed();
-
-    return { posts, categories };
+    this.state = {
+      posts: []
+    };
   }
 
+  componentDidMount() {
+    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?_embed&categories=55`)
+      .then(res => this.setState({
+        posts: res.data
+      }))
+      .catch(err => console.log(err));
+  };
+
   render() {
-    const { posts } = this.props;
+    const { posts } = this.state;
+    console.log('slider posts: ', posts);
 
     return (
       <div className={'slider-area'} >
