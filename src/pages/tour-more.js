@@ -9,7 +9,7 @@ import SectionTitle from "../UI/SectionTitle";
 import { defaultCoverImage } from "../components/layouts/constants";
 import List from "../UI/List";
 import LI from "../UI/List/Item";
-import Link from "next/Link";
+import Link from "next/link";
 import Config from "../config";
 import { prefixer } from '../utils';
 import WPAPI from 'wpapi';
