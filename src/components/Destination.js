@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
-import Link from "next/Link";
+import Link from "next/link";
 import axios from 'axios';
 
 const settings = {

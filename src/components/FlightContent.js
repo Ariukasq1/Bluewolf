@@ -3,7 +3,7 @@ import SectionTitle from "../UI/SectionTitle";
 import List from '../UI/List';
 import LI from '../UI/List/Item';
 import { prefixer } from '../utils';
-import Link from "next/Link";
+import Link from "next/link";
 import Config from "../config";
 import WPAPI from 'wpapi';
 
