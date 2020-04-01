@@ -5,6 +5,7 @@ import CallToAction from "../components/CallToAction";
 import Config from "../config";
 import WPAPI from 'wpapi';
 import Destination from '../components/Destination';
+import ErrorPage from 'next/error';
 
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 

@@ -3,6 +3,7 @@ import TourFilter from './TourFilter';
 import Sidebar from './Sidebar';
 import Loader from "./Loader";
 import axios from 'axios';
+import Config from "../config";
 
 class TourSidebar extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class TourSidebar extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/categories?parent=9`)
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=9`)
       .then(res => this.setState({
         categories: res.data,
         isLoaded: true

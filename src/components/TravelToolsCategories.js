@@ -6,7 +6,7 @@ import { prefixer } from '../utils';
 import axios from 'axios';
 import Link from "next/link";
 import Loader from "./Loader";
-
+import Config from "../config";
 
 class AboutCategories extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class AboutCategories extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://bluewolftravel.local/wp-json/wp/v2/pages?parent=7')
+    axios.get(`${Config().apiUrl}/wp/v2/pages?parent=7`)
       .then(res => this.setState({
         pages: res.data,
         isLoaded: true

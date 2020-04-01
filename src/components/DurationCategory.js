@@ -5,6 +5,7 @@ import { prefixer } from '../utils';
 import axios from 'axios';
 import Link from "next/link";
 import Loader from "./Loader";
+import Config from "../config";
 
 class ThemeCategory extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class ThemeCategory extends React.Component {
 
 
   componentDidMount() {
-    axios.get('http://bluewolftravel.local/wp-json/wp/v2/categories?parent=26')
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=26`)
       .then(res => this.setState({
         categories: res.data,
         isLoaded: true

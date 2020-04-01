@@ -3,6 +3,7 @@ import SlickSlider from '../UI/Slick'
 import Link from "next/link";
 import { getData } from "../utils";
 import axios from 'axios';
+import Config from "../config";
 
 const NextArrow = ({ className, onClick }) => {
   return (
@@ -32,8 +33,6 @@ const settings = {
   ]
 };
 
-// const wp = new WPAPI({ endpoint: Config().apiUrl });
-
 class Slider extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +43,7 @@ class Slider extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?_embed&categories=55`)
+    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=55`)
       .then(res => this.setState({
         posts: res.data
       }))

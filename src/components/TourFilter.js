@@ -4,6 +4,7 @@ import List from "../UI/List";
 import axios from 'axios';
 import Loader from "./Loader";
 import { withRouter } from 'next/router';
+import Config from "../config";
 
 class TourFilter extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class TourFilter extends React.Component {
   componentDidMount() {
     const { category } = this.props;
 
-    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/categories?parent=${category.id}`)
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=${category.id}`)
       .then(res => this.setState({
         categories: res.data,
         isLoaded: true

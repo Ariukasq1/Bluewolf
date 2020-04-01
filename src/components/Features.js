@@ -1,10 +1,7 @@
 import React from 'react';
-// import Config from "../config";
-// import WPAPI from 'wpapi';
 import { getData } from '../utils';
 import axios from 'axios';
-
-// const wp = new WPAPI({ endpoint: Config().apiUrl });
+import Config from "../config";
 
 class Features extends React.Component {
     constructor(props) {
@@ -16,7 +13,7 @@ class Features extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?_embed&categories=61`)
+        axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=61`)
             .then(res => this.setState({
                 posts: res.data
             }))

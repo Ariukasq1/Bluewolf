@@ -5,6 +5,7 @@ import { prefixer } from '../utils';
 import axios from 'axios';
 import Link from "next/link";
 import Loader from "./Loader";
+import Config from "../config";
 
 class WhereCategory extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class WhereCategory extends React.Component {
 
 
   componentDidMount() {
-    axios.get('http://bluewolftravel.local/wp-json/wp/v2/categories?parent=20')
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=20`)
       .then(res => this.setState({
         categories: res.data,
         isLoaded: true
