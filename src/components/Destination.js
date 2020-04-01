@@ -3,8 +3,6 @@ import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
 import Link from "next/Link";
-// import Config from "../config";
-// import WPAPI from 'wpapi';
 import axios from 'axios';
 
 const settings = {
@@ -36,8 +34,6 @@ const settings = {
   ]
 };
 
-// const wp = new WPAPI({ endpoint: Config.apiUrl });
-
 class Destination extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +44,7 @@ class Destination extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?categories=55`)
+    axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?_embed&categories=55`)
       .then(res => this.setState({
         posts: res.data
       }))

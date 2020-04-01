@@ -16,7 +16,7 @@ class Features extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?categories=61`)
+        axios.get(`http://bluewolftravel.local/wp-json/wp/v2/posts?_embed&categories=61`)
             .then(res => this.setState({
                 posts: res.data
             }))
