@@ -9,7 +9,6 @@ import Config from "../config";
 import WPAPI from 'wpapi';
 import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer, getData } from "../utils";
-import RentCarSidebar from '../components/RentCarSidebar';
 
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
@@ -151,7 +150,6 @@ export default class extends React.Component {
               </div>
             </div>
 
-            {/* <RentCarSidebar /> */}
           </PageWrapper>
           <CallToAction />
         </Layout >
