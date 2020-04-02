@@ -16,7 +16,7 @@ class TourSidebar extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=9`)
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=14`)
       .then(res => this.setState({
         categories: res.data,
         isLoaded: true
