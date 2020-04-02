@@ -4,6 +4,7 @@ import BlogContent from "../components/Blog/BlogContent";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
+import { prefixer } from '../utils';
 
 export default function BlogPage() {
   return (
