@@ -5,10 +5,8 @@ import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import SectionTitle from '../UI/SectionTitle'
-import { prefixer } from '../utils';
 import List from '../UI/List';
 import LI from '../UI/List/Item';
-import Link from "next/link";
 import Config from "../config";
 import WPAPI from 'wpapi';
 
@@ -19,7 +17,7 @@ class Flight extends React.Component {
     const categories = await wp
       .categories()
       .slug('flight')
-      .perPage(3)
+      .perPage(20)
       .embed();
 
     if (categories.length > 0) {
@@ -56,20 +54,11 @@ class Flight extends React.Component {
                     <div key={post.slug} className='col-md-6 col-lg-4'>
                       <div className="flight-plan-item">
                         <div className="flight-plan-header">
-
-                          <Link href={prefixer('/posts/' + post.slug)}>
-                            <a>
-                              <h6 className="plan-name">
-                                {post.acf.flight_number}</h6>
-                            </a>
-                          </Link>
+                          <h6 className="plan-name">
+                            {post.acf.flight_number}</h6>
                           <div className="plan-main">
                             <span className="img">
-                              <Link href={prefixer('/posts/' + post.slug)}>
-                                <a>
-                                  {post.acf.logo && <img src={post.acf.logo} alt={post.title} />}
-                                </a>
-                              </Link>
+                              {post.acf.logo && <img src={post.acf.logo} alt={post.title} />}
                             </span>
                           </div>
                         </div>

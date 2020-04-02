@@ -45,7 +45,7 @@ class Destination extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=55`)
+    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=13`)
       .then(res => this.setState({
         posts: res.data
       }))
@@ -56,7 +56,7 @@ class Destination extends React.Component {
     const { posts } = this.state;
 
     return (
-      <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/ub_city.png')})` }}>
+      <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/tours_bg.jpg')})` }}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-4">

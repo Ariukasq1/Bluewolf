@@ -15,7 +15,7 @@ class Faq extends React.Component {
     const categories = await wp
       .categories()
       .slug('faq')
-      .perPage(3)
+      .perPage(40)
       .embed();
 
     if (categories.length > 0) {

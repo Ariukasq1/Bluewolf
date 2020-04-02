@@ -61,7 +61,7 @@ function Header({ title, description, image, url }) {
           <div className="row align-items-center">
             <div className="col-4 col-lg-3">
               <div className="logo-area">
-                <a href="http://localhost:8080">
+                <a href="http://bluewolftravel.nmma.co/">
                   <img src={prefixer("/images/logo.png")} alt="bluewolf-logo" />
                 </a>
               </div>

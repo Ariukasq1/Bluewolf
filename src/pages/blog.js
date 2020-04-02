@@ -1,45 +1,23 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import Content from "../components/Blog/Content";
+import BlogContent from "../components/Blog/BlogContent";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
-import ErrorPage from 'next/error';
-import WPAPI from 'wpapi'
-import Config from "../config";
+import PageHeader from "../components/PageHeader";
 
-const wp = new WPAPI({ endpoint: Config().apiUrl });
-
-class BlogPage extends React.Component {
-  static async getInitialProps() {
-    try {
-      const posts = await wp
-        .posts()
-        .category([56])
-        .perPage(40)
-        .embed();
-
-      return { posts }
-
-    } catch (err) {
-      return { hasError: true }
-    }
-  }
-
-  render() {
-    if (this.props.hasError) {
-      return <ErrorPage statusCode={503} />;
-    }
-
-    return (
-      <>
-        <Layout title='Blog | Bluewolf'>
-          <Content posts={this.props.posts} />
-          <CallToAction />
-        </Layout>
-        <MobileMenu />
-      </>
-    );
-  }
+export default function BlogPage() {
+  return (
+    <>
+      <Layout title='Blog'>
+        <PageHeader
+          bgImg={prefixer('/images/ub_city.png')}
+          title={'Blog'}
+          content={'Businex always try to provide the best Business Solutions for Clients to grow up their Business very sharply and smoothly.'}
+        />
+        <BlogContent />
+        <CallToAction />
+      </Layout>
+      <MobileMenu />
+    </>
+  );
 }
-
-export default BlogPage;

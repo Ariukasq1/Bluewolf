@@ -22,7 +22,7 @@ class Accomodation extends React.Component {
     const posts = await wp
       .posts()
       .category(categories[0].id)
-      .perPage(40)
+      .perPage(20)
       .embed();
 
     return { posts, categories };
@@ -78,10 +78,10 @@ class Accomodation extends React.Component {
                             }}
                           />
                           <div className="blog-meta">
-                            <Link href='#'><a>By:
+                            <Link href={prefixer(`/accomodation-more/${post.slug}`)}><a>By:
                               {post.acf.distance}
                             </a></Link>
-                            <Link href='#'><a>
+                            <Link href={prefixer(`/accomodation-more/${post.slug}`)}><a>
                               Price: {post.acf.price}
                             </a>
                             </Link>

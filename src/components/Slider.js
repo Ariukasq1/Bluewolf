@@ -43,7 +43,7 @@ class Slider extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=55`)
+    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=13`)
       .then(res => this.setState({
         posts: res.data
       }))

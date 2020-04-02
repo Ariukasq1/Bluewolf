@@ -13,7 +13,7 @@ class Features extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=61`)
+        axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=10`)
             .then(res => this.setState({
                 posts: res.data
             }))

@@ -1,43 +1,33 @@
 import React from 'react';
 import moment from "moment";
 import PageWrapper from "../PageWrapper";
-import PageHeader from "../PageHeader";
 import SidebarList from './SidebarList';
 import Link from "next/link";
 import { prefixer, getData } from '../../utils';
 import Config from "../../config";
-import WPAPI from 'wpapi';
-
-const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Content extends React.Component {
-  static async getInitialProps() {
-    const categories = await wp
-      .categories()
-      .slug('blog')
-      .embed();
+  constructor(props) {
+    super(props);
 
-    const posts = await wp
-      .posts()
-      .category(categories[0].id)
-      .perPage(40)
-      .embed();
-
-    return { posts, categories };
+    this.state = {
+      posts: []
+    };
   }
 
+  componentDidMount() {
+    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=3`)
+      .then(res => this.setState({
+        posts: res.data
+      }))
+      .catch(err => console.log(err));
+  };
 
   render() {
-    const { posts } = this.props;
+    const { posts } = this.state;
 
     return (
       <>
-        <PageHeader
-          bgImg={prefixer('/images/ub_city.png')}
-          title={'Blog'}
-          content={'Businex always try to provide the best Business Solutions for Clients to grow up their Business very sharply and smoothly.'}
-        />
-
         <PageWrapper classes={'blog-page-content-area sp-y'}>
           <div className='col-lg-9 null'>
             <div className='blog-content-wrapper false'>

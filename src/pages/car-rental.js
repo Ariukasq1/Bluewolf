@@ -18,8 +18,8 @@ class CarRental extends React.Component {
   static async getInitialProps() {
     const categories = await wp
       .categories()
-      .slug('carrental')
-      .perPage(3)
+      .slug('car-rental')
+      .perPage(20)
       .embed();
 
     if (categories.length > 0) {
