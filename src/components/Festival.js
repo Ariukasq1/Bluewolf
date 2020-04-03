@@ -1,7 +1,7 @@
 import React from 'react';
 import parse from 'html-react-parser';
-import Content from "../../UI/Content";
-import { prefixer, getData } from '../../utils';
+import Content from "../UI/Content";
+import { prefixer, getData } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
 

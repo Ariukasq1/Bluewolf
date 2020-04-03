@@ -2,7 +2,7 @@ import React from 'react';
 import parse from 'html-react-parser';
 import List from '../UI/List';
 import LI from '../UI/List/Item';
-import { prefixer, getData } from '../../utils';
+import { prefixer, getData } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
 
