@@ -4,6 +4,20 @@ import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
 
+const settings = {
+  slidesToShow: 2,
+  arrows: false,
+  dots: true,
+  className: "testimonial-content--3 testimonial-grid",
+  responsive: [
+      {
+          breakpoint: 991,
+          settings: {
+              slidesToShow: 1
+          }
+      }
+  ]
+}
 export default class Testimonials extends React.Component {
   constructor(props) {
     super(props);
