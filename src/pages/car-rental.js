@@ -53,40 +53,41 @@ class CarRental extends React.Component {
             <div className="service-content-area">
               <div className="container">
                 <div className="row mtn-30">
-                  {posts.map(post => (
-                    <div className="col-md-6 col-lg-4">
-                      <div key={post.slug} className="service-item">
-                        <figure className="service-thumb">
-                          <Link href={prefixer(`/car-rental-more/${post.slug}`)}>
-                            <a>
-                              <img src={getData(post._embedded, 'image')} />
-                            </a>
-                          </Link>
-                          <figcaption className="service-txt">
-                            <h5>{post.title.rendered}</h5>
-                          </figcaption>
-                        </figure>
+                  {
+                    posts.map(post => (
+                      <div className="col-md-6 col-lg-4">
+                        <div key={post.slug} className="service-item">
+                          <figure className="service-thumb">
+                            <Link href={prefixer(`/car-rental-more/${post.slug}`)}>
+                              <a>
+                                <img src={getData(post._embedded, 'image')} />
+                              </a>
+                            </Link>
+                            <figcaption className="service-txt">
+                              <h5>{post.title.rendered}</h5>
+                            </figcaption>
+                          </figure>
 
-                        <div className="service-content">
-                          <div className="service-content-inner">
-                            <h5>
-                              <Link href={prefixer(`/car-rental-more/${post.slug}`)}>
-                                <a className="stretched-link">
-                                  {post.title.rendered}
-                                </a>
-                              </Link>
-                            </h5>
-                            <List classes="price-list">
-                              <LI> {post.acf.car_type}</LI>
-                              <LI>Max passenger {post.acf.max_passenger}</LI>
-                              <LI>Door {post.acf.car_door}</LI>
-                              <LI>Top speed {post.acf.top_speed}km/h</LI>
-                            </List>
+                          <div className="service-content">
+                            <div className="service-content-inner">
+                              <h5>
+                                <Link href={prefixer(`/car-rental-more/${post.slug}`)}>
+                                  <a className="stretched-link">
+                                    {post.title.rendered}
+                                  </a>
+                                </Link>
+                              </h5>
+                              <List classes="price-list">
+                                <LI> {post.acf.car_type}</LI>
+                                <LI>Max passenger {post.acf.max_passenger}</LI>
+                                <LI>Door {post.acf.car_door}</LI>
+                                <LI>Top speed {post.acf.top_speed}km/h</LI>
+                              </List>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))
+                    ))
                   }
                 </div>
               </div>

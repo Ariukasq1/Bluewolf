@@ -1,5 +1,4 @@
 import React from 'react';
-import parse from 'html-react-parser';
 import Content from "../UI/Content";
 import { prefixer, getData } from '../utils';
 import Link from "next/link";
@@ -38,10 +37,10 @@ export default class Festival extends React.Component {
 
                 <div className="col-md-6 col-lg-7">
                   <Content classes="about-content">
-                    <h6>{parse(post.title.rendered)}</h6>
-                    <h2>{parse(post.acf.heading)}</h2>
+                    <h6>{post.title.rendered}</h6>
+                    <h2>{post.acf.heading}</h2>
                     <span className="about-since">{post.acf.since}</span>
-                    <p>{parse(post.acf.text)}</p>
+                    <p>{post.acf.text}</p>
                     <Link href={prefixer(`tour-category/${post.slug}`)}>
                       <a className="btn-about">
                         {post.acf.btntext} <i className="fa fa-angle-double-right" />

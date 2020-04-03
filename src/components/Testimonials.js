@@ -1,5 +1,4 @@
 import React from 'react';
-import parse from 'html-react-parser';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
@@ -67,7 +66,7 @@ export default class Testimonials extends React.Component {
                           <div className="testimonial-txt">
                             <img src={prefixer('/img/icons/quote.png')} alt="quote-icon" />
                             <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-                            <h5 className="client-name">{parse(post.title.rendered)}</h5>
+                            <h5 className="client-name">{post.title.rendered}</h5>
                           </div>
                         </div>
                       </div>

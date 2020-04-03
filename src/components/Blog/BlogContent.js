@@ -30,49 +30,51 @@ class BlogContent extends React.Component {
         <div className='col-lg-9 null'>
           <div className='blog-content-wrapper false'>
             <div className="row mtn-30">
-              {posts.map(post => (
-                <div key={post.slug} className='col-md-6'>
-                  <div className="blog-item">
-                    <figure className="blog-thumb">
-                      <Link href={prefixer(`/blog-more/${post.slug}`)}>
-                        <a>
-                          <img src={getData(post._embedded, 'image')} alt={post.title} />
-                        </a>
-                      </Link>
-                    </figure>
-                    <div className="blog-content">
-                      <h2 className="h6">
+              {
+                posts.map(post => (
+                  <div key={post.slug} className='col-md-6'>
+                    <div className="blog-item">
+                      <figure className="blog-thumb">
                         <Link href={prefixer(`/blog-more/${post.slug}`)}>
                           <a>
-                            <div
-                              dangerouslySetInnerHTML={{
-                                __html: post.title.rendered
-                              }}
-                            />
+                            <img src={getData(post._embedded, 'image')} alt={post.title} />
                           </a>
                         </Link>
-                      </h2>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: post.excerpt.rendered
-                        }}
-                      />
-                      <div className="blog-meta">
-                        <Link href={prefixer(`/blog-more/${post.slug}`)}>
-                          <a>
-                            By: {getData(post._embedded, 'author').name}
-                          </a>
-                        </Link>
-                        <Link href={prefixer(`/blog-more/${post.slug}`)}>
-                          <a>
-                            {moment(post.date).format('ll')}
-                          </a>
-                        </Link>
+                      </figure>
+                      <div className="blog-content">
+                        <h2 className="h6">
+                          <Link href={prefixer(`/blog-more/${post.slug}`)}>
+                            <a>
+                              <div
+                                dangerouslySetInnerHTML={{
+                                  __html: post.title.rendered
+                                }}
+                              />
+                            </a>
+                          </Link>
+                        </h2>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: post.excerpt.rendered
+                          }}
+                        />
+                        <div className="blog-meta">
+                          <Link href={prefixer(`/blog-more/${post.slug}`)}>
+                            <a>
+                              By: {getData(post._embedded, 'author').name}
+                            </a>
+                          </Link>
+                          <Link href={prefixer(`/blog-more/${post.slug}`)}>
+                            <a>
+                              {moment(post.date).format('ll')}
+                            </a>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              }
             </div>
           </div>
         </div>

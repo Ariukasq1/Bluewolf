@@ -1,5 +1,4 @@
 import React from 'react';
-import parse from 'html-react-parser';
 import List from '../UI/List';
 import LI from '../UI/List/Item';
 import SectionTitle from "../UI/SectionTitle";
@@ -54,7 +53,7 @@ export default class ToursHome extends React.Component {
                           </a>
                         </Link>
                         <figcaption className="service-txt">
-                          <h5>{parse(post.title.rendered)}</h5>
+                          <h5>{post.title.rendered}</h5>
                         </figcaption>
                       </figure>
 
@@ -63,14 +62,14 @@ export default class ToursHome extends React.Component {
                           <h5>
                             <Link href={prefixer(`/tour-more/${post.slug}`)}>
                               <a className="stretched-link">
-                                {parse(post.title.rendered)}
+                                {post.title.rendered}
                               </a>
                             </Link>
                           </h5>
                           <List classes="price-list">
                             <LI>Price: {post.acf.price}</LI>
-                            <LI>Theme: {parse(post.acf.theme)}</LI>
-                            <LI>Duration: {parse(post.acf.duration)}</LI>
+                            <LI>Theme: {post.acf.theme}</LI>
+                            <LI>Duration: {post.acf.duration}</LI>
                             <LI>Group size: {post.acf.group_size}</LI>
                           </List>
                         </div>

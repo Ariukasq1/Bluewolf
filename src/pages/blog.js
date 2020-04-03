@@ -13,7 +13,7 @@ export default function BlogPage() {
     <>
       <Layout title='Blog'>
         <PageHeader
-          bgImg={prefixer('/images/ub_city.png')}
+          bgImg={prefixer('/images/default.jpg')}
           title={'Blog'}
           content={'Businex always try to provide the best Business Solutions for Clients to grow up their Business very sharply and smoothly.'}
         />
