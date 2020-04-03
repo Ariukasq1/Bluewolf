@@ -24,7 +24,7 @@ export default class Festival extends React.Component {
   };
 
   render() {
-    const { price, theme, duration, group_size } = post.acf;
+    const { posts } = this.state;
 
     return (
       <div className={`service-area-wrapper sm-top-wt`}>
@@ -42,12 +42,12 @@ export default class Festival extends React.Component {
           <div className="container">
             <div className="row mtn-30">
               {posts.map(post => (
-                <div className="col-md-6 col-lg-4">
-                  <div key={post.slug} className="service-item">
+                <div key={post.slug} className="col-md-6 col-lg-4">
+                  <div className="service-item">
                     <figure className="service-thumb">
                       <Link href={prefixer(`/tour-more/${post.slug}`)}>
                         <a>
-                          <img src={getData(post._embedded, 'image')} />
+                          <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
                         </a>
                       </Link>
                       <figcaption className="service-txt">
@@ -65,10 +65,10 @@ export default class Festival extends React.Component {
                           </Link>
                         </h5>
                         <List classes="price-list">
-                          <LI>Price: {price}</LI>
-                          <LI>Theme: {parse(theme)}</LI>
-                          <LI>Duration: {parse(duration)}</LI>
-                          <LI>Group size: {group_size}</LI>
+                          <LI>Price: {post.acf.price}</LI>
+                          <LI>Theme: {parse(post.acf.theme)}</LI>
+                          <LI>Duration: {parse(post.acf.duration)}</LI>
+                          <LI>Group size: {post.acf.group_size}</LI>
                         </List>
                       </div>
                     </div>

@@ -29,7 +29,7 @@ class Features extends React.Component {
                     <div className="row mtn-sm-60 mtn-md-5">
                         {
                             posts.map(post => (
-                                <div className="col-md-4">
+                                <div key={post.slug} className="col-md-4">
                                     <div className="icon-box-item">
                                         <div className="icon-box__icon">
                                             <img src={getData(post._embedded, 'image')} alt={post.title} />
