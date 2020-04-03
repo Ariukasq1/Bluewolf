@@ -5,7 +5,7 @@ import { prefixer, getData } from '../../utils';
 import Config from "../../config";
 import axios from 'axios';
 
-class Content extends React.Component {
+class BlogContent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -81,4 +81,4 @@ class Content extends React.Component {
   }
 }
 
-export default Content;
+export default BlogContent;

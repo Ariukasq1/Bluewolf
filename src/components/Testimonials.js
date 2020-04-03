@@ -61,7 +61,7 @@ export default class Testimonials extends React.Component {
                       <div key={post.slug}>
                         <div className="testimonial-item testimonial-item--3">
                           <div className="testimonial-thumb">
-                            <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
+                            <img src={getData(post._embedded, 'image')} alt={post.title} />
                           </div>
 
                           <div className="testimonial-txt">

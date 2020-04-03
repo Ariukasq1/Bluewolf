@@ -41,7 +41,7 @@ export default class Festival extends React.Component {
                     <h6>{parse(post.title.rendered)}</h6>
                     <h2>{parse(post.acf.heading)}</h2>
                     <span className="about-since">{post.acf.since}</span>
-                    <p>{parse(text)}</p>
+                    <p>{parse(post.acf.text)}</p>
                     <Link href={prefixer(`tour-category/${post.slug}`)}>
                       <a className="btn-about">
                         {post.acf.btntext} <i className="fa fa-angle-double-right" />

@@ -8,7 +8,7 @@ import Link from "next/link";
 import axios from 'axios';
 import Config from "../config";
 
-export default class Festival extends React.Component {
+export default class ToursHome extends React.Component {
   constructor(props) {
     super(props);
 
@@ -43,40 +43,41 @@ export default class Festival extends React.Component {
         <div className="service-content-area">
           <div className="container">
             <div className="row mtn-30">
-              {posts.map(post => (
-                <div key={post.slug} className="col-md-6 col-lg-4">
-                  <div className="service-item">
-                    <figure className="service-thumb">
-                      <Link href={prefixer(`/tour-more/${post.slug}`)}>
-                        <a>
-                          <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
-                        </a>
-                      </Link>
-                      <figcaption className="service-txt">
-                        <h5>{parse(post.title.rendered)}</h5>
-                      </figcaption>
-                    </figure>
+              {
+                posts.map(post => (
+                  <div key={post.slug} className="col-md-6 col-lg-4">
+                    <div className="service-item">
+                      <figure className="service-thumb">
+                        <Link href={prefixer(`/tour-more/${post.slug}`)}>
+                          <a>
+                            <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
+                          </a>
+                        </Link>
+                        <figcaption className="service-txt">
+                          <h5>{parse(post.title.rendered)}</h5>
+                        </figcaption>
+                      </figure>
 
-                    <div className="service-content">
-                      <div className="service-content-inner">
-                        <h5>
-                          <Link href={prefixer(`/tour-more/${post.slug}`)}>
-                            <a className="stretched-link">
-                              {parse(post.title.rendered)}
-                            </a>
-                          </Link>
-                        </h5>
-                        <List classes="price-list">
-                          <LI>Price: {post.acf.price}</LI>
-                          <LI>Theme: {parse(post.acf.theme)}</LI>
-                          <LI>Duration: {parse(post.acf.duration)}</LI>
-                          <LI>Group size: {post.acf.group_size}</LI>
-                        </List>
+                      <div className="service-content">
+                        <div className="service-content-inner">
+                          <h5>
+                            <Link href={prefixer(`/tour-more/${post.slug}`)}>
+                              <a className="stretched-link">
+                                {parse(post.title.rendered)}
+                              </a>
+                            </Link>
+                          </h5>
+                          <List classes="price-list">
+                            <LI>Price: {post.acf.price}</LI>
+                            <LI>Theme: {parse(post.acf.theme)}</LI>
+                            <LI>Duration: {parse(post.acf.duration)}</LI>
+                            <LI>Group size: {post.acf.group_size}</LI>
+                          </List>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))
+                ))
               }
             </div>
           </div>
