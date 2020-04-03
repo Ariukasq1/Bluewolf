@@ -5,7 +5,7 @@ import Festival from '../components/Festival';
 import Features from '../components/Features';
 import TourHome from '../components/TourHome';
 import Testimonials from "../components/Testimonials";
-import BlogContent from "../components/Blog";
+import BlogPageContent from "../components/Blog";
 import BrandLogo from "../components/BrandLogo";
 import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
@@ -22,7 +22,7 @@ export default function Home() {
         <TourHome />
         <Testimonials />
         <Destination />
-        <BlogContent perPage={3} />
+        <BlogPageContent perPage={3} />
         <BrandLogo />
         <Funfact />
         <CallToAction />

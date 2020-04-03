@@ -6,7 +6,7 @@ import BlogItem from './BlogItem';
 import moment from "moment";
 import { getData } from '../../utils';
 
-class BlogContent extends React.Component {
+class BlogPageContent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ class BlogContent extends React.Component {
                 posts.map(post => (
                   <BlogItem
                     key={post.id}
-                    id={post.id}
+                    id={post.slug}
                     title={post.title}
                     excerpt={post.excerpt}
                     postBy={getData(post._embedded, 'author').name}
@@ -66,4 +66,4 @@ class BlogContent extends React.Component {
   }
 }
 
-export default BlogContent;
+export default BlogPageContent;

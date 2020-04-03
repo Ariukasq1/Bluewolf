@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import BlogItem from "./blogItem";
-import BlogItemList from "./blogItemList";
+import BlogItem from "./BlogItem";
+import BlogItemList from "./BlogItemList";
 import Pagination from "../Pagination";
 import Config from "../../config";
 import axios from 'axios';
