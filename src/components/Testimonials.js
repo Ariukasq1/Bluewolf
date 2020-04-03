@@ -4,6 +4,7 @@ import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
 import Config from "../config";
+import axios from 'axios';
 
 const settings = {
   slidesToShow: 2,

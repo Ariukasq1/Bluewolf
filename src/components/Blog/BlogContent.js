@@ -5,6 +5,7 @@ import SidebarList from './SidebarList';
 import Link from "next/link";
 import { prefixer, getData } from '../../utils';
 import Config from "../../config";
+import axios from 'axios';
 
 class Content extends React.Component {
   constructor(props) {
