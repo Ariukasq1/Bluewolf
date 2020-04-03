@@ -1,27 +1,32 @@
 [
   {
     "id": 1,
-    "logoSrc": "brand-logo/01.png",
+    "logoSrc": "payment1.png",
     "URL": "/"
   },
   {
     "id": 2,
-    "logoSrc": "brand-logo/02.png",
+    "logoSrc": "payment2.png",
     "URL": "/"
   },
   {
     "id": 3,
-    "logoSrc": "brand-logo/03.png",
+    "logoSrc": "payment3.png",
     "URL": "/"
   },
   {
     "id": 4,
-    "logoSrc": "brand-logo/04.png",
+    "logoSrc": "payment4.png",
     "URL": "/"
   },
   {
     "id": 5,
-    "logoSrc": "brand-logo/05.png",
+    "logoSrc": "payment5.png",
+    "URL": "/"
+  },
+  {
+    "id": 6,
+    "logoSrc": "payment6.png",
     "URL": "/"
   }
 ]

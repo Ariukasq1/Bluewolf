@@ -36,7 +36,7 @@ class Features extends React.Component {
                                         </div>
                                         <div className="icon-box__info">
                                             <h5>{post.title.rendered}</h5>
-                                            <p dangerouslySetInnerHTML={{
+                                            <div dangerouslySetInnerHTML={{
                                                 __html: post.content.rendered
                                             }} />
                                         </div>

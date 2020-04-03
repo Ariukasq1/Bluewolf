@@ -8,19 +8,23 @@ import WPAPI from 'wpapi';
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 export default class extends React.Component {
-  static async getInitialProps() {
-    let apiMethod = wp.pages();
+  constructor(props) {
+    super(props);
 
-    const page = await apiMethod
-      .slug('rent-this-car')
-      .embed()
-      .then(data => {
-        return data[0];
-      });
-
-    return { page };
+    this.state = {
+      categories: [],
+      isLoaded: false
+    };
   }
 
+  componentDidMount() {
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=14`)
+      .then(res => this.setState({
+        categories: res.data,
+        isLoaded: true
+      }))
+      .catch(err => console.log(err));
+  };
   render() {
     const { page } = this.props;
 

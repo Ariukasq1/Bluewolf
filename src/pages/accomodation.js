@@ -110,7 +110,7 @@ class Accomodation extends React.Component {
       <>
         <Layout title={title}>
           <PageHeader
-            bgImg={prefixer('/images/ub_city.png')}
+            bgImg={prefixer('/images/ub_cover.jpg')}
             title={title}
             content={'BlueWolf Travel - the team of local travel experts organizing discovery & adventure oriented tours for groups, incentives and  individuals. '}
           />

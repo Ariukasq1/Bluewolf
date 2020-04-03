@@ -7,37 +7,31 @@ import PageWrapper from "../components/PageWrapper";
 import SectionTitle from "../UI/SectionTitle";
 import Config from "../config";
 import WPAPI from 'wpapi';
+import Head from 'next/head'
 
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
-export default class extends React.Component {
-  static async getInitialProps(context) {
-    const slug = context.query.slug;
+const GA_TRACKING_ID = 'GTM-NN7QKCX';
 
-    let apiMethod = wp.posts();
-
-    const post = await apiMethod
-      .slug(slug)
-      .embed()
-      .then(data => {
-        return data[0];
-      });
-
-    return { post };
-  }
-
-  render() {
-    const { post } = this.props;
-
-    if (!post.title) {
-      return <Error statusCode={404} />;
-    }
-
-    const { content, cover_image } = post.acf;
-
-    return (
-      <>
-        <Layout>
+export default () => {
+  return (
+    <>
+      <Head>
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script dangerouslySetInnerHTML={{
+          __html: `(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', '${GA_TRACKING_ID}');`
+        }}>
+        </script>
+      </Head>
+      <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GA_TRACKING_ID}" height="0" width="0" style="display:none;visibility:hidden;"></iframe>` }} />
+      {/* <Layout>
           <PageHeader
             bgImg={cover_image}
             title={<p dangerouslySetInnerHTML={{ __html: post.title.rendered }} />}
@@ -60,7 +54,7 @@ export default class extends React.Component {
                     <div className="skill-experience-area mem-achieve-item">
                       <h4>Practical information</h4>
                       <div className="skill-bar-wrap mt-40 mt-sm-30">
-                        <div data-erxes-embed={form_id} style="width:900px;height:800px"></div>
+                        <div data-erxes-embed="tNgqcR" style={{ width: "900px", height: "800px" }}></div>
                       </div>
                     </div>
                   </div>
@@ -69,13 +63,9 @@ export default class extends React.Component {
             </div>
           </PageWrapper>
           <CallToAction />
-        </Layout >
-        {/* Google Tag Manager (noscript) */}
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NN7QKCX"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        {/* <!-- End Google Tag Manager (noscript) --> */}
-        <MobileMenu />
-      </>
-    );
-  }
+        </Layout > */}
+      <div data-erxes-embed="jM9mMG" style={{ width: "900px", height: "800px" }}></div>
+      <MobileMenu />
+    </>
+  );
 }

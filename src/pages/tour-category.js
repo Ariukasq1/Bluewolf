@@ -126,9 +126,9 @@ class Category extends React.Component {
       <>
         <Layout title={title}>
           <PageHeader
-            bgImg={prefixer('/images/Glacier1.jpg')}
-            title={title}
-            content={'BlueWolf Travel - the team of local travel experts organizing discovery & adventure oriented tours for groups, incentives and  individuals. '}
+            bgImg={prefixer('/images/BGoat.jpg')}
+            title={`Tours`}
+            content={`Blue Wolf Travel provides clients with the most comprehensive range of professional eco-travel services in western Mongolia. As the largest tour company in western Mongolia, Blue Wolf offers many advantages that have set them apart and lead to recently being honored by the Mongolian Tourism Board as one of Mongolia's best tour operators.`}
           />
           <PageWrapper classes="post-page-content-area sp-y">
             {this.renderContent()}

@@ -45,7 +45,7 @@ export default class extends React.Component {
       <>
         <Layout>
           <PageHeader
-            bgImg={prefixer('/images/BGoat.jpg')}
+            bgImg={cover_image ? cover_image : prefixer('/images' + defaultCoverImage)}
             title={<p dangerouslySetInnerHTML={{
               __html: post.title.rendered
             }} />}
