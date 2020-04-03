@@ -4,6 +4,7 @@ import Content from "../UI/Content";
 import { prefixer, getData } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
+import Config from "../config";
 
 export default class Festival extends React.Component {
   constructor(props) {

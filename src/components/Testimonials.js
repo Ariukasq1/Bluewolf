@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
+import Config from "../config";
 
 const settings = {
   slidesToShow: 2,
@@ -10,12 +11,12 @@ const settings = {
   dots: true,
   className: "testimonial-content--3 testimonial-grid",
   responsive: [
-      {
-          breakpoint: 991,
-          settings: {
-              slidesToShow: 1
-          }
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 1
       }
+    }
   ]
 }
 export default class Testimonials extends React.Component {
