@@ -7,7 +7,7 @@ function LogoItem(props) {
     <div className="brand-logo-item">
       <Link href={`${prefixer(props.URL)}`}>
         <a>
-          <img src={prefixer('/img/' + props.logoSrc)} alt="Bluewolf-Logo" />
+          <img src={prefixer('/images/' + props.logoSrc)} alt='brands-logo' />
         </a>
       </Link>
     </div>
