@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/css/slick.min.css";
-import "../styles/css/bootstrap.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.min.css';
 import '../styles/css/timeline.css';
 import App from 'next/app'

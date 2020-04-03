@@ -4,6 +4,7 @@ import BrandLogo from "../components/BrandLogo";
 import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
+import { Accordion, Card, Button } from 'react-bootstrap';
 import SectionTitle from '../UI/SectionTitle'
 import Config from "../config";
 import WPAPI from 'wpapi';
@@ -47,27 +48,22 @@ class Faq extends React.Component {
 
               <div className="row mtn-30">
                 <div className='faq-list'>
-                  <div class="accordion" id="accordionExample">
+                  <Accordion defaultActiveKey="0">
                     {
-                      posts.map(post => (
-                        <div key={post.slug} class="card">
-                          <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                              <button class="btn" type="button" data-toggle="collapse" data-target='#collapse{post.slug}' aria-expanded="true" aria-controls="collapseOne">
-                                <div dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                              </button>
-                            </h2>
-                          </div>
-
-                          <div id="collapse{post.slug}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">
-                              <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-                            </div>
-                          </div>
-                        </div>
+                      posts.map((post, index) => (
+                        <Card key={post.slug} >
+                          <Card.Header>
+                            <Accordion.Toggle as={Button} variant="link" eventKey={index}>
+                              <div dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                            </Accordion.Toggle>
+                          </Card.Header>
+                          <Accordion.Collapse eventKey={index}>
+                            <Card.Body><div dangerouslySetInnerHTML={{ __html: post.content.rendered }} /></Card.Body>
+                          </Accordion.Collapse>
+                        </Card>
                       ))
                     }
-                  </div>
+                  </Accordion>
                 </div>
               </div>
             </div>

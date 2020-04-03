@@ -3,9 +3,9 @@ import Layout from "../components/Layout";
 import Slider from '../components/Slider';
 import Festival from '../components/Festival';
 import Features from '../components/Features';
-import ToursHome from '../components/ToursHome';
+import TourHome from '../components/TourHome';
 import Testimonials from "../components/Testimonials";
-import BlogContent from "../components/Blog/BlogContent";
+import BlogContent from "../components/Blog";
 import BrandLogo from "../components/BrandLogo";
 import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
@@ -19,10 +19,10 @@ export default function Home() {
         <Slider />
         <Festival />
         <Features />
-        <ToursHome />
+        <TourHome />
         <Testimonials />
         <Destination />
-        <BlogContent />
+        <BlogContent perPage={3} />
         <BrandLogo />
         <Funfact />
         <CallToAction />

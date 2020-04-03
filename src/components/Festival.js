@@ -15,10 +15,18 @@ export default class Festival extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=11`)
-      .then(res => this.setState({
-        posts: res.data
-      }))
+    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=festivals`)
+      .then(res => {
+        const categories = res.data;
+
+        if (categories && categories.length > 0) {
+          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+            .then(res => this.setState({
+              posts: res.data
+            }))
+            .catch(err => console.log(err));
+        }
+      })
       .catch(err => console.log(err));
   };
 
@@ -36,13 +44,13 @@ export default class Festival extends React.Component {
                 </div>
 
                 <div className="col-md-6 col-lg-7">
-                  <Content classes="about-content">
+                  <Content classes="festival-content">
                     <h6>{post.title.rendered}</h6>
                     <h2>{post.acf.heading}</h2>
-                    <span className="about-since">{post.acf.since}</span>
+                    <span className="festival-since">{post.acf.since}</span>
                     <p>{post.acf.text}</p>
-                    <Link href={prefixer(`tour-category/${post.slug}`)}>
-                      <a className="btn-about">
+                    <Link href={prefixer(`tour-category/mongolia`)}>
+                      <a className="btn-festival">
                         {post.acf.btntext} <i className="fa fa-angle-double-right" />
                       </a>
                     </Link>

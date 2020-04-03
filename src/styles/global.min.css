@@ -1279,7 +1279,6 @@ Background Image
 .bg-img {
   background: no-repeat center center;
   background-size: cover;
-  opacity: 0.8;
 }
 
 /*----------------------
@@ -3254,15 +3253,15 @@ Start Comment Area Wrapper
 08. About Style CSS
 ==========================*/
 @media only screen and (min-width: 1200px) {
-  .about-content {
+  .festival-content {
     margin-left: 55px;
     padding-right: 80px;
   }
 }
-.about-content h6 {
+.festival-content h6 {
   margin-bottom: 13px;
 }
-.about-content .about-since {
+.festival-content .festival-since {
   color: #484848;
   display: inline-block;
   font-size: 24px;
@@ -3273,11 +3272,11 @@ Start Comment Area Wrapper
   margin-bottom: 30px;
 }
 @media only screen and (max-width: 767.98px) {
-  .about-content .about-since {
+  .festival-content .festival-since {
     margin-bottom: 20px;
   }
 }
-.about-content .about-since:after {
+.festival-content .festival-since:after {
   background-color: #b4b4b4;
   content: "";
   position: absolute;
@@ -3287,7 +3286,7 @@ Start Comment Area Wrapper
   height: 2px;
   width: 110px;
 }
-.about-content .btn-about {
+.festival-content .btn-festival {
   color: #151515;
   font-size: 16px;
   font-weight: 500;
@@ -3295,108 +3294,40 @@ Start Comment Area Wrapper
   margin-top: 15px;
 }
 @media only screen and (max-width: 767.98px) {
-  .about-content .btn-about {
+  .festival-content .btn-festival {
     margin-top: 5px;
   }
 }
-.about-content .btn-about i {
+.festival-content .btn-festival i {
   font-size: 20px;
   line-height: 3px;
   vertical-align: middle;
   transition: 0.3s;
 }
-.about-content .btn-about:hover i {
+.festival-content .btn-festival:hover i {
   padding-left: 5px;
 }
 @media only screen and (min-width: 1200px) {
-  .about-content--2 {
+  .festival-content--2 {
     margin-left: 0;
     padding-right: 40px;
   }
 }
 
-.about-thumb {
+.festival-thumb {
   overflow: hidden;
 }
 @media only screen and (max-width: 767.98px) {
-  .about-thumb {
+  .festival-thumb {
     margin-bottom: 35px;
   }
 }
-.about-thumb img {
+.festival-thumb img {
   width: 100%;
   transition: 0.4s;
 }
-.about-thumb--2 {
+.festival-thumb--2 {
   margin-right: -250px;
-}
-
-.home-two-about-area {
-  background-color: #f8f9fc;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199.98px), only screen and (min-width: 1200px) and (max-width: 1599.98px) {
-  .home-two-about-area {
-    background-size: 1100px auto;
-  }
-}
-@media only screen and (max-width: 767.98px), only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .home-two-about-area {
-    background-image: none !important;
-  }
-}
-.home-two-about-area .about-content {
-  padding-top: 100px;
-  padding-bottom: 110px;
-}
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .home-two-about-area .about-content {
-    padding-top: 40px;
-    padding-bottom: 90px;
-  }
-}
-@media only screen and (max-width: 767.98px) {
-  .home-two-about-area .about-content {
-    padding-bottom: 60px;
-    padding-top: 0;
-  }
-}
-
-.video-button-thumb {
-  position: relative;
-}
-.video-button-thumb:after {
-  content: "";
-  background-color: #0D3069;
-  opacity: 0.5;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.video-button-thumb .btn-play {
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  color: #0D3069;
-  font-size: 18px;
-  text-align: center;
-  line-height: 60px;
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-.video-button-thumb .btn-play:hover {
-  background-color: #0D3069;
-  color: #FFFFFF;
-}
-.video-button-thumb .btn-play i {
-  padding-left: 5px;
 }
 
 /*======================

@@ -45,10 +45,18 @@ class Destination extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=13`)
-      .then(res => this.setState({
-        posts: res.data
-      }))
+    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=sliders`)
+      .then(res => {
+        const categories = res.data;
+
+        if (categories && categories.length > 0) {
+          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+            .then(res => this.setState({
+              posts: res.data
+            }))
+            .catch(err => console.log(err));
+        }
+      })
       .catch(err => console.log(err));
   };
 
@@ -73,7 +81,7 @@ class Destination extends React.Component {
                       <figure className="tours-pic">
                         <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
                           <a>
-                            <img src={getData(post._embedded, 'image')} alt={post.name} />
+                            <img src={post.acf.slider_image} alt={post.name} />
                           </a>
                         </Link>
                       </figure>

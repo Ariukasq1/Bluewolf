@@ -80,28 +80,11 @@ export default class extends React.Component {
                       />
                     </div>
                   </div>
-                  {post.acf.itinerary ?
-                    <div className="col-12">
-                      <div className="education-content-wrap mt-60">
-                        <TimelineWrap icon={'layer-group'}>
-                          <div className="cd-timeline-block">
-                            <div className="cd-timeline-img">
-                              <span className="dot" />
-                            </div>
-                            <div className="cd-timeline-content">
-                              <div className="cd-heading">
-                                <h5>{post.acf.itinerary.day}</h5>
-                              </div>
-                              <p className="cd-description">
-                                <span>{post.acf.itinerary.title}</span>
-                                {post.acf.itinerary.text}</p>
-                            </div>
-                          </div>
-                        </TimelineWrap>
-                      </div>
-                    </div> :
-                    null
-                  }
+                  <div className="col-12">
+                    <div className="education-content-wrap mt-60">
+                      <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="member-details-middle sm-top-wt">

@@ -29,10 +29,18 @@ export default class Testimonials extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=36`)
-      .then(res => this.setState({
-        posts: res.data
-      }))
+    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=testimonials`)
+      .then(res => {
+        const categories = res.data;
+
+        if (categories && categories.length > 0) {
+          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+            .then(res => this.setState({
+              posts: res.data
+            }))
+            .catch(err => console.log(err));
+        }
+      })
       .catch(err => console.log(err));
   };
 

@@ -7,7 +7,7 @@ import Link from "next/link";
 import axios from 'axios';
 import Config from "../config";
 
-export default class ToursHome extends React.Component {
+export default class TourHome extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,10 +17,18 @@ export default class ToursHome extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=14`)
-      .then(res => this.setState({
-        posts: res.data
-      }))
+    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=tours`)
+      .then(res => {
+        const categories = res.data;
+
+        if (categories && categories.length > 0) {
+          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+            .then(res => this.setState({
+              posts: res.data
+            }))
+            .catch(err => console.log(err));
+        }
+      })
       .catch(err => console.log(err));
   };
 
