@@ -11,7 +11,7 @@ export default function BlogItem(props) {
           {
             props.thumb ? (
               <figure className="blog-thumb">
-                <Link href={prefixer(`/blog-more/${props.slug}`)}>
+                <Link href={prefixer(`/blog-more/${props.id}`)}>
                   <a>
                     <img src={props.thumb} alt={props.title} />
                   </a>
@@ -21,7 +21,7 @@ export default function BlogItem(props) {
           }
           <div className="blog-content">
             <h2 className="h6">
-              <Link href={prefixer(`/blog-more/${props.slug}`)}>
+              <Link href={prefixer(`/blog-more/${props.id}`)}>
                 <a>
                   <div
                     dangerouslySetInnerHTML={{
@@ -37,12 +37,12 @@ export default function BlogItem(props) {
               }}
             />
             <div className="blog-meta">
-              <Link href={prefixer(`/blog-more/${props.slug}`)}>
+              <Link href={prefixer(`/blog-more/${props.id}`)}>
                 <a>
                   By: {props.postBy}
                 </a>
               </Link>
-              <Link href={prefixer(`/blog-more/${props.slug}`)}>
+              <Link href={prefixer(`/blog-more/${props.id}`)}>
                 <a>
                   {props.date}
                 </a>

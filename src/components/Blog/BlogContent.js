@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import BlogItem from "../../components/Blog/blogItem";
-import BlogItemList from "../../components/Blog/blogItemList";
-import Pagination from "../../components/Pagination";
+import BlogItem from "./blogItem";
+import BlogItemList from "./blogItemList";
+import Pagination from "../Pagination";
 import Config from "../../config";
 import axios from 'axios';
 import moment from "moment";
@@ -57,7 +57,7 @@ class BlogContent extends Component {
                       currentPosts.map(post => (
                         <BlogItemList
                           key={post.id}
-                          id={post.id}
+                          id={post.slug}
                           thumb={getData(post._embedded, 'image')}
                           title={post.title}
                           excerpt={post.excerpt}
@@ -71,7 +71,7 @@ class BlogContent extends Component {
                     currentPosts.map(post => (
                       <BlogItem
                         key={post.id}
-                        id={post.id}
+                        id={post.slug}
                         cols={this.props.cols === 'col-12' ? 'col-md-6 col-lg-4' : 'col-md-6'}
                         thumb={getData(post._embedded, 'image')}
                         title={post.title}
