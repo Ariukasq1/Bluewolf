@@ -1,6 +1,6 @@
 import React from 'react';
 import parse from 'html-react-parser';
-import SectionTitle from "../UI/SectionTitle"
+import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
 

@@ -2,6 +2,7 @@ import React from 'react';
 import parse from 'html-react-parser';
 import List from '../UI/List';
 import LI from '../UI/List/Item';
+import SectionTitle from "../UI/SectionTitle";
 import { prefixer, getData } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
@@ -32,7 +33,7 @@ export default class Festival extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 col-xl-5 m-auto text-center">
-                <SectionTitle variant="light" title="Our Services" heading="Car rental" />
+                <SectionTitle variant="light" title="Join Fixed Departures" heading="We travel delicious memory for every guest" />
               </div>
             </div>
           </div>
