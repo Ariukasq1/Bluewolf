@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from "../components/Layout";
 import Slider from '../components/Slider';
-// import About from '../components/About';
-import Features from '../components/Features'
-// import Services from '../components/TransfortContent'
+import Festival from '../components/Festival';
+import Features from '../components/Features';
+import ToursHome from '../components/ToursHome';
 import Testimonials from "../components/Testimonials";
 // import Blog from "../components/Blog/Content";
 import BrandLogo from "../components/BrandLogo";
@@ -17,9 +17,9 @@ export default function Home() {
     <>
       <Layout title="Bluewolf">
         <Slider />
-        {/* <About category={post.categories[55]} /> */}
+        <Festival />
         <Features />
-        {/* <Services classes="sm-top-wt" /> */}
+        <ToursHome />
         <Testimonials />
         <Destination />
         {/* <Blog posts={this.props.posts} /> */}

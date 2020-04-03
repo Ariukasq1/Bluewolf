@@ -56,7 +56,7 @@ class Destination extends React.Component {
     const { posts } = this.state;
 
     return (
-      <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/blue.jpg')})` }}>
+      <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/blue.jpeg')})` }}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-4">
