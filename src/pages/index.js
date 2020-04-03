@@ -5,7 +5,7 @@ import Festival from '../components/Festival';
 import Features from '../components/Features';
 import ToursHome from '../components/ToursHome';
 import Testimonials from "../components/Testimonials";
-// import Blog from "../components/Blog/Content";
+import Blog from "../components/Blog/BlogContent";
 import BrandLogo from "../components/BrandLogo";
 import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
@@ -22,7 +22,7 @@ export default function Home() {
         <ToursHome />
         <Testimonials />
         <Destination />
-        {/* <Blog posts={this.props.posts} /> */}
+        <Blog />
         <BrandLogo />
         <Funfact />
         <CallToAction />
