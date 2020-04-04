@@ -26,6 +26,11 @@
         &:hover {
           color: $hvrColor;
         }
+        .nowrap-text {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
     }
 

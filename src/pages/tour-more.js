@@ -4,9 +4,9 @@ import CallToAction from "../components/CallToAction";
 import Layout from '../components/Layout';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
-import TimelineWrap from "../components/Timeline";
 import SectionTitle from "../UI/SectionTitle";
 import { defaultCoverImage } from "../components/layouts/constants";
+import { Nav } from 'react-bootstrap';
 import List from "../UI/List";
 import LI from "../UI/List/Item";
 import Link from "next/link";
@@ -53,13 +53,22 @@ export default class extends React.Component {
           />
           <PageWrapper classes={'member-details-wrapper sm-top'}>
             <div className="col-12">
-              <div className="member-details-top">
+              <Nav defaultActiveKey="/home">
+                <Nav.Item>
+                  <Nav.Link eventKey="link">Active</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="link-1">Link</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="link-2">Link</Nav.Link>
+                </Nav.Item>
+              </Nav>
+              <div eventKey="link" className="member-details-top">
                 <div className="row">
                   <div className="col-md-12">
                     <div className="member-desc">
                       <h2><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h2>
-                      <h5><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h5>
-                      <p dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
                       <div className="contact-info mt-50">
                         <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p>
                         <p><strong>Duration</strong> {duration}</p>
@@ -70,7 +79,7 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="member-details-bottom sm-top-wt">
+              <div eventKey="link-1" className="member-details-bottom sm-top-wt">
                 <div className="row mtn-50">
                   <div className="col-xl-6 m-auto text-center">
                     <div className="member-education mem-achieve-item">
@@ -126,7 +135,7 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="member-details-middle sm-top-wt">
+              <div eventKey="link-2" className="member-details-middle sm-top-wt">
                 <div className="row mtn-50">
                   <div className="col-xl-6 m-auto text-center">
                     <div className="member-education mem-achieve-item">
@@ -156,7 +165,7 @@ export default class extends React.Component {
                   <div className="col-12">
                     <div className="col-xl-6 m-auto text-center">
                       <Link href={prefixer('/book-now/form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
-                        <a className='btn btn-primary'><i class="fa fa-star"></i> Book now
+                        <a className='btn btn-primary'><i className="fa fa-star"></i> Book now
                     </a>
                       </Link>
                     </div>

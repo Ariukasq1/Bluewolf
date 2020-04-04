@@ -2702,7 +2702,7 @@ blockquote-title, .blockquote-title {
 
 .post-content-wrapper .post-item .post-thumb img {
   object-fit: cover;
-  height: 200px;
+  height: 300px;
   width: 100%;
 }
 .post-content-wrapper .post-item .post-content {
@@ -3389,11 +3389,17 @@ Start Comment Area Wrapper
     font-size: 16px;
   }
 }
+.service-item .service-txt h5 .nowrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .service-item .service-thumb {
   margin: 0;
 }
 .service-item .service-thumb img {
-  height: 250px;
+  width: 100%;
+  height: 300px;
 }
 .service-item .service-content {
   background-color: rgba(13, 48, 105, 0.95);
@@ -3863,6 +3869,11 @@ Start Comment Area Wrapper
 }
 .post-item .post-content h2 a:hover {
   color: #182141;
+}
+.post-item .post-content h2 a .nowrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .post-item .post-content .post-meta {
   display: flex;
@@ -4366,6 +4377,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 .hotel-from {
   position: relative;
   float: right;
+}
+
+ul.article-list li a.thumb_title {
+  position: absolute;
+  display: block;
+  width: 100%;
+  background: rgba(23, 51, 102, 0.7);
+  color: #fff;
+  padding: 5px 0;
 }
 
 /*

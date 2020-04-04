@@ -63,11 +63,12 @@ export default class TourHome extends React.Component {
                         </Link>
                         <figcaption className="service-txt">
                           <h5>
-                            <div
+                            <div className='nowrap-text'
                               dangerouslySetInnerHTML={{
                                 __html: post.title.rendered
                               }}
-                            /></h5>
+                            />
+                          </h5>
                         </figcaption>
                       </figure>
 

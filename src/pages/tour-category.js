@@ -81,7 +81,7 @@ class Category extends React.Component {
                           <h2 className="h6">
                             <Link href={prefixer(`/tour-more/${post.slug}`)}>
                               <a>
-                                <div
+                                <div className="nowrap-text"
                                   dangerouslySetInnerHTML={{
                                     __html: post.title.rendered
                                   }} />

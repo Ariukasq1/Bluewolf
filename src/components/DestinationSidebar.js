@@ -16,7 +16,7 @@ export default function DestinationSidebar(props) {
         </figure>
         <div className="tours-info">
           <h5>
-            <Link href={`${prefixer('/tour-category/' + props.id)}`} className="stretched-link"><a>{props.title}</a>
+            <Link href={`${prefixer('/tour-category/' + props.id)}`} ><a>{props.title}</a>
             </Link>
           </h5>
         </div>
