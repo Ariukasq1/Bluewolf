@@ -55,7 +55,7 @@ class CarRental extends React.Component {
                 <div className="row mtn-30">
                   {
                     posts.map(post => (
-                      <div className="col-md-6 col-lg-4">
+                      <div key={post.slug} className="col-md-6 col-lg-4">
                         <div key={post.slug} className="service-item">
                           <figure className="service-thumb">
                             <Link href={prefixer(`/car-rental-more/${post.slug}`)}>

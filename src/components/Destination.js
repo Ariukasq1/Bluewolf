@@ -1,8 +1,8 @@
 import React from 'react';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
-import { prefixer, getData } from '../utils';
-import Link from "next/link";
+import { prefixer } from '../utils';
+import DestinationSidebar from "./DestinationSidebar";
 import axios from 'axios';
 import Config from "../config";
 
@@ -64,7 +64,7 @@ class Destination extends React.Component {
     const { posts } = this.state;
 
     return (
-      <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/blue.jpeg')})` }}>
+      <div className="tour-area-wrapper bg-img sp-y ul-top" style={{ backgroundImage: `url(${prefixer('/images/blue.jpg')})` }}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-4">
@@ -76,23 +76,12 @@ class Destination extends React.Component {
             <div className="col-lg-8">
               <SlickSlider settings={settings}>
                 {posts.map(post => (
-                  <div key={post.slug}>
-                    <div className="destination-item">
-                      <figure className="tours-pic">
-                        <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
-                          <a>
-                            <img src={post.acf.slider_image} alt={post.name} />
-                          </a>
-                        </Link>
-                      </figure>
-                      <div className="tours-info">
-                        <h5>
-                          <Link href={`${prefixer('/tour-category/' + post.slug)}`} className="stretched-link"><a>{post.title.rendered}</a>
-                          </Link>
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
+                  <DestinationSidebar
+                    key={post.slug}
+                    id={post.slug}
+                    slider_image={post.acf.slider_image}
+                    title={post.title.rendered}
+                  />
                 ))
                 }
               </SlickSlider>

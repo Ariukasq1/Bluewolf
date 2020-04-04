@@ -66,13 +66,13 @@ export default class extends React.Component {
                   <div className="about-service mt-50 mt-sm-35">
                     <h3>{post.title.rendered}</h3>
                     {
-                      <p><div dangerouslySetInnerHTML={{ __html: post.content.rendered }} /></p>
+                      <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
                     }
                     <List classes="location-feature mt-30">
-                      <LI><i class="fa fa-map-marker"></i> {distance}
+                      <LI><i className="fa fa-map-marker"></i> {distance}
                       </LI>
-                      <LI><i class='fa fa-clock-o'></i> Check in time: {check_in}</LI>
-                      <LI><i class='fa fa-clock-o'></i> Check out out: {check_out}</LI>
+                      <LI><i className='fa fa-clock-o'></i> Check in time: {check_in}</LI>
+                      <LI><i className='fa fa-clock-o'></i> Check out out: {check_out}</LI>
                     </List>
                   </div>
                 </div>

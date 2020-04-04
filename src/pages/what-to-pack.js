@@ -65,7 +65,7 @@ class WhatToPack extends React.Component {
           <CallToAction />
         </Layout >
         <MobileMenu />
-      </>
+      </  >
     );
   };
 }

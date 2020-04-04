@@ -2,6 +2,7 @@ import React from 'react';
 import SidebarItem from "./Sidebar/SidebarItem";
 import Sidebar from "./Sidebar";
 import List from "../UI/List";
+import LI from "../UI/List/Item";
 class AboutCategories extends React.Component {
   render() {
     return (
@@ -62,6 +63,14 @@ class AboutCategories extends React.Component {
 
               </List>
             </div>
+          </SidebarItem>
+          <SidebarItem title="Why booking with us">
+            <List classes="service-list">
+              <LI><i className="fa fa-check-square-o" /> Guaranteed lower rates- All hotel rooms in Mongolia booked through us are guaranteed to be at a lower rate than the hotel’s own rack rate.</LI>
+              <LI><i className="fa  fa-check-square-o" /> No Cancellation Fee- Any booking made with us can be cancelled for free up until 3 days prior to your arrival date.</LI>
+              <LI><i className="fa fa-check-square-o" /> Safe and Easy payment methodWe now accept Visa and MasterCard as methods of payment.</LI>
+              <LI><i className="fa  fa-check-square-o" /> Best selectedThe choice is easy – for safety, quality and the best prices available, book your hotel in Mongolia with us.</LI>
+            </List>
           </SidebarItem>
         </Sidebar>
       </ >

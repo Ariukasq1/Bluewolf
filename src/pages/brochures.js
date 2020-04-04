@@ -1,11 +1,12 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import BrandLogo from "../components/BrandLogo";
-import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
+import SidebarItem from "../components/Sidebar/SidebarItem";
+import List from "../UI/List";
+import LI from "../UI/List/Item";
 import { prefixer } from '../utils';
 import { defaultCoverImage } from "../components/layouts/constants";
 import Config from "../config";
@@ -60,20 +61,14 @@ class WhatToPack extends React.Component {
               </div>
             </div>
             <div className='col-lg-5'>
-              <div className="service-details-content">
-                <div className="post-content">
-                  {page.acf.brochure_title}
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: page.acf.link
-                    }}
-                  />
-                </div>
-              </div>
+              <SidebarItem>
+                <h2 className='h5'>{page.acf.brochure_title}</h2>
+                <List classes="service-list">
+                  <LI><p dangerouslySetInnerHTML={{ __html: page.acf.link }} /></LI>
+                </List>
+              </SidebarItem>
             </div>
           </PageWrapper>
-          <BrandLogo />
-          <Funfact classes="sp-top" />
           <CallToAction />
         </Layout >
         <MobileMenu />

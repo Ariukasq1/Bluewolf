@@ -19,7 +19,7 @@ export default function Home() {
         <Slider />
         <Festival />
         <Features />
-        <TourHome />
+        <TourHome perPage={6} />
         <Testimonials />
         <Destination />
         <BlogPageContent perPage={3} />

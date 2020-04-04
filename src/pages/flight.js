@@ -4,7 +4,9 @@ import BrandLogo from "../components/BrandLogo";
 import Funfact from "../components/Funfact";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
-import SectionTitle from '../UI/SectionTitle'
+import PageHeader from "../components/PageHeader";
+import SectionTitle from '../UI/SectionTitle';
+import { prefixer } from '../utils';
 import List from '../UI/List';
 import LI from '../UI/List/Item';
 import Config from "../config";
@@ -37,6 +39,12 @@ class Flight extends React.Component {
     return (
       <>
         <Layout>
+          <PageHeader
+            bgImg={prefixer('/images/airplane.jpg')}
+            title={'Air plane'}
+            content={'Businex always try to provide the best Business Solutions for Clients to grow up their Business very sharply and smoothly.'}
+          />
+
           <div className="flight-plan-area sm-top">
             <div className="container">
               <div className="row">

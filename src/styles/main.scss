@@ -47,33 +47,46 @@ input[type = checkbox] {
 };
 
 /*Faq*/
-.faq-list .accordion .card .card-header h3 button {
-  font-size: 24px;
-  color: #173366;
-  font-family: "Roboto Condensed", sans-serif;
-}
+.faq-list {
+  width: 100%;
 
-.faq-list .accordion .card .card-header h3 button:hover {
-  text-decoration: none;
-}
+  .accordion {
+  .card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-bottom: 1px solid #041129;
 
-.faq-list .accordion .card .card-header h3 button:hover {
-  text-decoration: none;
-}
-.faq-list .accordion .card-body h3 {
-  border-bottom: none;
-  color: #000;
-  text-transform: none;
-  margin-bottom: 0;
-}
-.faq-list .accordion .card-body ul {
-  list-style: circle;
-  padding-left: 30px;
-}
-.faq-list .accordion .card-body ul li {
-  color: #333;
-  list-style: circle;
-  margin-bottom: 2px;
+    .card-header {
+      padding: .75rem 1.25rem;
+      margin-bottom: 0;
+      background-color: #fff;
+    } 
+
+    .btn-link { 
+      font-size: 24px;
+      color: #041129;
+      font-family: "Roboto Condensed", sans-serif;
+      margin: 10px 0 10px 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .card-body {
+    font-size:14px;
+    border-bottom: none;
+    color: rgb(51, 48, 48);
+    text-transform: none;
+    margin-bottom: 0;
+  }
+  }
 }
 
 .post-item .post-content ul li {
@@ -130,4 +143,18 @@ label {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
   text-align: justify;
+}
+
+.hotel-from {
+  position: relative;
+  float: right;
+}
+
+ul.article-list li a.thumb_title {
+  position: absolute;
+  display: block;
+  width: 100%;
+  background: rgba(23,51,102,0.7);
+  color: #fff;
+  padding: 5px 0;
 }

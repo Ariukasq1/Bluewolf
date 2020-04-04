@@ -71,6 +71,10 @@ class Accomodation extends React.Component {
                                 {post.title.rendered}
                               </a>
                             </Link>
+                            {/* {post.acf.price ?
+                              < div className='hotel-from'>From: {post.acf.price}</div>
+                              : null
+                            } */}
                           </h2>
                           <div
                             dangerouslySetInnerHTML={{
@@ -78,11 +82,17 @@ class Accomodation extends React.Component {
                             }}
                           />
                           <div className="blog-meta">
-                            <Link href={prefixer(`/accomodation-more/${post.slug}`)}><a>By:
-                              {post.acf.distance}
-                            </a></Link>
+                            <Link href={prefixer(`/accomodation-more/${post.slug}`)}>
+                              <a>
+                                <i className="fa fa-map-marker"></i> {post.acf.distance}
+                              </a>
+                            </Link>
+
                             <Link href={prefixer(`/accomodation-more/${post.slug}`)}><a>
-                              Price: {post.acf.price}
+                              {post.acf.price ?
+                                <h2 className='h6'>From: {post.acf.price}</h2>
+                                : null
+                              }
                             </a>
                             </Link>
                           </div>

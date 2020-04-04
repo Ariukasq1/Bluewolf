@@ -3,32 +3,67 @@ import Sidebar from "../Sidebar";
 import SidebarItem from "../Sidebar/SidebarItem";
 import FeaturedBlog from "../FeaturedBlog";
 import Newsletter from "../Newsletter";
-import Blogs from "../../data/Blog/blog";
-import { prefixer } from '../../utils';
+import { prefixer, getData } from '../../utils';
+import Config from "../../config";
+import axios from 'axios';
+import moment from "moment";
 
-const SidebarForBlog = () => {
-  return (
-    <Sidebar classes={`col-lg-3`}>
-      <SidebarItem classes={'single-sidebar-item-wrap'}>
-        <img src={prefixer('/img/banner-poster.jpg')} alt="Banner" />
-      </SidebarItem>
+class SidebarList extends React.Component {
+  constructor(props) {
+    super(props);
 
-      <SidebarItem title={'FEATURED POSTS'} classes={'single-sidebar-item-wrap'}>
-        <div className={'latest-blog-widget'}>
-          {
-            Blogs.reverse().slice(0, 4).map(post => (
-              <FeaturedBlog key={post.id} id={post.id} title={post.title} publishDate={post.publishDate} thumb={post.thumb} />
-            ))
-          }
-        </div>
-      </SidebarItem>
+    this.state = {
+      posts: []
+    };
+  }
 
-      <SidebarItem classes={'single-sidebar-item-wrap'}>
-        <Newsletter />
-      </SidebarItem>
+  componentDidMount() {
+    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=blog`)
+      .then(res => {
+        const categories = res.data;
+        const perPage = this.props.perPage || 6;
 
-    </Sidebar>
-  );
-};
+        if (categories && categories.length > 0) {
+          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}&per_page=${perPage}`)
+            .then(res => this.setState({
+              posts: res.data
+            }))
+            .catch(err => console.log(err));
+        }
+      })
+      .catch(err => console.log(err));
+  };
+  render() {
+    const { posts } = this.state;
 
-export default SidebarForBlog;
+    return (
+      <Sidebar classes={`col-lg-3`}>
+        <SidebarItem classes={'single-sidebar-item-wrap'}>
+          <img src={prefixer('/images/banner1.jpg')} alt="Banner" />
+        </SidebarItem>
+
+        <SidebarItem title={'FEATURED POSTS'} classes={'single-sidebar-item-wrap'}>
+          <div className={'latest-blog-widget'}>
+            {
+              posts.map(post => (
+                <FeaturedBlog
+                  key={post.slug}
+                  id={post.slug}
+                  title={post.title}
+                  date={moment(post.date).format('ll')}
+                  thumb={getData(post._embedded, 'image')}
+                />
+              ))
+            }
+          </div>
+        </SidebarItem>
+
+        <SidebarItem classes={'single-sidebar-item-wrap'}>
+          <Newsletter />
+        </SidebarItem>
+
+      </Sidebar >
+    );
+  };
+}
+export default SidebarList;

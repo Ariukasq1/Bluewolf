@@ -1,21 +1,34 @@
 import React from 'react';
 import Link from "next/link";
-import { prefixer } from '../utils';
 
-const FeaturedBlog = ({ title, thumb, publishDate, id }) => {
-  const blogURL = `blog/${title.split(' ').join('-').toLocaleLowerCase()}?id=${id}`;
+export default function FeaturedBlog(props) {
+
   return (
     <div className="single-blog-item">
       <div className="post-thumb">
-        <Link href={prefixer('/' + blogURL)}><img src={prefixer('/img/' + thumb)} alt={title} /></Link>
+        <Link href={`/blog-more/${props.id}`}>
+          <a>
+            <img src={props.thumb} alt={props.title} />
+          </a>
+        </Link>
       </div>
 
       <div className="post-info">
-        <h6><Link href={prefixer('/' + blogURL)}>{title}</Link></h6>
-        <span className="post-date"><i className="fa fa-clock-o" />  {publishDate}</span>
+        <h6><Link href={`/blog-more/${props.id}`}>
+          <a>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: props.title.rendered
+              }}
+            />
+          </a>
+        </Link></h6>
+        <span className="post-date">
+          <i className="fa fa-clock-o" />
+          {props.date}
+        </span>
       </div>
     </div>
   );
-};
+}
 
-export default FeaturedBlog;

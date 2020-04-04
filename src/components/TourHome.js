@@ -20,9 +20,10 @@ export default class TourHome extends React.Component {
     axios.get(`${Config().apiUrl}/wp/v2/categories?slug=tours`)
       .then(res => {
         const categories = res.data;
+        const perPage = this.props.perPage || 10;
 
         if (categories && categories.length > 0) {
-          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}&per_page=${perPage}`)
             .then(res => this.setState({
               posts: res.data
             }))
@@ -61,7 +62,12 @@ export default class TourHome extends React.Component {
                           </a>
                         </Link>
                         <figcaption className="service-txt">
-                          <h5>{post.title.rendered}</h5>
+                          <h5>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: post.title.rendered
+                              }}
+                            /></h5>
                         </figcaption>
                       </figure>
 
@@ -70,7 +76,11 @@ export default class TourHome extends React.Component {
                           <h5>
                             <Link href={prefixer(`/tour-more/${post.slug}`)}>
                               <a className="stretched-link">
-                                {post.title.rendered}
+                                <div
+                                  dangerouslySetInnerHTML={{
+                                    __html: post.title.rendered
+                                  }}
+                                />
                               </a>
                             </Link>
                           </h5>

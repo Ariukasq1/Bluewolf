@@ -4,7 +4,7 @@ import { prefixer } from '../../utils';
 
 function CallToAction() {
   return (
-    <div className="call-top-action-wrap sp-y">
+    <div className="call-top-action-wrap sp-y sm-top">
       <div className="container">
         <div className="footer-top-content">
           <div className="row align-items-center">

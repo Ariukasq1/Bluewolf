@@ -19,7 +19,7 @@ class BlogPageContent extends React.Component {
     axios.get(`${Config().apiUrl}/wp/v2/categories?slug=blog`)
       .then(res => {
         const categories = res.data;
-        const perPage = this.props.perPage || 20;
+        const perPage = this.props.perPage || 6;
 
         if (categories && categories.length > 0) {
           axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}&per_page=${perPage}`)

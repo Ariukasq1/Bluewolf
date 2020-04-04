@@ -73,7 +73,7 @@ class Slider extends React.Component {
                       <div className="col-xl-7">
                         <div className="slider-content">
                           <h2>{post.title.rendered}</h2>
-                          <Link href={'/category/' + post.slug} >
+                          <Link href={'/tour-category/' + post.slug} >
                             <a className="btn btn-brand">
                               {post.acf.explore}
                             </a>
