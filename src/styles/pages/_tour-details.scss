@@ -1,8 +1,8 @@
 /*==========================================
-23. Team Member Details Page Style CSS
+23. Tour Details Page Style CSS
 ===========================================*/
 
-.member-desc {
+.tour-desc {
   h2 {
     @include font-size(32px);
     margin-bottom: 8px;
@@ -17,7 +17,7 @@
   }
 }
 
-.member-social-icons {
+.tour-social-icons {
   display: flex;
 
   a {
@@ -54,11 +54,11 @@
 .contact-info {
   p {
     position: relative;
-    padding-left: 85px;
+    padding-left: 100px;
 
     strong {
       position: absolute;
-      width: 75px;
+      width: 88px;
       left: 0;
       top: 0;
 
@@ -101,7 +101,7 @@
     }
   }
 
-  &.member-education {
+  &.tour-education {
     margin-bottom: 55px;
 
     @media #{$sm-device} {
@@ -109,4 +109,36 @@
     }
   }
 }
+
+
+table.tablepress-id-itinerary {
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 200px;
+	text-align: left;
+	border-collapse: collapse;
+  
+  td {
+		border: 0px solid #AAAAAA;
+		padding: 9px 9px;
+	}
+  
+  th {
+		border: 0px solid #AAAAAA;
+		padding: 9px 9px;
+	}
+  
+  tbody {
+		td {
+      font-size: 14px;
+      
+      &:first-child {
+        width: 100px;
+        text-align: end;
+        font-weight: 600;
+      }
+		}
+	}
+}
+
 

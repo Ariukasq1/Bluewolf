@@ -2583,18 +2583,18 @@ blockquote-title, .blockquote-title {
 }
 
 /*==========================================
-23. Team Member Details Page Style CSS
+23. Tour Details Page Style CSS
 ===========================================*/
-.member-desc h2 {
+.tour-desc h2 {
   font-size: 2rem;
   margin-bottom: 8px;
 }
 @media (max-width: 1200px) {
-  .member-desc h2 {
+  .tour-desc h2 {
     font-size: calc(1.325rem + 0.9vw);
   }
 }
-.member-desc h5 {
+.tour-desc h5 {
   opacity: 0.8;
   font-size: 16px;
   line-height: 1;
@@ -2602,10 +2602,10 @@ blockquote-title, .blockquote-title {
   margin-bottom: 25px;
 }
 
-.member-social-icons {
+.tour-social-icons {
   display: flex;
 }
-.member-social-icons a {
+.tour-social-icons a {
   color: #FFFFFF;
   display: block;
   font-size: 18px;
@@ -2614,29 +2614,29 @@ blockquote-title, .blockquote-title {
   height: 40px;
   width: 50px;
 }
-.member-social-icons a.facebook {
+.tour-social-icons a.facebook {
   background-color: #3B5999;
 }
-.member-social-icons a.twitter {
+.tour-social-icons a.twitter {
   background-color: #1DA1F2;
 }
-.member-social-icons a.linkedin {
+.tour-social-icons a.linkedin {
   background-color: #0077B5;
 }
-.member-social-icons a.reddit {
+.tour-social-icons a.reddit {
   background-color: #FF4500;
 }
-.member-social-icons a.pinterest {
+.tour-social-icons a.pinterest {
   background-color: #CB2028;
 }
 
 .contact-info p {
   position: relative;
-  padding-left: 85px;
+  padding-left: 100px;
 }
 .contact-info p strong {
   position: absolute;
-  width: 75px;
+  width: 88px;
   left: 0;
   top: 0;
 }
@@ -2669,13 +2669,37 @@ blockquote-title, .blockquote-title {
   flex-basis: 100px;
   width: 100px;
 }
-.mem-achieve-item.member-education {
+.mem-achieve-item.tour-education {
   margin-bottom: 55px;
 }
 @media only screen and (max-width: 767.98px) {
-  .mem-achieve-item.member-education {
+  .mem-achieve-item.tour-education {
     margin-bottom: 40px;
   }
+}
+
+table.tablepress-id-itinerary {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 200px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.tablepress-id-itinerary td {
+  border: 0px solid #AAAAAA;
+  padding: 9px 9px;
+}
+table.tablepress-id-itinerary th {
+  border: 0px solid #AAAAAA;
+  padding: 9px 9px;
+}
+table.tablepress-id-itinerary tbody td {
+  font-size: 14px;
+}
+table.tablepress-id-itinerary tbody td:first-child {
+  width: 100px;
+  text-align: end;
+  font-weight: 600;
 }
 
 /*===========================

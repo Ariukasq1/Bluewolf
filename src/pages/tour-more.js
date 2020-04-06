@@ -6,7 +6,6 @@ import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import SectionTitle from "../UI/SectionTitle";
 import { defaultCoverImage } from "../components/layouts/constants";
-import { Nav } from 'react-bootstrap';
 import List from "../UI/List";
 import LI from "../UI/List/Item";
 import Link from "next/link";
@@ -39,7 +38,7 @@ export default class extends React.Component {
       return <Error statusCode={404} />;
     }
 
-    const { content, cover_image, price, theme, duration, group_size } = post.acf;
+    const { content, cover_image, price, theme, duration, group_size, intro_text, why_choose_this_tour } = post.acf;
 
     return (
       <>
@@ -51,43 +50,48 @@ export default class extends React.Component {
             }} />}
             content={content ? content : ''}
           />
-          <PageWrapper classes={'member-details-wrapper sm-top'}>
+          <PageWrapper classes={'tour-details-wrapper sm-top'}>
             <div className="col-12">
-              <Nav defaultActiveKey="/home">
-                <Nav.Item>
-                  <Nav.Link eventKey="link">Active</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="link-1">Link</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="link-2">Link</Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <div eventKey="link" className="member-details-top">
+              <div className="tour-details-top">
                 <div className="row">
-                  <div className="col-md-12">
-                    <div className="member-desc">
+                  <div className="col-md-5">
+                    <div className="tour-pic mb-sm-35">
+                      <img src={post.acf.image} alt={post.title.rendered} />
+                    </div>
+                  </div>
+                  <div className="col-md-7 ml-auto">
+                    <div className="tour-desc">
                       <h2><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h2>
-                      <div className="contact-info mt-50">
-                        <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p>
-                        <p><strong>Duration</strong> {duration}</p>
+                      <div className="contact-info mt-30">
                         <p><strong>Group size</strong> {group_size}</p>
+                        <p><strong>Duration</strong> {duration}</p>
+                        <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p>
                         <p><strong>From</strong> {price}</p>
+                        <hr />
+                      </div>
+                      <div>
+                        <strong>Intro text</strong>
+                        <hr />
+                        <div dangerouslySetInnerHTML={{ __html: intro_text }} />
+                        <hr />
+                        <strong>Why choose this tour</strong>
+                        <hr />
+                        <div dangerouslySetInnerHTML={{ __html: why_choose_this_tour }} />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div eventKey="link-1" className="member-details-bottom sm-top-wt">
+              <div className="tour-details-bottom sm-top-wt">
                 <div className="row mtn-50">
                   <div className="col-xl-6 m-auto text-center">
-                    <div className="member-education mem-achieve-item">
+                    <div className="tour-education mem-achieve-item">
                       <SectionTitle
                         heading={'TOUR ITINERARY'}
                         text=""
                       />
                     </div>
+                    <hr />
                   </div>
                   <div className="col-12">
                     <div className="education-content-wrap mt-60">
@@ -96,15 +100,16 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="member-details-middle sm-top-wt">
-                <div className="row mtn-50">
+              <div className="tour-details-middle sm-top-wt">
+                <div className="row mtn-30">
                   <div className="col-xl-12 m-auto text-center">
-                    <div className="member-education mem-achieve-item">
+                    <div className="tour-education mem-achieve-item">
                       <SectionTitle
                         heading={'PRICES & INCLUSIONS'}
                         text=""
                       />
                     </div>
+                    <hr />
                   </div>
 
                   <div className="col-lg-6">
@@ -135,15 +140,16 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div eventKey="link-2" className="member-details-middle sm-top-wt">
-                <div className="row mtn-50">
+              <div className="tour-details-middle sm-top-wt">
+                <div className="row mtn-30">
                   <div className="col-xl-6 m-auto text-center">
-                    <div className="member-education mem-achieve-item">
+                    <div className="tour-education mem-achieve-item">
                       <SectionTitle
-                        heading={'Practical information'}
+                        heading={'PRACTICAL INFORMATION'}
                         text=""
                       />
                     </div>
+                    <hr />
                   </div>
 
                   <div className="col-12">
@@ -160,8 +166,8 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="member-details-middle sm-top-wt">
-                <div className="row mtn-50">
+              <div className="tour-details-middle sm-top-wt">
+                <div className="row mtn-30">
                   <div className="col-12">
                     <div className="col-xl-6 m-auto text-center">
                       <Link href={prefixer('/book-now/form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>

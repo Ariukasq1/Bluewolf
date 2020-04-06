@@ -36,7 +36,7 @@ class Contact extends React.Component {
                 <div className="row">
                   <div className="col-lg-8">
                     <div className="contact-form-area contact-method">
-                      <h3>Send us a Message</h3>
+                      <h3>Blue Wolf Email Send</h3>
                       <div
                         dangerouslySetInnerHTML={{
                           __html: page.content.rendered
