@@ -54,7 +54,7 @@ export default class Testimonials extends React.Component {
             <div className="col-lg-6 m-auto text-center">
               <SectionTitle
                 title="TESTIMONIALS"
-                heading="Our Customer <br/>Loves What we do"
+                heading="Our Customers <br/>Love what we do"
               />
             </div>
           </div>

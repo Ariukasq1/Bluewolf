@@ -61,6 +61,7 @@ export default class TourHome extends React.Component {
                             <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
                           </a>
                         </Link>
+                        <h4>{post.acf.price}</h4>
                         <figcaption className="service-txt">
                           <h5>
                             <div className='nowrap-text'

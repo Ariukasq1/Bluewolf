@@ -3383,6 +3383,7 @@ Start Comment Area Wrapper
 .service-item .service-txt h5 {
   font-weight: 600;
   margin-bottom: 0;
+  padding-left: 15px;
 }
 @media only screen and (max-width: 767.98px) {
   .service-item .service-txt h5 {
@@ -3400,6 +3401,20 @@ Start Comment Area Wrapper
 .service-item .service-thumb img {
   width: 100%;
   height: 300px;
+}
+.service-item .service-thumb h4 {
+  position: absolute;
+  top: 10px;
+  right: -9px;
+  background: url(../public/images/price.png) no-repeat center center;
+  color: #ffa406;
+  width: 103px;
+  height: 41px;
+  line-height: 32px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  padding-left: 10px;
 }
 .service-item .service-content {
   background-color: rgba(13, 48, 105, 0.95);
