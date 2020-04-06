@@ -3498,17 +3498,6 @@ Start Comment Area Wrapper
     margin-right: auto;
   }
 }
-.testimonial-item .testimonial-txt .client-name {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1;
-  margin-bottom: 0;
-}
-.testimonial-item .testimonial-txt .client-name .designation {
-  font-size: 15px;
-  font-weight: 400;
-  color: #6a6a6a;
-}
 .testimonial-item .testimonial-thumb {
   border-radius: 50%;
   height: 110px;
@@ -3525,6 +3514,19 @@ Start Comment Area Wrapper
     margin-left: auto;
     margin-right: auto;
   }
+}
+.testimonial-item .testimonial-thumb .client-name {
+  position: absolute;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1;
+  margin-bottom: 0;
+}
+.testimonial-item .testimonial-thumb .client-name .designation {
+  font-size: 15px;
+  font-weight: 400;
+  color: #6a6a6a;
 }
 .testimonial-item--2 {
   background-color: transparent;

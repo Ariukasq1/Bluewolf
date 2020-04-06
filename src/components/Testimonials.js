@@ -6,7 +6,7 @@ import Config from "../config";
 import axios from 'axios';
 
 const settings = {
-  slidesToShow: 2,
+  slidesToShow: 1,
   arrows: false,
   dots: true,
   className: "testimonial-content--3 testimonial-grid",
@@ -68,13 +68,12 @@ export default class Testimonials extends React.Component {
                       <div key={post.slug}>
                         <div className="testimonial-item testimonial-item--3">
                           <div className="testimonial-thumb">
-                            <img src={getData(post._embedded, 'image')} alt={post.title} />
+                            <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
+                            <h5 className="client-name">{post.title.rendered}</h5>
                           </div>
-
                           <div className="testimonial-txt">
                             <img src={prefixer('/img/icons/quote.png')} alt="quote-icon" />
                             <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-                            <h5 className="client-name">{post.title.rendered}</h5>
                           </div>
                         </div>
                       </div>
