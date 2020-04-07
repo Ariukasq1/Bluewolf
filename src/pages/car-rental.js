@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../components/Layout";
 import BrandLogo from "../components/BrandLogo";
-import Funfact from "../components/Funfact";
+import BlueWolfBook from "../components/BlueWolfBook";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import SectionTitle from '../UI/SectionTitle'
@@ -63,8 +63,12 @@ class CarRental extends React.Component {
                                 <img src={getData(post._embedded, 'image')} />
                               </a>
                             </Link>
+                            <h4>{post.acf.price}$</h4>
                             <figcaption className="service-txt">
-                              <h5>{post.title.rendered}</h5>
+                              <h5><div
+                                dangerouslySetInnerHTML={{
+                                  __html: post.title.rendered
+                                }} /></h5>
                             </figcaption>
                           </figure>
 
@@ -73,9 +77,13 @@ class CarRental extends React.Component {
                               <h5>
                                 <Link href={prefixer(`/car-rental-more/${post.slug}`)}>
                                   <a className="stretched-link">
-                                    {post.title.rendered}
+                                    <div
+                                      dangerouslySetInnerHTML={{
+                                        __html: post.title.rendered
+                                      }} />
                                   </a>
                                 </Link>
+                                {post.acf.price}$
                               </h5>
                               <List classes="price-list">
                                 <LI> {post.acf.car_type}</LI>
@@ -94,7 +102,7 @@ class CarRental extends React.Component {
             </div>
           </div >
           <BrandLogo />
-          <Funfact classes="sp-top" />
+          <BlueWolfBook classes="sp-top" />
           <CallToAction />
         </Layout>
         <MobileMenu />

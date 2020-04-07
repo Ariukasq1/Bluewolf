@@ -1,7 +1,7 @@
 /*========================
 16. Fun Fact Style CSS
 ==========================*/
-.counter {
+.book {
   &-item {
     margin-top: 40px;
   }
@@ -15,14 +15,6 @@
 
     @media #{$sm-device} {
       font-size: 20px;
-    }
-
-    &.plus {
-      &:after {
-        content: '+';
-        position: absolute;
-        padding-left: 5px;
-      }
     }
   }
 

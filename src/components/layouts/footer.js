@@ -26,12 +26,10 @@ function Footer() {
           <div className="col-md-4 col-lg-2 ml-auto">
             <Widget title="Social Links">
               <List classes="widget-list">
-                <LI><Link href="https://www.facebook.com/bluewolftravelcom/">
-                  <a target="_blank">Facebook</a></Link></LI>
-                <LI><Link href="https://twitter.com/bluewolftravel"><a target="_blank">Twitter</a></Link></LI>
-                <LI><Link href="skype:bluewolftravel1?call">
-                  <a target="_blank">Skype</a></Link></LI>
-                <LI><Link href="https://www.instagram.com/chiryazdan/"><a target="_blank">Instagram</a></Link></LI>
+                <LI><a href="https://www.facebook.com/bluewolftravelcom/" target="_blank">Facebook</a></LI>
+                <LI><a href="https://twitter.com/bluewolftravel" target="_blank">Twitter</a></LI>
+                <LI><a href="skype:bluewolftravel1?call" target="_blank">Skype</a></LI>
+                <LI><a href="https://www.instagram.com/chiryazdan/" target="_blank">Instagram</a></LI>
               </List>
             </Widget>
           </div>

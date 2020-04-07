@@ -3429,7 +3429,7 @@ Start Comment Area Wrapper
 .service-item .service-thumb h4 {
   position: absolute;
   top: 10px;
-  right: -9px;
+  right: -5px;
   background: url(../public/images/price.png) no-repeat center center;
   color: #ffa406;
   width: 103px;
@@ -3437,7 +3437,6 @@ Start Comment Area Wrapper
   line-height: 32px;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
   padding-left: 10px;
 }
 .service-item .service-content {
@@ -4005,10 +4004,10 @@ Start Comment Area Wrapper
 /*========================
 16. Fun Fact Style CSS
 ==========================*/
-.counter-item {
+.book-item {
   margin-top: 40px;
 }
-.counter-number {
+.book-number {
   color: #f8f9fc;
   margin-bottom: 10px;
   position: relative;
@@ -4016,28 +4015,23 @@ Start Comment Area Wrapper
   font-weight: 600;
 }
 @media only screen and (max-width: 767.98px) {
-  .counter-number {
+  .book-number {
     font-size: 20px;
   }
 }
-.counter-number.plus:after {
-  content: "+";
-  position: absolute;
-  padding-left: 5px;
-}
-.counter-txt {
+.book-txt {
   color: #f8f9fc;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .counter-txt {
+  .book-txt {
     font-size: 20px;
   }
 }
 @media only screen and (max-width: 767.98px) {
-  .counter-txt {
+  .book-txt {
     font-size: 16px;
   }
 }

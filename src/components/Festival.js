@@ -40,12 +40,15 @@ export default class Festival extends React.Component {
             posts.map(post => (
               <div key={post.slug} className="row align-items-lg-center">
                 <div className="col-md-6 col-lg-5">
-                  <img src={getData(post._embedded, 'image')} alt={post.title} />
+                  <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
                 </div>
 
                 <div className="col-md-6 col-lg-7">
                   <Content classes="festival-content">
-                    <h6>{post.title.rendered}</h6>
+                    <h6><div
+                      dangerouslySetInnerHTML={{
+                        __html: post.title.rendered
+                      }} /></h6>
                     <h2>{post.acf.heading}</h2>
                     <span className="festival-since">{post.acf.since}</span>
                     <p>{post.acf.text}</p>

@@ -3,6 +3,7 @@ import MobileMenu from "../components/MobileMenu";
 import CallToAction from "../components/CallToAction";
 import Layout from '../components/Layout';
 import AccomoSidebar from '../components/AccomoSidebar';
+import BlueWolfBook from '../components/BlueWolfBook';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import Link from "next/link";
@@ -132,6 +133,7 @@ class Accomodation extends React.Component {
 
             <AccomoSidebar />
           </PageWrapper>
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />

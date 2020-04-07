@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../components/Layout";
 import BrandLogo from "../components/BrandLogo";
-import Funfact from "../components/Funfact";
+import BlueWolfBook from "../components/BlueWolfBook";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
@@ -66,7 +66,7 @@ class WhatToPack extends React.Component {
             </div>
           </PageWrapper>
           <BrandLogo />
-          <Funfact classes="sp-top" />
+          <BlueWolfBook classes="sp-top" />
           <CallToAction />
         </Layout >
         <MobileMenu />

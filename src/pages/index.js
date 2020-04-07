@@ -7,7 +7,7 @@ import TourHome from '../components/TourHome';
 import Testimonials from "../components/Testimonials";
 import BlogPageContent from "../components/Blog";
 import BrandLogo from "../components/BrandLogo";
-import Funfact from "../components/Funfact";
+import BlueWolfBook from "../components/BlueWolfBook";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import Destination from '../components/Destination';
@@ -24,7 +24,7 @@ export default function Home() {
         <Destination />
         <BlogPageContent perPage={3} />
         <BrandLogo />
-        <Funfact />
+        <BlueWolfBook />
         <CallToAction />
       </Layout>
       <MobileMenu />

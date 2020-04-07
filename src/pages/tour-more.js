@@ -113,9 +113,9 @@ export default class extends React.Component {
                   </div>
 
                   <div className="col-lg-6">
-                    <div className="skill-experience-area mem-achieve-item">
+                    <div className="my-history-area mem-achieve-item">
                       <h4>INCLUDES</h4>
-                      <div className="skill-bar-wrap mt-40 mt-sm-30">
+                      <div className="history-content-wrap how-we-works-content mt-40 mt-sm-30">
                         <List>
                           <LI>
                             <span dangerouslySetInnerHTML={{ __html: post.acf.price_included }} />

@@ -12,7 +12,7 @@ const BlogTemplate = ({ sidebar_position, blog_type, sidebar }) => {
       <PageHeader
         bgImg={prefixer('/images/default.jpg')}
         title={'Blog'}
-        content={'Businex always try to provide the best Business Solutions for Clients to grow up their Business very sharply and smoothly.'}
+        content={''}
       />
       <PageWrapper classes={'blog-page-content-area sp-y'}>
         {sidebar === true && sidebar_position === 'left' ? <SidebarList perPage={4} classes={'order-1 order-lg-0'} /> : null}
