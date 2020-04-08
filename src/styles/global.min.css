@@ -2678,25 +2678,24 @@ blockquote-title, .blockquote-title {
   }
 }
 
-table.tablepress-id-itinerary {
+figure.wp-block-table {
   background-color: #FFFFFF;
   width: 100%;
-  height: 200px;
   text-align: left;
   border-collapse: collapse;
 }
-table.tablepress-id-itinerary td {
+figure.wp-block-table td {
   border: 0px solid #AAAAAA;
   padding: 9px 9px;
 }
-table.tablepress-id-itinerary th {
+figure.wp-block-table th {
   border: 0px solid #AAAAAA;
   padding: 9px 9px;
 }
-table.tablepress-id-itinerary tbody td {
+figure.wp-block-table tbody td {
   font-size: 14px;
 }
-table.tablepress-id-itinerary tbody td:first-child {
+figure.wp-block-table tbody td:first-child {
   width: 100px;
   text-align: end;
   font-weight: 600;
@@ -4275,49 +4274,6 @@ Start Comment Area Wrapper
   transform: translateY(-10px);
 }
 
-/* $activeColor: #c0392b; //red */
-/* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */
-.squaredOne {
-  width: 28px;
-  height: 28px;
-  position: relative;
-  margin: 20px auto;
-  background: #fcfff4;
-  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
-}
-.squaredOne label {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  cursor: pointer;
-  background: linear-gradient(top, #222 0%, #45484d 100%);
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
-}
-.squaredOne label:after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  background: #27ae60;
-  background: linear-gradient(top, #27ae60 0%, #145b32 100%);
-  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-}
-.squaredOne label:hover::after {
-  opacity: 0.3;
-}
-.squaredOne input[type=checkbox] {
-  visibility: hidden;
-}
-.squaredOne input[type=checkbox]:checked + label:after {
-  opacity: 1;
-}
-
 /*Faq*/
 .faq-list {
   width: 100%;
@@ -4352,16 +4308,6 @@ Start Comment Area Wrapper
   color: #333030;
   text-transform: none;
   margin-bottom: 0;
-}
-
-.post-item .post-content ul li {
-  color: #999;
-  position: relative;
-  padding-left: 25px;
-  background-image: url(/public/images/check.png);
-  background-repeat: no-repeat;
-  background-position: left top 7px;
-  font-size: 14px;
 }
 
 .member-details-top .member-pic {
