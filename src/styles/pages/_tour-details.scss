@@ -15,6 +15,24 @@
     font-weight: 500;
     margin-bottom: 25px;
   }
+
+  .intro-list {
+    li {
+      margin-bottom: 10px;
+      font-weight: 500;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      &:before {
+        content: '\f046';
+        font-family: $fa-icon;
+        font-size: 13px;
+        margin-right: 5px;
+      }
+    }
+  }
 }
 
 .tour-social-icons {
@@ -84,8 +102,49 @@
       max-width: 75%;
     }
   }
+  .skill-bar-wrap {
+    .skill-list {
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &:before {
+          content: '\f1db';
+          font-family: $fa-icon;
+          font-size: 9px;
+          margin-right: 5px;
+        }
+  
+        
+      }
+    }
+  }
 
   .history-content-wrap {
+    .include-list {
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &:before {
+          content: '\f00c';
+          font-family: $fa-icon;
+          font-size: 13px;
+          margin-right: 5px;
+        }
+  
+        
+      }
+    }
+
     .icon-box-item {
 
       @media #{$md-device} {

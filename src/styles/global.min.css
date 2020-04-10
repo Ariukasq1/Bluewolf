@@ -1807,6 +1807,10 @@ blockquote-title, .blockquote-title {
   margin-top: 50px;
 }
 
+.li-top {
+  margin-top: 30px;
+}
+
 /*==========================
 04. Index Area Style CSS
 ===========================*/
@@ -2606,6 +2610,19 @@ blockquote-title, .blockquote-title {
   font-weight: 500;
   margin-bottom: 25px;
 }
+.tour-desc .intro-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.tour-desc .intro-list li:last-child {
+  margin-bottom: 0;
+}
+.tour-desc .intro-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  margin-right: 5px;
+}
 
 .tour-social-icons {
   display: flex;
@@ -2662,6 +2679,32 @@ blockquote-title, .blockquote-title {
   .mem-achieve-item .skill-bar-wrap, .mem-achieve-item .history-content-wrap {
     max-width: 75%;
   }
+}
+.mem-achieve-item .skill-bar-wrap .skill-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.mem-achieve-item .skill-bar-wrap .skill-list li:last-child {
+  margin-bottom: 0;
+}
+.mem-achieve-item .skill-bar-wrap .skill-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 9px;
+  margin-right: 5px;
+}
+.mem-achieve-item .history-content-wrap .include-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.mem-achieve-item .history-content-wrap .include-list li:last-child {
+  margin-bottom: 0;
+}
+.mem-achieve-item .history-content-wrap .include-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  margin-right: 5px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   .mem-achieve-item .history-content-wrap .icon-box-item {
@@ -2737,18 +2780,19 @@ figure.wp-block-table tbody td:first-child {
   padding-top: 35px;
   padding-bottom: 30px;
 }
-.post-content-wrapper .post-item .content-list li {
+.post-content-wrapper .post-item .intro-list li {
   margin-bottom: 10px;
   font-weight: 500;
 }
-.post-content-wrapper .post-item .content-list li:last-child {
+.post-content-wrapper .post-item .intro-list li:last-child {
   margin-bottom: 0;
 }
-.post-content-wrapper .post-item .content-list li:before {
-  content: "";
+.post-content-wrapper .post-item .intro-list li:before {
+  content: "";
   font-family: "FontAwesome";
   font-size: 13px;
   margin-right: 5px;
+  color: 88;
 }
 .post-content-wrapper.post-list .post-item .post-content {
   padding-top: 25px;
@@ -3942,6 +3986,10 @@ Start Comment Area Wrapper
   color: #151515;
   font-weight: 400;
   margin-right: 10px;
+}
+.post-item .post-content .post-meta a.post-price {
+  font-size: 20px;
+  font-weight: 600;
 }
 .post-item .post-content .post-meta a:last-child {
   margin-right: 0;

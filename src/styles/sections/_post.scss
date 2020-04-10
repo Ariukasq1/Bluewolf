@@ -44,6 +44,11 @@
         font-weight: 400;
         margin-right: 10px;
 
+        &.post-price {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
         &:last-child {
           margin-right: 0;
         }

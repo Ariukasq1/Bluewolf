@@ -63,20 +63,25 @@ export default class extends React.Component {
                     <div className="tour-desc">
                       <h2><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h2>
                       <div className="contact-info mt-30">
-                        <p><strong>Group size</strong> {group_size}</p>
-                        <p><strong>Duration</strong> {duration}</p>
-                        <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p>
-                        <p><strong>From</strong> {price}</p>
-                        <hr />
+                        {group_size ? <p><strong>Group size</strong> {group_size}</p> : ''}
+                        {duration ? <p><strong>Duration</strong> {duration}</p> : ''}
+                        {theme ? <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p> : ''}
+                        {price ? <p><strong>From</strong> {price}</p> : ''}
+
                       </div>
                       <div>
+                        <div className='li-top' />
                         <strong>Intro text</strong>
                         <hr />
-                        <div dangerouslySetInnerHTML={{ __html: intro_text }} />
-                        <hr />
+                        <List classes="intro-list">
+                          <div dangerouslySetInnerHTML={{ __html: intro_text }} />
+                        </List>
+                        <div className='li-top' />
                         <strong>Why choose this tour</strong>
                         <hr />
-                        <div dangerouslySetInnerHTML={{ __html: why_choose_this_tour }} />
+                        <List classes="intro-list">
+                          <div dangerouslySetInnerHTML={{ __html: why_choose_this_tour }} />
+                        </List>
                       </div>
                     </div>
                   </div>
@@ -105,21 +110,18 @@ export default class extends React.Component {
                   <div className="col-xl-12 m-auto text-center">
                     <div className="tour-education mem-achieve-item">
                       <SectionTitle
-                        heading={'PRICES & INCLUSIONS'}
+                        heading={'INCLUSIONS'}
                         text=""
                       />
                     </div>
                     <hr />
                   </div>
-
                   <div className="col-lg-6">
                     <div className="my-history-area mem-achieve-item">
                       <h4>INCLUDES</h4>
-                      <div className="history-content-wrap how-we-works-content mt-40 mt-sm-30">
-                        <List>
-                          <LI>
-                            <span dangerouslySetInnerHTML={{ __html: post.acf.price_included }} />
-                          </LI>
+                      <div className="history-content-wrap mt-40 mt-sm-30">
+                        <List classes="include-list">
+                          <div dangerouslySetInnerHTML={{ __html: post.acf.price_included }} />
                         </List>
                       </div>
                     </div>
@@ -128,12 +130,9 @@ export default class extends React.Component {
                   <div className="col-lg-6">
                     <div className="my-history-area mem-achieve-item">
                       <h4>NOT INCLUDES</h4>
-
-                      <div className="history-content-wrap how-we-works-content mt-40 mt-sm-30">
-                        <List>
-                          <LI>
-                            <span dangerouslySetInnerHTML={{ __html: post.acf.not_include }} />
-                          </LI>
+                      <div className="history-content-wrap mt-40 mt-sm-30">
+                        <List classes="include-list">
+                          <div dangerouslySetInnerHTML={{ __html: post.acf.not_include }} />
                         </List>
                       </div>
                     </div>
@@ -151,15 +150,12 @@ export default class extends React.Component {
                     </div>
                     <hr />
                   </div>
-
                   <div className="col-12">
                     <div className="skill-experience-area mem-achieve-item">
                       <h4>Practical information</h4>
                       <div className="skill-bar-wrap mt-40 mt-sm-30">
-                        <List>
-                          <LI>
-                            <span dangerouslySetInnerHTML={{ __html: post.acf.good_to_know }} />
-                          </LI>
+                        <List classes="skill-list">
+                          <div dangerouslySetInnerHTML={{ __html: post.acf.good_to_know }} />
                         </List>
                       </div>
                     </div>

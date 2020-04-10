@@ -4,7 +4,7 @@ import CallToAction from "../components/CallToAction";
 import Layout from '../components/Layout';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
-import LIST from '../UI/List';
+import List from '../UI/List';
 import Link from "next/link";
 import { prefixer, getData } from '../utils';
 import Config from "../config";
@@ -87,20 +87,24 @@ class Category extends React.Component {
                               </a>
                             </Link>
                           </h2>
-                          <LIST classes="content-list">
+                          <List classes="intro-list">
                             <div
                               dangerouslySetInnerHTML={{
                                 __html: post.acf.intro_text
                               }} />
-                          </LIST>
+                          </List>
                           <div className="post-meta">
-                            <Link href={prefixer(`/tour-more/${post.slug}`)}>
-                              <a>
-                                <p>From: {post.acf.price}</p></a>
-                            </Link>
-                            <Link href={prefixer(`/tour-more/${post.slug}`)}>
-                              <a>Group size: {post.acf.group_size}</a>
-                            </Link>
+                            {post.acf.price ?
+                              <Link href={prefixer(`/tour-more/${post.slug}`)}>
+                                <a className='post-price'>From: {post.acf.price}</a>
+                              </Link> : null
+                            }
+                            {post.acf.group_size ?
+                              <Link href={prefixer(`/tour-more/${post.slug}`)}>
+                                <a><i className="fa fa-user" aria-hidden="true"></i>&nbsp; {post.acf.group_size}</a>
+                              </Link>
+                              : null
+                            }
                           </div>
                         </div>
                       </div>
