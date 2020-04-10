@@ -170,7 +170,7 @@ export default class extends React.Component {
                 <div className="row mtn-30">
                   <div className="col-12">
                     <div className="col-xl-6 m-auto text-center">
-                      <Link href={prefixer('/book-now/form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
+                      <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
                         <a className='btn btn-primary'><i className="fa fa-star"></i> Book now
                     </a>
                       </Link>

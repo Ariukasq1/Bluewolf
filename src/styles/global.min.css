@@ -2732,6 +2732,19 @@ figure.wp-block-table tbody td:first-child {
   padding-top: 35px;
   padding-bottom: 30px;
 }
+.post-content-wrapper .post-item .content-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.post-content-wrapper .post-item .content-list li:last-child {
+  margin-bottom: 0;
+}
+.post-content-wrapper .post-item .content-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  margin-right: 5px;
+}
 .post-content-wrapper.post-list .post-item .post-content {
   padding-top: 25px;
   padding-bottom: 20px;

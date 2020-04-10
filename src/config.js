@@ -1,12 +1,12 @@
-const Config = () => {
+const Config = lang => {
   if ('production' !== process.env.NODE_ENV) {
     return {
-      apiUrl: 'http://bluewolftravel.nmma.co/wp/wp-json',
+      apiUrl: `http://bluewolftravel.nmma.co${lang ? `/${lang}` : ''}/wp/wp-json`,
     };
   }
 
   return {
-    apiUrl: 'http://bluewolftravel.nmma.co/wp/wp-json',
+    apiUrl: `http://bluewolftravel.nmma.co${lang ? `/${lang}` : ''}/wp/wp-json`,
   };
 }
 

@@ -4,14 +4,11 @@ import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
-import SidebarItem from "../components/Sidebar/SidebarItem";
-import List from "../UI/List";
-import LI from "../UI/List/Item";
 import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer } from '../utils';
 import Config from "../config";
 import WPAPI from 'wpapi';
-import Link from "next/link";
+import DestinationSidebar from '../components/DestinationSidebar';
 
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
@@ -60,60 +57,7 @@ class CarRental extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='col-lg-3'>
-              <List classes="service-list">
-                <h2 className='h4'>Destinations</h2>
-                <hr></hr>
-                <div className="destination-item">
-                  <figure className="link-pic">
-                    <Link href={`${prefixer('/tour-category/mongolia')}`}>
-                      <a>
-                        <img src={prefixer('/images/AltaiNomads.jpg')} alt='Mongolia' />
-                      </a>
-                    </Link>
-                  </figure>
-                  <div className="tours-info">
-                    <h5>
-                      <Link href={`${prefixer('/tour-category/mongolia')}`} >
-                        <a>Mongolia</a>
-                      </Link>
-                    </h5>
-                  </div>
-                </div>
-                <div className="destination-item">
-                  <figure className="link-pic">
-                    <Link href={`${prefixer('/tour-category/kazakhstan')}`}>
-                      <a>
-                        <img src={prefixer('/images/Белуха.jpg')} alt='Mongolia' />
-                      </a>
-                    </Link>
-                  </figure>
-                  <div className="tours-info">
-                    <h5>
-                      <Link href={`${prefixer('/tour-category/kazakhstan')}`} >
-                        <a>Kazakhstan</a>
-                      </Link>
-                    </h5>
-                  </div>
-                </div>
-                <div className="destination-item">
-                  <figure className="link-pic">
-                    <Link href={`${prefixer('/tour-category/russian-altai')}`}>
-                      <a>
-                        <img src={prefixer('/images/KhanTengri.jpg')} alt='Mongolia' />
-                      </a>
-                    </Link>
-                  </figure>
-                  <div className="tours-info">
-                    <h5>
-                      <Link href={`${prefixer('/tour-category/russian-altai')}`} >
-                        <a>Russian Altai</a>
-                      </Link>
-                    </h5>
-                  </div>
-                </div>
-              </List>
-            </div>
+            <DestinationSidebar />
           </PageWrapper>
           <CallToAction />
         </Layout >

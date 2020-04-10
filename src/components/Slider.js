@@ -3,7 +3,7 @@ import SlickSlider from '../UI/Slick'
 import Link from "next/link";
 import { getData } from "../utils";
 import axios from 'axios';
-import Config from "../config";
+import { LanguageConsumer } from './LanguageContext';
 
 const NextArrow = ({ className, onClick }) => {
   return (
@@ -42,13 +42,17 @@ class Slider extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=sliders`)
+  getPosts = () => {
+    const { apiUrl } = this.props;
+
+    console.log('apiUrl: ', this.props.apiUrl);
+
+    axios.get(`${apiUrl}/wp/v2/categories?slug=sliders`)
       .then(res => {
         const categories = res.data;
 
         if (categories && categories.length > 0) {
-          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+          axios.get(`${apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => this.setState({
               posts: res.data
             }))
@@ -56,7 +60,17 @@ class Slider extends React.Component {
         }
       })
       .catch(err => console.log(err));
+  }
+
+  componentDidMount() {
+    this.getPosts()
   };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.apiUrl !== prevProps.apiUrl) {
+      this.getPosts()
+    }
+  }
 
   render() {
     const { posts } = this.state;
@@ -92,4 +106,7 @@ class Slider extends React.Component {
   }
 };
 
-export default Slider;
+export default (props) => (
+  <LanguageConsumer>
+    {({ apiUrl }) => (<Slider {...props} apiUrl={apiUrl} />)}
+  </LanguageConsumer>);

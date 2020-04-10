@@ -58,7 +58,7 @@ export default class TourHome extends React.Component {
                       <figure className="service-thumb">
                         <Link href={prefixer(`/tour-more/${post.slug}`)}>
                           <a>
-                            <img src={getData(post._embedded, 'image')} alt={post.title.rendered} />
+                            <img src={getData(post._embedded, 'image')} alt={post.title} />
                           </a>
                         </Link>
                         <h4>{post.acf.price}</h4>

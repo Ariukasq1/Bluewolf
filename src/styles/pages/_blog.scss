@@ -44,6 +44,25 @@
       padding-top: 35px;
       padding-bottom: 30px;
     }
+    .content-list {
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &:before {
+          content: '\f05d';
+          font-family: $fa-icon;
+          font-size: 13px;
+          margin-right: 5px;
+        }
+  
+        
+      }
+    }
   }
 
   &.post-list {

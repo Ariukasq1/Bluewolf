@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer } from '../utils';
-import DestinationSidebar from "./DestinationSidebar";
+import Link from "next/link";
 import axios from 'axios';
 import Config from "../config";
 
@@ -76,12 +76,21 @@ class Destination extends React.Component {
             <div className="col-lg-8">
               <SlickSlider settings={settings}>
                 {posts.map(post => (
-                  <DestinationSidebar
-                    key={post.slug}
-                    id={post.slug}
-                    slider_image={post.acf.slider_image}
-                    title={post.title.rendered}
-                  />
+                  <div key={post.slug} className="destination-item">
+                    <figure className="tours-pic">
+                      <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
+                        <a>
+                          <img src={post.acf.slider_image} alt={post.title.rendered} />
+                        </a>
+                      </Link>
+                    </figure>
+                    <div className="tours-info">
+                      <h5>
+                        <Link href={`${prefixer('/tour-category/' + post.id)}`} ><a>{post.title.rendered}</a>
+                        </Link>
+                      </h5>
+                    </div>
+                  </div>
                 ))
                 }
               </SlickSlider>

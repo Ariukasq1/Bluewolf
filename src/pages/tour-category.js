@@ -11,7 +11,6 @@ import Config from "../config";
 import WPAPI from 'wpapi';
 import { withRouter } from 'next/router';
 import TourSidebar from '../components/TourSidebar';
-
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Category extends React.Component {
@@ -88,7 +87,7 @@ class Category extends React.Component {
                               </a>
                             </Link>
                           </h2>
-                          <LIST>
+                          <LIST classes="content-list">
                             <div
                               dangerouslySetInnerHTML={{
                                 __html: post.acf.intro_text

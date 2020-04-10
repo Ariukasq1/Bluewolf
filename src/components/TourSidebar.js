@@ -5,6 +5,7 @@ import Loader from "./Loader";
 import axios from 'axios';
 import Config from "../config";
 
+
 class TourSidebar extends React.Component {
   constructor(props) {
     super(props);

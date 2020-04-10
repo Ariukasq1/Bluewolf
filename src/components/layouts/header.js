@@ -5,7 +5,7 @@ import HeaderConfig from './HeaderConfig';
 import { prefixer } from "../../utils";
 import { defaultDesc, defaultImage } from "./constants";
 
-function Header({ title, description, image, url }) {
+function Header({ title, description, image, url, onChangeLang }) {
   const [isScrolled, setScrollChange] = useState(false);
 
   useEffect(() => {
@@ -78,6 +78,10 @@ function Header({ title, description, image, url }) {
             <div className="col-7 col-lg-2">
               <HeaderConfig />
             </div>
+            <ul>
+              <li><a onClick={onChangeLang.bind(this, 'en')}>English</a></li>
+              <li><a onClick={onChangeLang.bind(this, 'jp')} >Japan</a></li>
+            </ul>
           </div>
         </div>
       </header>
