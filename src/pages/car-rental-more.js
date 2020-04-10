@@ -63,6 +63,7 @@ export default class extends React.Component {
                   <div className='row'>
                     <h4>Specifications</h4>
                   </div>
+                  <hr />
                   <div className="car-rental-content service-details-page">
                     <div className="row">
                       <div className="col-md-6">
@@ -143,7 +144,7 @@ export default class extends React.Component {
                         <h4>Price</h4>
                       </div>
                       <div className="col-md-6">
-                        <h5>Avg price per day {cash} {price}</h5>
+                        <h5>Avg price per day: <span>{cash} {price}</span></h5>
                       </div>
                     </div>
                   </div>

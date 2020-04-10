@@ -2133,8 +2133,8 @@ blockquote-title, .blockquote-title {
 }
 .icon-box-item .icon-box__icon {
   text-align: center;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-right: 0px;
+  margin-top: 0px;
   flex-basis: 50px;
   width: 50px;
 }
@@ -2492,6 +2492,14 @@ blockquote-title, .blockquote-title {
 .car-rental-content.service-details-page .icon-box-item {
   margin-top: 40px;
 }
+.car-rental-content.service-details-page .icon-box-item .icon-box__icon {
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 100px;
+}
+.car-rental-content span {
+  color: red;
+}
 
 .pagination-wrap {
   border-top: 1px solid #eee;
@@ -2712,7 +2720,7 @@ blockquote-title, .blockquote-title {
   }
 }
 .mem-achieve-item .history-content-wrap .icon-box-item .icon-box__icon {
-  margin-right: 20px;
+  margin-right: 0px;
   margin-bottom: 0;
   flex-basis: 100px;
   width: 100px;
@@ -3491,15 +3499,14 @@ Start Comment Area Wrapper
 .service-item .service-thumb h4 {
   position: absolute;
   top: 10px;
-  right: -5px;
+  right: -11px;
   background: url(../public/images/price.png) no-repeat center center;
   color: #ffa406;
-  width: 103px;
+  width: 108px;
   height: 41px;
   line-height: 32px;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  padding-left: 10px;
 }
 .service-item .service-content {
   background-color: rgba(13, 48, 105, 0.95);
