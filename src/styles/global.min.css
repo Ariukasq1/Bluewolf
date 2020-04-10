@@ -3144,11 +3144,11 @@ Start Comment Area Wrapper
 }
 .contact-method.contact-information {
   background-color: #0D3069;
-  height: 100%;
   color: #FFFFFF;
   padding: 45px 30px;
   display: flex;
   align-items: center;
+  height: 600px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199.98px), only screen and (min-width: 1200px) {
   .contact-method.contact-information {
@@ -3170,6 +3170,7 @@ Start Comment Area Wrapper
 
 .contact-content-wrap {
   box-shadow: 0 10px 60px 0 rgba(71, 74, 182, 0.12);
+  height: 600px;
 }
 
 /*====================

@@ -68,11 +68,11 @@
 
   &.contact-information {
     background-color: $brandColor;
-    height: 100%;
     color: $white;
     padding: 45px 30px;
     display: flex;
     align-items: center;
+    height: 600px;
 
     @media #{$lg-device,$xl-device} {
       justify-content: center;
@@ -99,4 +99,5 @@
 
 .contact-content-wrap {
   box-shadow: 0 10px 60px 0 rgba(71, 74, 182, 0.12);
+  height: 600px;
 }
