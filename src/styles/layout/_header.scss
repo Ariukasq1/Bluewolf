@@ -69,21 +69,33 @@
     }
 
     .header-action{
-      a,button{
+      a {
         color: $brandColor;
         font-weight: 600;
       }
+      }    
     }
   }
-}
+
 
 // Index Action
-.header-action{
+.header-action {
   color: $white;
-  font-size: 22px;
+  font-size: 20px;
+
+  .lang-action {
+    cursor: pointer;
+
+    a {
+      padding: 0 2px;
+      img {
+        width: 21px;
+      }
+    }
+  }
 
   @media #{$lg-device, $sm-device} {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   a{
@@ -95,9 +107,5 @@
       }
     }
   }
-
-  [class*='btn-']{
-    color: $white;
-    margin-left: 20px;
-  }
+ 
 }

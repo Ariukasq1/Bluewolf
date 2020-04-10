@@ -1857,18 +1857,27 @@ blockquote-title, .blockquote-title {
   color: #0D3069;
   font-weight: 600;
 }
-.header-area.transparent:not(.sticky) .header-action a, .header-area.transparent:not(.sticky) .header-action button {
+.header-area.transparent:not(.sticky) .header-action a {
   color: #0D3069;
   font-weight: 600;
 }
 
 .header-action {
   color: #FFFFFF;
-  font-size: 22px;
+  font-size: 20px;
+}
+.header-action .lang-action {
+  cursor: pointer;
+}
+.header-action .lang-action a {
+  padding: 0 2px;
+}
+.header-action .lang-action a img {
+  width: 21px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199.98px), only screen and (max-width: 767.98px) {
   .header-action {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .header-action a {
@@ -1878,10 +1887,6 @@ blockquote-title, .blockquote-title {
   .header-action a.tel-no {
     display: none;
   }
-}
-.header-action [class*=btn-] {
-  color: #FFFFFF;
-  margin-left: 20px;
 }
 
 /*===========================

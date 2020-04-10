@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Head from 'next/head'
 import Menu from './menu';
-import HeaderConfig from './HeaderConfig';
 import { prefixer } from "../../utils";
 import { defaultDesc, defaultImage } from "./constants";
 
@@ -76,12 +75,18 @@ function Header({ title, description, image, url, onChangeLang }) {
             </div>
 
             <div className="col-7 col-lg-2">
-              <HeaderConfig />
+              <div className="header-action mt-lg-3 text-right">
+                <div className='phone'>
+                  <a href="99110303" className="tel-no"> (+976) 99110303 </a>
+                </div>
+                <div className='lang-action'>
+                  <a onClick={onChangeLang.bind(this, 'en')} ><img src={prefixer('/images/lang/eng.png')} alt='english' /></a>
+                  <a onClick={onChangeLang.bind(this, 'en')} ><img src={prefixer('/images/lang/japan.png')} alt='english' /></a>
+                  <a onClick={onChangeLang.bind(this, 'jp')} ><img src={prefixer('/images/lang/rus.png')} alt='english' /></a>
+                  <a onClick={onChangeLang.bind(this, 'jp')} ><img src={prefixer('/images/lang/china.png')} alt='english' /></a>
+                </div>
+              </div>
             </div>
-            <ul>
-              <li><a onClick={onChangeLang.bind(this, 'en')}>English</a></li>
-              <li><a onClick={onChangeLang.bind(this, 'jp')} >Japan</a></li>
-            </ul>
           </div>
         </div>
       </header>
