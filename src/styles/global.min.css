@@ -1027,7 +1027,7 @@ body {
 /* A better looking default horizontal rule */
 hr {
   border: 0;
-  border-top: 1px solid #0D3069;
+  border-top: 1px solid #e4e4e4;
   box-sizing: content-box;
   display: block;
   height: 1px;
@@ -2619,6 +2619,39 @@ blockquote-title, .blockquote-title {
 /*==========================================
 23. Tour Details Page Style CSS
 ===========================================*/
+.post-content-wrapper .post-item .post-thumb img {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+.post-content-wrapper .post-item .post-content {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+.post-content-wrapper .post-item .intro-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.post-content-wrapper .post-item .intro-list li:last-child {
+  margin-bottom: 0;
+}
+.post-content-wrapper .post-item .intro-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 9px;
+  color: 88;
+}
+.post-content-wrapper.post-list .post-item .post-content {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+@media only screen and (min-width: 1200px), only screen and (min-width: 768px) and (max-width: 991.98px), only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .post-content-wrapper.post-list .post-item .post-content {
+    padding-left: 0;
+  }
+}
+
 .tour-desc h2 {
   font-size: 2rem;
   margin-bottom: 8px;
@@ -2645,8 +2678,21 @@ blockquote-title, .blockquote-title {
 .tour-desc .intro-list li:before {
   content: "";
   font-family: "FontAwesome";
-  font-size: 13px;
-  margin-right: 5px;
+  font-size: 10px;
+  margin-right: 9px;
+}
+.tour-desc .not-include-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.tour-desc .not-include-list li:last-child {
+  margin-bottom: 0;
+}
+.tour-desc .not-include-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 9px;
 }
 
 .tour-social-icons {
@@ -2679,18 +2725,13 @@ blockquote-title, .blockquote-title {
 
 .contact-info p {
   position: relative;
-  padding-left: 100px;
+  padding: 10px 0 10px 200px;
 }
 .contact-info p strong {
   position: absolute;
-  width: 88px;
+  width: 160px;
+  padding: 10px 0 10px 0;
   left: 0;
-  top: 0;
-}
-.contact-info p strong:after {
-  content: ":";
-  right: 0;
-  position: absolute;
   top: 0;
 }
 
@@ -2718,18 +2759,8 @@ blockquote-title, .blockquote-title {
   font-size: 9px;
   margin-right: 5px;
 }
-.mem-achieve-item .history-content-wrap .include-list li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.mem-achieve-item .history-content-wrap .include-list li:last-child {
-  margin-bottom: 0;
-}
-.mem-achieve-item .history-content-wrap .include-list li:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 13px;
-  margin-right: 5px;
+.mem-achieve-item .skill {
+  padding-left: 200px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   .mem-achieve-item .history-content-wrap .icon-box-item {
@@ -2749,6 +2780,10 @@ blockquote-title, .blockquote-title {
   .mem-achieve-item.tour-education {
     margin-bottom: 40px;
   }
+}
+
+.inclusion {
+  margin-left: 180px;
 }
 
 figure.wp-block-table {
@@ -2792,39 +2827,6 @@ figure.wp-block-table tbody td:first-child {
 }
 @media only screen and (min-width: 1200px), only screen and (min-width: 768px) and (max-width: 991.98px), only screen and (min-width: 992px) and (max-width: 1199.98px) {
   .blog-content-wrapper.blog-list .blog-item .blog-content {
-    padding-left: 0;
-  }
-}
-
-.post-content-wrapper .post-item .post-thumb img {
-  object-fit: cover;
-  height: 300px;
-  width: 100%;
-}
-.post-content-wrapper .post-item .post-content {
-  padding-top: 35px;
-  padding-bottom: 30px;
-}
-.post-content-wrapper .post-item .intro-list li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.post-content-wrapper .post-item .intro-list li:last-child {
-  margin-bottom: 0;
-}
-.post-content-wrapper .post-item .intro-list li:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 13px;
-  margin-right: 5px;
-  color: 88;
-}
-.post-content-wrapper.post-list .post-item .post-content {
-  padding-top: 25px;
-  padding-bottom: 20px;
-}
-@media only screen and (min-width: 1200px), only screen and (min-width: 768px) and (max-width: 991.98px), only screen and (min-width: 992px) and (max-width: 1199.98px) {
-  .post-content-wrapper.post-list .post-item .post-content {
     padding-left: 0;
   }
 }
@@ -4047,6 +4049,7 @@ Start Comment Area Wrapper
 .blog-item .blog-content h2 {
   font-weight: 600;
   margin-bottom: 15px;
+  line-height: 25px;
 }
 .blog-item .blog-content h2 a {
   color: #151515;

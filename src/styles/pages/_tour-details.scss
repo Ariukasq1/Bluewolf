@@ -1,6 +1,53 @@
 /*==========================================
 23. Tour Details Page Style CSS
 ===========================================*/
+.post-content-wrapper {
+  .post-item {
+    .post-thumb{
+      img{
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+      }
+    }
+
+    .post-content {
+      padding-top: 35px;
+      padding-bottom: 30px;
+    }
+
+    .intro-list {
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &:before {
+          content: '\f00c';
+          font-family: $fa-icon;
+          font-size: 10px;
+          margin-right: 9px;
+          color: green($color: #065818);
+        }   
+      }
+    }
+  }
+
+  &.post-list {
+    .post-item {
+      .post-content {
+        padding-top: 25px;
+        padding-bottom: 20px;
+        @media #{$xl-device, $md-device, $lg-device} {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
 
 .tour-desc {
   h2 {
@@ -28,9 +75,29 @@
       &:before {
         content: '\f00c';
         font-family: $fa-icon;
-        font-size: 13px;
-        margin-right: 5px;
+        font-size: 10px;
+        margin-right: 9px;
       }
+    }
+  }
+
+  .not-include-list {
+    li {
+      margin-bottom: 10px;
+      font-weight: 500;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      &:before {
+        content: '\f00d';
+        font-family: $fa-icon;
+        font-size: 10px;
+        margin-right: 9px;
+      }
+
+      
     }
   }
 }
@@ -72,20 +139,14 @@
 .contact-info {
   p {
     position: relative;
-    padding-left: 100px;
+    padding: 10px 0 10px 200px;
 
     strong {
       position: absolute;
-      width: 88px;
+      width: 160px;
+      padding: 10px 0 10px 0;
       left: 0;
       top: 0;
-
-      &:after {
-        content: ':';
-        right: 0;
-        position: absolute;
-        top: 0;
-      }
     }
   }
 }
@@ -124,27 +185,11 @@
     }
   }
 
-  .history-content-wrap {
-    .include-list {
-      li {
-        margin-bottom: 10px;
-        font-weight: 500;
-  
-        &:last-child {
-          margin-bottom: 0;
-        }
-        
-        &:before {
-          content: '\f00c';
-          font-family: $fa-icon;
-          font-size: 13px;
-          margin-right: 5px;
-        }
-  
-        
-      }
-    }
+  .skill {
+    padding-left: 200px;
+  }
 
+  .history-content-wrap {
     .icon-box-item {
 
       @media #{$md-device} {
@@ -169,6 +214,9 @@
   }
 }
 
+.inclusion {
+  margin-left:180px;
+}
 
 figure.wp-block-table {
 	background-color: #FFFFFF;

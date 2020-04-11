@@ -30,54 +30,6 @@
   }
 }
 
-.post-content-wrapper {
-  .post-item {
-    .post-thumb{
-      img{
-        object-fit: cover;
-        height: 300px;
-        width: 100%;
-      }
-    }
-
-    .post-content {
-      padding-top: 35px;
-      padding-bottom: 30px;
-    }
-
-    .intro-list {
-      li {
-        margin-bottom: 10px;
-        font-weight: 500;
-  
-        &:last-child {
-          margin-bottom: 0;
-        }
-        
-        &:before {
-          content: '\f046';
-          font-family: $fa-icon;
-          font-size: 13px;
-          margin-right: 5px;
-          color: green($color: #065818);
-        }   
-      }
-    }
-  }
-
-  &.post-list {
-    .post-item {
-      .post-content {
-        padding-top: 25px;
-        padding-bottom: 20px;
-        @media #{$xl-device, $md-device, $lg-device} {
-          padding-left: 0;
-        }
-      }
-    }
-  }
-}
-
 .single-sidebar-item-wrap {
   margin-bottom: 50px;
 
