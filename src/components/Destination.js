@@ -86,7 +86,7 @@ class Destination extends React.Component {
                     </figure>
                     <div className="tours-info">
                       <h5>
-                        <Link href={`${prefixer('/tour-category/' + post.id)}`} ><a>{post.title.rendered}</a>
+                        <Link href={`${prefixer('/tour-category/' + post.slug)}`} ><a>{post.title.rendered}</a>
                         </Link>
                       </h5>
                     </div>

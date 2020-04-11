@@ -6,8 +6,8 @@ import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import SectionTitle from "../UI/SectionTitle";
 import { defaultCoverImage } from "../components/layouts/constants";
+import Share from '../components/Share';
 import List from "../UI/List";
-import LI from "../UI/List/Item";
 import Link from "next/link";
 import Config from "../config";
 import { prefixer } from '../utils';
@@ -38,6 +38,12 @@ export default class extends React.Component {
       return <Error statusCode={404} />;
     }
 
+    let url = '';
+
+    if (process.browser) {
+      url = window.location.href
+    }
+
     const { content, cover_image, price, theme, duration, group_size, intro_text, why_choose_this_tour } = post.acf;
 
     return (
@@ -58,6 +64,7 @@ export default class extends React.Component {
                     <div className="tour-pic mb-sm-35">
                       <img src={post.acf.image} alt={post.title.rendered} />
                     </div>
+                    <Share title={post.title.rendered} path={url} />
                   </div>
                   <div className="col-md-7 ml-auto">
                     <div className="tour-desc">

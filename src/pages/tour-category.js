@@ -1,7 +1,6 @@
 import React from 'react';
 import MobileMenu from "../components/MobileMenu";
 import CallToAction from "../components/CallToAction";
-import Layout from '../components/Layout';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import List from '../UI/List';
@@ -11,6 +10,8 @@ import Config from "../config";
 import WPAPI from 'wpapi';
 import { withRouter } from 'next/router';
 import TourSidebar from '../components/TourSidebar';
+import Layout from '../components/Layout';
+
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Category extends React.Component {

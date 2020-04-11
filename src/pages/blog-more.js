@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
+import Layout from '../components/Layout';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import MobileMenu from "../components/MobileMenu";
 import CallToAction from "../components/CallToAction";
 import Share from "../components/Share";
-import Layout from '../components/Layout';
 import Config from "../config";
 import WPAPI from 'wpapi';
 import { defaultCoverImage } from "../components/layouts/constants";
@@ -45,7 +45,7 @@ export default class extends React.Component {
     const { content, cover_image } = post.acf;
 
     return (
-      <Fragment>
+      <>
         <Layout>
           <PageHeader
             bgImg={cover_image ? cover_image : prefixer('/images' + defaultCoverImage)}
@@ -64,7 +64,6 @@ export default class extends React.Component {
 
                         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
                       </div>
-
                       <Share title={post.title.rendered} path={url} />
                     </div>
                     <SidebarList />
@@ -76,7 +75,7 @@ export default class extends React.Component {
           <CallToAction />
         </Layout >
         <MobileMenu />
-      </Fragment >
+      </>
     );
   }
 }

@@ -1921,6 +1921,10 @@ blockquote-title, .blockquote-title {
   margin-bottom: 0;
   font-weight: 500;
 }
+.widget-item .social {
+  margin-top: 6px;
+  float: left;
+}
 
 .widget-list li {
   line-height: 2;
@@ -1932,6 +1936,19 @@ blockquote-title, .blockquote-title {
 }
 .widget-list li a:hover {
   color: #0D3069;
+  padding-left: 5px;
+}
+.widget-list li a .li-right {
+  margin: 0 10px 10px 0;
+}
+.widget-list li i {
+  color: #0D3069;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+.widget-list li i:hover {
+  color: #0077B5;
   padding-left: 5px;
 }
 
@@ -2626,7 +2643,7 @@ blockquote-title, .blockquote-title {
   margin-bottom: 0;
 }
 .tour-desc .intro-list li:before {
-  content: "";
+  content: "";
   font-family: "FontAwesome";
   font-size: 13px;
   margin-right: 5px;
