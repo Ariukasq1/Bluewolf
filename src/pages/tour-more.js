@@ -5,9 +5,13 @@ import Layout from '../components/Layout';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import SectionTitle from "../UI/SectionTitle";
+import BrandLogo from '../components/BrandLogo';
+import BlueWolfBook from '../components/BlueWolfBook';
+import Disqus from "disqus-react"
 import { defaultCoverImage } from "../components/layouts/constants";
 import Share from '../components/Share';
 import List from "../UI/List";
+import LI from "../UI/List/Item";
 import Link from "next/link";
 import Config from "../config";
 import { prefixer } from '../utils';
@@ -46,6 +50,13 @@ export default class extends React.Component {
 
     const { content, cover_image, price, theme, duration, group_size, intro_text, why_choose_this_tour } = post.acf;
 
+    const disqusShortname = "erxes-inc";
+    const disqusConfig = {
+      url,
+      identifier: post.slug,
+      title: post.title.rendered
+    }
+
     return (
       <>
         <Layout>
@@ -68,7 +79,8 @@ export default class extends React.Component {
                         <hr />
                         {price ? <p><strong>From</strong> {price}</p> : ''}
                         <hr />
-                        {group_size ? <p><strong>Group size</strong> {group_size}</p> : ''}
+                        {group_size ? <p><strong>Group size</strong>{group_size}</p> : ''
+                        }
                         <hr />
                         {duration ? <p><strong>Duration</strong> {duration}</p> : ''}
                         <hr />
@@ -100,6 +112,29 @@ export default class extends React.Component {
                   <div className="col-md-4">
                     <div className="tour-pic mb-sm-35">
                       <img src={post.acf.image} alt={post.title.rendered} />
+                    </div>
+                    <div className='white-box'>
+                      <div className='from'>
+                        {duration ? <p>{duration}</p> : ''}
+                      </div>
+                      <div className='price'>
+                        <span>{price ? <p><strong>From</strong> {price}</p> : ''}</span>
+                      </div>
+                      <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
+                        <a className='btn btn-brand'><i className="fa fa-star"></i> Book now
+                       </a>
+                      </Link>
+                      <List classes='features li-top'>
+                        <LI>
+                          <i className='fa fa-tripadvisor'></i> Trip Advisor
+                        </LI>
+                        <LI>
+                          <i className='fa fa-heart'></i> Unforgettable
+                        </LI>
+                        <LI>
+                          <i className='fa fa-cog'></i> Safe
+                        </LI>
+                      </List>
                     </div>
                     <Share title={post.title.rendered} path={url} />
                   </div>
@@ -136,11 +171,9 @@ export default class extends React.Component {
                   </div>
                   <div className="col-12">
                     <div className="skill-experience-area mem-achieve-item">
-                      <div className="skill-bar-wrap mt-30 mt-sm-30">
-                        <List classes="skill-list">
-                          <div dangerouslySetInnerHTML={{ __html: post.acf.good_to_know }} />
-                        </List>
-                      </div>
+                      <List classes="skill-list">
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.good_to_know }} />
+                      </List>
                     </div>
                   </div>
                 </div>
@@ -151,14 +184,22 @@ export default class extends React.Component {
                     <div className="col-xl-6 m-auto text-center">
                       <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
                         <a className='btn btn-primary'><i className="fa fa-star"></i> Book now
-                    </a>
+                       </a>
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className='ul-top'>
+                <Disqus.DiscussionEmbed
+                  shortname={disqusShortname}
+                  config={disqusConfig}
+                />
+              </div>
             </div>
           </PageWrapper>
+          <BrandLogo />
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />

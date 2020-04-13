@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Menu from './menu';
 import { prefixer } from "../../utils";
 import { defaultDesc, defaultImage } from "./constants";
+import HeaderConfig from './HeaderConfig';
 
 function Header({ title, description, image, url, onChangeLang }) {
   const [isScrolled, setScrollChange] = useState(false);
@@ -75,17 +76,8 @@ function Header({ title, description, image, url, onChangeLang }) {
             </div>
 
             <div className="col-7 col-lg-2">
-              <div className="header-action mt-lg-3 text-right">
-                <div className='phone'>
-                  <a href="99110303" className="tel-no"> (+976) 99110303 </a>
-                </div>
-                <div className='lang-action'>
-                  <a onClick={onChangeLang.bind(this, 'en')} ><img src={prefixer('/images/lang/eng.png')} alt='english' /></a>
-                  <a onClick={onChangeLang.bind(this, 'en')} ><img src={prefixer('/images/lang/japan.png')} alt='english' /></a>
-                  <a onClick={onChangeLang.bind(this, 'jp')} ><img src={prefixer('/images/lang/rus.png')} alt='english' /></a>
-                  <a onClick={onChangeLang.bind(this, 'jp')} ><img src={prefixer('/images/lang/china.png')} alt='english' /></a>
-                </div>
-              </div>
+              <HeaderConfig
+                onChangeLang={onChangeLang} />
             </div>
           </div>
         </div>

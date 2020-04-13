@@ -1879,6 +1879,11 @@ blockquote-title, .blockquote-title {
 .header-action .lang-action a img {
   width: 21px;
 }
+.header-action .lang-action .btn-menu {
+  color: #FFFFFF;
+  font-size: 23px;
+  margin-left: 10px;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199.98px), only screen and (max-width: 767.98px) {
   .header-action {
     font-size: 18px;
@@ -2746,14 +2751,18 @@ blockquote-title, .blockquote-title {
     max-width: 75%;
   }
 }
-.mem-achieve-item .skill-bar-wrap .skill-list li {
+.mem-achieve-item .skill-list {
+  text-align: justify;
+  padding-left: 20px;
+}
+.mem-achieve-item .skill-list li {
   margin-bottom: 10px;
   font-weight: 500;
 }
-.mem-achieve-item .skill-bar-wrap .skill-list li:last-child {
+.mem-achieve-item .skill-list li:last-child {
   margin-bottom: 0;
 }
-.mem-achieve-item .skill-bar-wrap .skill-list li:before {
+.mem-achieve-item .skill-list li:before {
   content: "";
   font-family: "FontAwesome";
   font-size: 9px;
@@ -2795,6 +2804,7 @@ figure.wp-block-table {
 figure.wp-block-table td {
   border: 0px solid #AAAAAA;
   padding: 9px 9px;
+  text-align: justify;
 }
 figure.wp-block-table th {
   border: 0px solid #AAAAAA;
@@ -2804,9 +2814,10 @@ figure.wp-block-table tbody td {
   font-size: 14px;
 }
 figure.wp-block-table tbody td:first-child {
-  width: 100px;
+  width: 150px;
   text-align: end;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 /*===========================
@@ -4422,6 +4433,67 @@ label {
 .hotel-from {
   position: relative;
   float: right;
+}
+
+.white-box {
+  margin-top: 20px;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 -1px 3px 0 rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  margin-bottom: 20px;
+  border: none;
+  position: relative;
+}
+.white-box .btn {
+  background-color: transparent;
+  border-color: #0d3069;
+  border-radius: 5px;
+  color: #0d3069;
+  font-weight: 600;
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+.white-box .btn:hover {
+  background-color: #0d3069;
+  color: #fff;
+}
+
+.from {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+  position: relative;
+}
+.from i {
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+  top: 0;
+}
+
+.price {
+  font-size: 24px;
+  color: #141414;
+  font-weight: bold;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 0;
+}
+.features li {
+  position: relative;
+  font-size: 15px;
+  margin-top: 10px;
+  color: #333;
+}
+.features li i {
+  left: 1px;
+  font-size: 17px;
+  top: 2px;
+  color: #0D3069;
 }
 
 /*

@@ -92,6 +92,12 @@
         width: 21px;
       }
     }
+
+    .btn-menu {
+      color: $white;
+      font-size: 23px;
+      margin-left: 10px;
+    }
   }
 
   @media #{$lg-device, $sm-device} {

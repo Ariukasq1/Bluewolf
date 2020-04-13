@@ -163,25 +163,27 @@
       max-width: 75%;
     }
   }
-  .skill-bar-wrap {
-    .skill-list {
-      li {
-        margin-bottom: 10px;
-        font-weight: 500;
+
+  .skill-list {
+  text-align: justify;
+  padding-left: 20px;
   
-        &:last-child {
-          margin-bottom: 0;
-        }
-        
-        &:before {
-          content: '\f1db';
-          font-family: $fa-icon;
-          font-size: 9px;
-          margin-right: 5px;
-        }
-  
-        
+    li {
+      margin-bottom: 10px;
+      font-weight: 500;
+
+      &:last-child {
+        margin-bottom: 0;
       }
+      
+      &:before {
+        content: '\f1db';
+        font-family: $fa-icon;
+        font-size: 9px;
+        margin-right: 5px;
+      }
+
+      
     }
   }
 
@@ -226,7 +228,8 @@ figure.wp-block-table {
   
   td {
 		border: 0px solid #AAAAAA;
-		padding: 9px 9px;
+    padding: 9px 9px;
+    text-align: justify;
 	}
   
   th {
@@ -239,9 +242,10 @@ figure.wp-block-table {
       font-size: 14px;
       
       &:first-child {
-        width: 100px;
+        width: 150px;
         text-align: end;
         font-weight: 600;
+        text-transform: uppercase;
       }
 		}
 	}
