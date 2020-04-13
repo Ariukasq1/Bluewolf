@@ -2150,7 +2150,7 @@ blockquote-title, .blockquote-title {
 }
 .icon-box-item .icon-box__icon {
   text-align: center;
-  margin-right: 0px;
+  margin-right: 15px;
   margin-top: 0px;
   flex-basis: 50px;
   width: 50px;
