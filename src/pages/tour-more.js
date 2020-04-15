@@ -50,7 +50,7 @@ export default class extends React.Component {
 
     const { content, cover_image, price, theme, duration, group_size, intro_text, why_choose_this_tour } = post.acf;
 
-    const disqusShortname = "erxes-inc";
+    const disqusShortname = "bluewolftravel";
     const disqusConfig = {
       url,
       identifier: post.slug,
