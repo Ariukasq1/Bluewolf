@@ -9,6 +9,8 @@ import { prefixer, getData } from '../utils';
 import Config from "../config";
 import WPAPI from 'wpapi';
 import { withRouter } from 'next/router';
+import BrandLogo from '../components/BrandLogo';
+import BlueWolfBook from '../components/BlueWolfBook';
 import TourSidebar from '../components/TourSidebar';
 import Layout from '../components/Layout';
 
@@ -139,6 +141,8 @@ class Category extends React.Component {
 
             <TourSidebar />
           </PageWrapper>
+          <BrandLogo />
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />

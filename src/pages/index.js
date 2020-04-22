@@ -11,6 +11,7 @@ import BlueWolfBook from "../components/BlueWolfBook";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import Destination from '../components/Destination';
+import Head from 'next/head';
 
 export default function Home() {
   return (

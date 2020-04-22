@@ -20,6 +20,7 @@
       li {
         margin-bottom: 10px;
         font-weight: 500;
+        color: #666;
   
         &:last-child {
           margin-bottom: 0;
@@ -28,9 +29,9 @@
         &:before {
           content: '\f00c';
           font-family: $fa-icon;
-          font-size: 10px;
+          font-size: 11px;
           margin-right: 9px;
-          color: green($color: #065818);
+          color: #2fbf1e;
         }   
       }
     }
@@ -49,114 +50,8 @@
   }
 }
 
-.tour-desc {
-  h2 {
-    @include font-size(32px);
-    margin-bottom: 8px;
-  }
-
-  h5 {
-    opacity: 0.8;
-    font-size: 16px;
-    line-height: 1;
-    font-weight: 500;
-    margin-bottom: 25px;
-  }
-
-  .intro-list {
-    li {
-      margin-bottom: 10px;
-      font-weight: 500;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-      
-      &:before {
-        content: '\f00c';
-        font-family: $fa-icon;
-        font-size: 10px;
-        margin-right: 9px;
-      }
-    }
-  }
-
-  .not-include-list {
-    li {
-      margin-bottom: 10px;
-      font-weight: 500;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-      
-      &:before {
-        content: '\f00d';
-        font-family: $fa-icon;
-        font-size: 10px;
-        margin-right: 9px;
-      }
-
-      
-    }
-  }
-}
-
-.tour-social-icons {
-  display: flex;
-
-  a {
-    color: $white;
-    display: block;
-    font-size: 18px;
-    text-align: center;
-    line-height: 40px;
-    height: 40px;
-    width: 50px;
-
-    &.facebook {
-      background-color: $facebook;
-    }
-
-    &.twitter {
-      background-color: $twitter;
-    }
-
-    &.linkedin {
-      background-color: $linkedin;
-    }
-
-    &.reddit {
-      background-color: $reddit;
-    }
-
-    &.pinterest {
-      background-color: $pinterest;
-    }
-  }
-}
-
-.contact-info {
-  p {
-    position: relative;
-    padding: 10px 0 10px 200px;
-
-    strong {
-      position: absolute;
-      width: 160px;
-      padding: 10px 0 10px 0;
-      left: 0;
-      top: 0;
-    }
-  }
-}
-
 .mem-achieve-item {
   margin-top: 50px;
-
-  h4 {
-    font-weight: 600;
-  }
 
   .skill-bar-wrap, .history-content-wrap {
     @media #{$xl-device} {
@@ -167,6 +62,8 @@
   .skill-list {
   text-align: justify;
   padding-left: 20px;
+  font-size: 16px;
+  color: #203047;
   
     li {
       margin-bottom: 10px;
@@ -179,11 +76,9 @@
       &:before {
         content: '\f1db';
         font-family: $fa-icon;
-        font-size: 9px;
+        font-size: 14px;
         margin-right: 5px;
-      }
-
-      
+      }   
     }
   }
 
@@ -216,20 +111,117 @@
   }
 }
 
-.inclusion {
-  margin-left:180px;
+.tour-details-top {
+  display: flex;
+  font-size: 16px;
+	justify-content: space-between;
+  position: relative;
+  
+  .tour-desc {
+    h2 {
+      @include font-size(32px);
+      margin-bottom: 8px;
+    }
+  
+    h5 {
+      opacity: 0.8;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+  
+    .intro-list {
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &:before {
+          content: '\f00c';
+          font-family: $fa-icon;
+          margin-right: 9px;
+          color: #2fbf1e;
+        }
+      }
+    }
+  
+    .not-include-list {
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &:before {
+          content: '\f00d';
+          font-family: $fa-icon;
+          margin-right: 9px;
+          color: $red;
+        }
+  
+        
+      }
+    }
+  }  
+
+  .contact-info {
+    p { 
+      position: relative;
+      text-align: left;
+
+      strong {
+        position: absolute;
+        width: 160px;
+        padding: 0px 0 10px 0;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    strong {
+      position: relative;
+      width: 160px;
+      padding: 10px 0 10px 0;
+      left: 0;
+      top: 0;
+      color: #203047;
+    }
+
+    span {
+      padding: 10px 0 10px 200px;
+      color: #203047;
+    }
+
+    ul {
+      position: relative;
+      padding: 0px 0 10px 100px;
+      color: #203047;
+    }
+  }
+
+  .sticky-content { 
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 125px;
+  }
 }
 
 figure.wp-block-table {
 	background-color: #FFFFFF;
-	width: 100%;
+  width: 100%;
 	text-align: left;
 	border-collapse: collapse;
   
   td {
-		border: 0px solid #AAAAAA;
     padding: 9px 9px;
     text-align: justify;
+    color: #203047;
 	}
   
   th {
@@ -239,13 +231,14 @@ figure.wp-block-table {
   
   tbody {
 		td {
-      font-size: 14px;
+      font-size: 16px;
       
       &:first-child {
-        width: 150px;
-        text-align: end;
+        width: 100px;
+        text-align: start;
         font-weight: 600;
         text-transform: uppercase;
+        color: #0D3069;
       }
 		}
 	}

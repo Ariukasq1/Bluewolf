@@ -7,8 +7,8 @@ import axios from 'axios';
 import Config from "../config";
 
 const settings = {
-  slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToShow: 2,
+  slidesToScroll: 2,
   arrows: false,
   autoplay: false,
   dots: true,

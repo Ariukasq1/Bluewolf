@@ -84,7 +84,7 @@
   {
     "id": 6,
     "title": "About us",
-    "link": "/about",
+    "link": "#",
     "megaMenu": false,
     "subMenu": [
       {

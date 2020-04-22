@@ -45,6 +45,7 @@ class BlogContent extends Component {
     const paginate = currentPage => this.setState({
       currentPage: currentPage
     });
+
     return (
       <div className={this.props.cols + ' ' + this.props.classes}>
         <Fragment>

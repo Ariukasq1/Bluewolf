@@ -70,46 +70,55 @@ export default class extends React.Component {
           <PageWrapper classes={'tour-details-wrapper sm-top'}>
             <div className="col-12">
               <div className="tour-details-top">
-                <div className="row">
-                  <div className="col-md-8 ml-auto">
-                    <div className="tour-desc">
-                      <h2><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h2>
-                      <div className="contact-info mt-30">
-                        {theme ? <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p> : ''}
+                <div className="col-md-8 ml-auto">
+                  <div className="tour-desc">
+                    <h2><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h2>
+                    <div className="contact-info mt-30">
+                      {theme ? <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p> : ''}
+                      <hr />
+                      {price ? <p><strong>From</strong> <span>{price}</span></p> : ''}
+                      <hr />
+                      {group_size ? <p><strong>Group size</strong><span>{group_size}</span></p> : ''
+                      }
+                      <hr />
+                      {duration ? <p><strong>Duration</strong> <span>{duration}</span></p> : ''}
+                      <hr />
+                      <p><strong>Intro text</strong></p>
+                      <List classes="intro-list">
+                        <div dangerouslySetInnerHTML={{ __html: intro_text }} />
+                      </List>
+                      <hr />
+                      <p><strong>Why choose this tour</strong>
+                      </p>
+                      <List classes="intro-list">
+                        <div dangerouslySetInnerHTML={{ __html: why_choose_this_tour }} />
+                      </List>
+                      <hr />
+                      <p><strong>Services included</strong>
+                      </p>
+                      <List classes="intro-list">
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.price_included }} />
+                      </List>
+                      <hr />
+                      <p><strong>Services not included</strong>
+                      </p>
+                      <List classes="not-include-list">
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.not_include }} />
+                      </List>
+                      <div className="col-xl-6 m-auto text-center">
+                        <div className="tour-education mem-achieve-item">
+                          <SectionTitle
+                            heading={'TOUR ITINERARY'}
+                          />
+                        </div>
                         <hr />
-                        {price ? <p><strong>From</strong> {price}</p> : ''}
-                        <hr />
-                        {group_size ? <p><strong>Group size</strong>{group_size}</p> : ''
-                        }
-                        <hr />
-                        {duration ? <p><strong>Duration</strong> {duration}</p> : ''}
-                        <hr />
-                        <p><strong>Intro text</strong>
-                          <List classes="intro-list">
-                            <div dangerouslySetInnerHTML={{ __html: intro_text }} />
-                          </List></p>
-                        <hr />
-                        <p><strong>Why choose this tour</strong>
-                          <List classes="intro-list">
-                            <div dangerouslySetInnerHTML={{ __html: why_choose_this_tour }} />
-                          </List>
-                        </p>
-                        <hr />
-                        <p><strong>Services included</strong>
-                          <List classes="intro-list">
-                            <div dangerouslySetInnerHTML={{ __html: post.acf.price_included }} />
-                          </List>
-                        </p>
-                        <hr />
-                        <p><strong>Services not included</strong>
-                          <List classes="not-include-list">
-                            <div dangerouslySetInnerHTML={{ __html: post.acf.not_include }} />
-                          </List>
-                        </p>
                       </div>
+                      <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
                     </div>
                   </div>
-                  <div className="col-md-4">
+                </div>
+                <div className="col-md-4">
+                  <div className="sticky-content ">
                     <div className="tour-pic mb-sm-35">
                       <img src={post.acf.image} alt={post.title.rendered} />
                     </div>
@@ -140,31 +149,12 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="tour-details-bottom ul-top">
-                <div className="row mtn-50">
-                  <div className="col-xl-6 m-auto text-center">
-                    <div className="tour-education mem-achieve-item">
-                      <SectionTitle
-                        heading={'TOUR ITINERARY'}
-                        text=""
-                      />
-                    </div>
-                    <hr />
-                  </div>
-                  <div className="col-10">
-                    <div className="education-content-wrap mt-30">
-                      <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div className="tour-details-middle ul-top">
                 <div className="row mtn-30">
                   <div className="col-xl-6 m-auto text-center">
                     <div className="tour-education mem-achieve-item">
                       <SectionTitle
                         heading={'PRACTICAL INFORMATION'}
-                        text=""
                       />
                     </div>
                     <hr />
@@ -183,7 +173,7 @@ export default class extends React.Component {
                   <div className="col-12">
                     <div className="col-xl-6 m-auto text-center">
                       <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
-                        <a className='btn btn-primary'><i className="fa fa-star"></i> Book now
+                        <a className='btn btn-brand'><i className="fa fa-star"></i> Book now
                        </a>
                       </Link>
                     </div>

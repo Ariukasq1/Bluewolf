@@ -136,9 +136,11 @@ h6, .h6 {
 /* Paragraph Margin */
 p {
   margin-bottom: 15px;
+  text-align: justify;
 
   &:last-child {
     margin-bottom: 0;
+    text-align: justify;
   }
 }
 

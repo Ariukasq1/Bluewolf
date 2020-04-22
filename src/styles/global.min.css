@@ -1153,9 +1153,11 @@ h6, .h6 {
 /* Paragraph Margin */
 p {
   margin-bottom: 15px;
+  text-align: justify;
 }
 p:last-child {
   margin-bottom: 0;
+  text-align: justify;
 }
 
 ul {
@@ -2636,6 +2638,7 @@ blockquote-title, .blockquote-title {
 .post-content-wrapper .post-item .intro-list li {
   margin-bottom: 10px;
   font-weight: 500;
+  color: #666;
 }
 .post-content-wrapper .post-item .intro-list li:last-child {
   margin-bottom: 0;
@@ -2643,9 +2646,9 @@ blockquote-title, .blockquote-title {
 .post-content-wrapper .post-item .intro-list li:before {
   content: "";
   font-family: "FontAwesome";
-  font-size: 10px;
+  font-size: 11px;
   margin-right: 9px;
-  color: 88;
+  color: #2fbf1e;
 }
 .post-content-wrapper.post-list .post-item .post-content {
   padding-top: 25px;
@@ -2657,94 +2660,8 @@ blockquote-title, .blockquote-title {
   }
 }
 
-.tour-desc h2 {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-@media (max-width: 1200px) {
-  .tour-desc h2 {
-    font-size: calc(1.325rem + 0.9vw);
-  }
-}
-.tour-desc h5 {
-  opacity: 0.8;
-  font-size: 16px;
-  line-height: 1;
-  font-weight: 500;
-  margin-bottom: 25px;
-}
-.tour-desc .intro-list li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.tour-desc .intro-list li:last-child {
-  margin-bottom: 0;
-}
-.tour-desc .intro-list li:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 10px;
-  margin-right: 9px;
-}
-.tour-desc .not-include-list li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.tour-desc .not-include-list li:last-child {
-  margin-bottom: 0;
-}
-.tour-desc .not-include-list li:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 10px;
-  margin-right: 9px;
-}
-
-.tour-social-icons {
-  display: flex;
-}
-.tour-social-icons a {
-  color: #FFFFFF;
-  display: block;
-  font-size: 18px;
-  text-align: center;
-  line-height: 40px;
-  height: 40px;
-  width: 50px;
-}
-.tour-social-icons a.facebook {
-  background-color: #3B5999;
-}
-.tour-social-icons a.twitter {
-  background-color: #1DA1F2;
-}
-.tour-social-icons a.linkedin {
-  background-color: #0077B5;
-}
-.tour-social-icons a.reddit {
-  background-color: #FF4500;
-}
-.tour-social-icons a.pinterest {
-  background-color: #CB2028;
-}
-
-.contact-info p {
-  position: relative;
-  padding: 10px 0 10px 200px;
-}
-.contact-info p strong {
-  position: absolute;
-  width: 160px;
-  padding: 10px 0 10px 0;
-  left: 0;
-  top: 0;
-}
-
 .mem-achieve-item {
   margin-top: 50px;
-}
-.mem-achieve-item h4 {
-  font-weight: 600;
 }
 @media only screen and (min-width: 1200px) {
   .mem-achieve-item .skill-bar-wrap, .mem-achieve-item .history-content-wrap {
@@ -2754,6 +2671,8 @@ blockquote-title, .blockquote-title {
 .mem-achieve-item .skill-list {
   text-align: justify;
   padding-left: 20px;
+  font-size: 16px;
+  color: #203047;
 }
 .mem-achieve-item .skill-list li {
   margin-bottom: 10px;
@@ -2765,7 +2684,7 @@ blockquote-title, .blockquote-title {
 .mem-achieve-item .skill-list li:before {
   content: "";
   font-family: "FontAwesome";
-  font-size: 9px;
+  font-size: 14px;
   margin-right: 5px;
 }
 .mem-achieve-item .skill {
@@ -2791,8 +2710,87 @@ blockquote-title, .blockquote-title {
   }
 }
 
-.inclusion {
-  margin-left: 180px;
+.tour-details-top {
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  position: relative;
+}
+.tour-details-top .tour-desc h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+@media (max-width: 1200px) {
+  .tour-details-top .tour-desc h2 {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+}
+.tour-details-top .tour-desc h5 {
+  opacity: 0.8;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.tour-details-top .tour-desc .intro-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.tour-details-top .tour-desc .intro-list li:last-child {
+  margin-bottom: 0;
+}
+.tour-details-top .tour-desc .intro-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  margin-right: 9px;
+  color: #2fbf1e;
+}
+.tour-details-top .tour-desc .not-include-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.tour-details-top .tour-desc .not-include-list li:last-child {
+  margin-bottom: 0;
+}
+.tour-details-top .tour-desc .not-include-list li:before {
+  content: "";
+  font-family: "FontAwesome";
+  margin-right: 9px;
+  color: #e74c3c;
+}
+.tour-details-top .contact-info p {
+  position: relative;
+  text-align: left;
+}
+.tour-details-top .contact-info p strong {
+  position: absolute;
+  width: 160px;
+  padding: 0px 0 10px 0;
+  left: 0;
+  top: 0;
+}
+.tour-details-top .contact-info strong {
+  position: relative;
+  width: 160px;
+  padding: 10px 0 10px 0;
+  left: 0;
+  top: 0;
+  color: #203047;
+}
+.tour-details-top .contact-info span {
+  padding: 10px 0 10px 200px;
+  color: #203047;
+}
+.tour-details-top .contact-info ul {
+  position: relative;
+  padding: 0px 0 10px 100px;
+  color: #203047;
+}
+.tour-details-top .sticky-content {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 125px;
 }
 
 figure.wp-block-table {
@@ -2802,22 +2800,23 @@ figure.wp-block-table {
   border-collapse: collapse;
 }
 figure.wp-block-table td {
-  border: 0px solid #AAAAAA;
   padding: 9px 9px;
   text-align: justify;
+  color: #203047;
 }
 figure.wp-block-table th {
   border: 0px solid #AAAAAA;
   padding: 9px 9px;
 }
 figure.wp-block-table tbody td {
-  font-size: 14px;
+  font-size: 16px;
 }
 figure.wp-block-table tbody td:first-child {
-  width: 150px;
-  text-align: end;
+  width: 100px;
+  text-align: start;
   font-weight: 600;
   text-transform: uppercase;
+  color: #0D3069;
 }
 
 /*===========================

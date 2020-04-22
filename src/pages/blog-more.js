@@ -7,6 +7,9 @@ import CallToAction from "../components/CallToAction";
 import Share from "../components/Share";
 import Config from "../config";
 import WPAPI from 'wpapi';
+import Disqus from "disqus-react";
+import BrandLogo from '../components/BrandLogo';
+import BlueWolfBook from '../components/BlueWolfBook';
 import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer } from "../utils";
 import SidebarList from '../components/Blog/SidebarList';
@@ -44,6 +47,13 @@ export default class extends React.Component {
 
     const { content, cover_image } = post.acf;
 
+    const disqusShortname = "bluewolftravel";
+    const disqusConfig = {
+      url,
+      identifier: post.slug,
+      title: post.title.rendered
+    }
+
     return (
       <>
         <Layout>
@@ -70,8 +80,16 @@ export default class extends React.Component {
                   </div>
                 </div>
               </article>
+              <div className='ul-top'>
+                <Disqus.DiscussionEmbed
+                  shortname={disqusShortname}
+                  config={disqusConfig}
+                />
+              </div>
             </div>
           </PageWrapper>
+          <BrandLogo />
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />
