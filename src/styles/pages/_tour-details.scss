@@ -4,11 +4,21 @@
 .post-content-wrapper {
   .post-item {
     .post-thumb{
+
       img{
         object-fit: cover;
         height: 300px;
         width: 100%;
       }
+
+      .discount {
+        position: absolute;
+        background-color: #0D3069;
+        padding: 8px 15px 8px 12px;
+        margin-top: 5px;
+        z-index:2;
+        color: #fff;
+      } 
     }
 
     .post-content {

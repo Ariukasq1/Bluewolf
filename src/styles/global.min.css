@@ -2631,6 +2631,14 @@ blockquote-title, .blockquote-title {
   height: 300px;
   width: 100%;
 }
+.post-content-wrapper .post-item .post-thumb .discount {
+  position: absolute;
+  background-color: #0D3069;
+  padding: 8px 15px 8px 12px;
+  margin-top: 5px;
+  z-index: 2;
+  color: #fff;
+}
 .post-content-wrapper .post-item .post-content {
   padding-top: 35px;
   padding-bottom: 30px;
@@ -3527,15 +3535,27 @@ Start Comment Area Wrapper
 }
 .service-item .service-thumb h4 {
   position: absolute;
+  text-align: start;
+  padding-left: 10px;
   top: 10px;
-  right: -11px;
+  font-weight: 600;
+  font-size: 18px;
+  right: -10px;
   background: url(../public/images/price.png) no-repeat center center;
   color: #ffa406;
-  width: 108px;
+  width: 100px;
   height: 41px;
   line-height: 32px;
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+.service-item .service-thumb .discount {
+  position: absolute;
+  background-color: #0D3069;
+  padding: 8px 15px 8px 12px;
+  margin-top: 5px;
+  z-index: 2;
+  color: #fff;
 }
 .service-item .service-content {
   background-color: rgba(13, 48, 105, 0.95);

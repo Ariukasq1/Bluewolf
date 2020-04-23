@@ -73,6 +73,7 @@ class Category extends React.Component {
                     <div key={post.id} className='col-md-6'>
                       <div className="post-item">
                         <figure className="post-thumb">
+                          {post.acf.discount ? <span className="discount">{post.acf.discount} </span> : ''}
                           <Link href={prefixer(`/tour-more/${post.slug}`)}>
                             <a>
                               <img src={getData(post._embedded, 'image')} alt={post.title} />

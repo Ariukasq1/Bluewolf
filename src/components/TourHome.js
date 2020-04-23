@@ -56,6 +56,7 @@ export default class TourHome extends React.Component {
                   <div key={post.slug} className="col-md-6 col-lg-4">
                     <div className="service-item">
                       <figure className="service-thumb">
+                        {post.acf.discount ? <span className="discount">{post.acf.discount} </span> : ''}
                         <Link href={prefixer(`/tour-more/${post.slug}`)}>
                           <a>
                             <img src={getData(post._embedded, 'image')} alt={post.title} />
