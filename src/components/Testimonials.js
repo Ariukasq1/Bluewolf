@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
 import { prefixer, getData } from '../utils';
-import Config from "../config";
+import { LanguageConsumer } from './LanguageContext';
 import axios from 'axios';
 
 const settings = {
@@ -19,7 +19,7 @@ const settings = {
     }
   ]
 }
-export default class Testimonials extends React.Component {
+class Testimonials extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,13 +28,15 @@ export default class Testimonials extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=testimonials`)
+  getData = () => {
+    const { apiUrl } = this.props;
+
+    axios.get(`${apiUrl}/wp/v2/categories?slug=testimonials`)
       .then(res => {
         const categories = res.data;
 
         if (categories && categories.length > 0) {
-          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+          axios.get(`${apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => this.setState({
               posts: res.data
             }))
@@ -43,6 +45,16 @@ export default class Testimonials extends React.Component {
       })
       .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    this.getData()
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.apiUrl !== prevProps.apiUrl) {
+      this.getData()
+    }
+  }
 
   render() {
     const { posts } = this.state;
@@ -88,3 +100,8 @@ export default class Testimonials extends React.Component {
     );
   }
 }
+
+export default (props) => (
+  <LanguageConsumer>
+    {({ apiUrl }) => (<Testimonials {...props} apiUrl={apiUrl} />)}
+  </LanguageConsumer>);

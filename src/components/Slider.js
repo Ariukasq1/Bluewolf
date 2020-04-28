@@ -51,11 +51,11 @@ class Slider extends React.Component {
 
         if (categories && categories.length > 0) {
           axios.get(`${apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
-            .then(res => {
+            .then(res =>
               this.setState({
                 posts: res.data
               })
-            })
+            )
             .catch(err => console.log(err));
         }
 
@@ -105,7 +105,7 @@ class Slider extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default (props) => (
   <LanguageConsumer>
