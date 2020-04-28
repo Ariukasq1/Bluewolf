@@ -4,6 +4,7 @@ import { prefixer, getData } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
 import Config from "../config";
+import { LanguageConsumer } from './LanguageContext';
 
 export default class Festival extends React.Component {
   constructor(props) {
@@ -14,21 +15,38 @@ export default class Festival extends React.Component {
     };
   }
 
-  componentDidMount() {
+  getData = () => {
+    const { apiUrl } = this.props;
+    console.log('apiUrl: ', apiUrl);
     axios.get(`${Config().apiUrl}/wp/v2/categories?slug=festivals`)
       .then(res => {
         const categories = res.data;
+        console.log('category', res.data);
 
         if (categories && categories.length > 0) {
           axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
-            .then(res => this.setState({
-              posts: res.data
-            }))
+            .then(res => {
+              console.log('data: ', res.data)
+              this.setState({
+                posts: res.data
+
+              })
+            })
             .catch(err => console.log(err));
         }
       })
       .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    this.getData()
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.apiUrl !== prevProps.apiUrl) {
+      this.getData()
+    }
+  }
 
   render() {
     const { posts } = this.state;
@@ -67,3 +85,8 @@ export default class Festival extends React.Component {
     );
   }
 }
+
+export default (props) => (
+  <LanguageConsumer>
+    {({ apiUrl }) => (<Festival {...props} apiUrl={apiUrl} />)}
+  </LanguageConsumer>);

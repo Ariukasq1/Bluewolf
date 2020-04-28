@@ -11,7 +11,7 @@ import WPAPI from 'wpapi';
 import { withRouter } from 'next/router';
 import BrandLogo from '../components/BrandLogo';
 import BlueWolfBook from '../components/BlueWolfBook';
-import TourSidebar from '../components/TourSidebar';
+import TourSidebar from '../components/Tour/TourSidebar';
 import Layout from '../components/Layout';
 
 const wp = new WPAPI({ endpoint: Config().apiUrl });

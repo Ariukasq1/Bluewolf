@@ -15,7 +15,7 @@ export default function Tours() {
         <PageHeader
           bgImg={prefixer('/images/default.jpg')}
           title={'Destinations'}
-          content={'Businex always try to provide the best Business Solutions for Clients to grow up their Business very sharply and smoothly.'}
+          content={''}
         />
         <Destination />
         <BrandLogo />

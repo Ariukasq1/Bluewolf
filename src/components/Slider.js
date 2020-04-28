@@ -42,20 +42,16 @@ class Slider extends React.Component {
     };
   }
 
-  getPosts = () => {
+  getData = () => {
     const { apiUrl } = this.props;
-
-    console.log('apiUrl: ', apiUrl);
 
     axios.get(`${apiUrl}/wp/v2/categories?slug=sliders`)
       .then(res => {
         const categories = res.data;
-        console.log('category', res.data);
 
         if (categories && categories.length > 0) {
           axios.get(`${apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => {
-              console.log('res data: ', res.data)
               this.setState({
                 posts: res.data
               })
@@ -68,12 +64,12 @@ class Slider extends React.Component {
   }
 
   componentDidMount() {
-    this.getPosts()
+    this.getData()
   };
 
   componentDidUpdate(prevProps) {
     if (this.props.apiUrl !== prevProps.apiUrl) {
-      this.getPosts()
+      this.getData()
     }
   }
 
