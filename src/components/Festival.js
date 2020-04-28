@@ -16,7 +16,7 @@ class Festival extends React.Component {
 
   getData = () => {
     const { apiUrl } = this.props;
-    console.log('apiUrl: ', apiUrl);
+
     axios.get(`${apiUrl}/wp/v2/categories?slug=festivals`)
       .then(res => {
         const categories = res.data;

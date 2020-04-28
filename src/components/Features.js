@@ -1,7 +1,7 @@
 import React from 'react';
 import { getData } from '../utils';
 import axios from 'axios';
-import Config from "../config";
+import { LanguageConsumer } from './LanguageContext';
 
 class Features extends React.Component {
   constructor(props) {
@@ -12,13 +12,15 @@ class Features extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=features`)
+  getData = () => {
+    const { apiUrl } = this.props;
+
+    axios.get(`${apiUrl}/wp/v2/categories?slug=features`)
       .then(res => {
         const categories = res.data;
 
         if (categories && categories.length > 0) {
-          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+          axios.get(`${apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => this.setState({
               posts: res.data
             }))
@@ -27,6 +29,16 @@ class Features extends React.Component {
       })
       .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    this.getData()
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.apiUrl !== prevProps.apiUrl) {
+      this.getData()
+    }
+  }
 
   render() {
     const { posts } = this.state;
@@ -59,4 +71,7 @@ class Features extends React.Component {
   }
 }
 
-export default Features;
+export default (props) => (
+  <LanguageConsumer>
+    {({ apiUrl }) => (<Features {...props} apiUrl={apiUrl} />)}
+  </LanguageConsumer>);

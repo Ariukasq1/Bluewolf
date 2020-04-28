@@ -16,6 +16,7 @@
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
     "disqus-react": "^1.0.7",
     "express": "^4.17.1",
     "fontawesome-4.7": "^4.7.0",
