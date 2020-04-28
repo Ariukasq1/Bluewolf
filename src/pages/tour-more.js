@@ -16,6 +16,7 @@ import Link from "next/link";
 import Config from "../config";
 import { prefixer } from '../utils';
 import WPAPI from 'wpapi';
+import RelatedTours from '../components/Tour/RelatedTours';
 
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
@@ -180,6 +181,7 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
+              <RelatedTours perPage={3} />
               <div className='ul-top'>
                 <Disqus.DiscussionEmbed
                   shortname={disqusShortname}

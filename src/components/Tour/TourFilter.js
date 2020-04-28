@@ -1,10 +1,10 @@
 import React from 'react';
-import SidebarItem from "./Sidebar/SidebarItem";
-import List from "../UI/List";
+import SidebarItem from "../Sidebar/SidebarItem";
+import List from "../../UI/List";
 import axios from 'axios';
-import Loader from "./Loader";
+import Loader from "../Loader";
 import { withRouter } from 'next/router';
-import Config from "../config";
+import Config from "../../config";
 
 class TourFilter extends React.Component {
   constructor(props) {

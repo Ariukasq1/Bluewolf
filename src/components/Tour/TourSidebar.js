@@ -1,9 +1,9 @@
 import React from 'react';
 import TourFilter from './TourFilter';
-import Sidebar from './Sidebar';
-import Loader from "./Loader";
+import Sidebar from '../Sidebar';
+import Loader from "../Loader";
 import axios from 'axios';
-import Config from "../config";
+import Config from "../../config";
 
 
 class TourSidebar extends React.Component {

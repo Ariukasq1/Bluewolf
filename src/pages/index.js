@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Slider from '../components/Slider';
 import Festival from '../components/Festival';
 import Features from '../components/Features';
-import TourHome from '../components/TourHome';
+import TourHome from '../components/Tour/TourHome';
 import Testimonials from "../components/Testimonials";
 import BlogPageContent from "../components/Blog";
 import BrandLogo from "../components/BrandLogo";
@@ -11,7 +11,6 @@ import BlueWolfBook from "../components/BlueWolfBook";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import Destination from '../components/Destination';
-import Head from 'next/head';
 
 export default function Home() {
   return (

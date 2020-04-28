@@ -29,7 +29,7 @@ export default class Testimonials extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/categories?slug=testimonials`)
+    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=testimonials`)
       .then(res => {
         const categories = res.data;
 
