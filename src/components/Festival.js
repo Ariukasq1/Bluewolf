@@ -3,7 +3,6 @@ import Content from "../UI/Content";
 import { prefixer, getData } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
-import Config from "../config";
 import { LanguageConsumer } from './LanguageContext';
 
 class Festival extends React.Component {
@@ -18,18 +17,15 @@ class Festival extends React.Component {
   getData = () => {
     const { apiUrl } = this.props;
     console.log('apiUrl: ', apiUrl);
-    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=festivals`)
+    axios.get(`${apiUrl}/wp/v2/categories?slug=festivals`)
       .then(res => {
         const categories = res.data;
-        console.log('category', res.data);
 
         if (categories && categories.length > 0) {
-          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
+          axios.get(`${apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => {
-              console.log('data: ', res.data)
               this.setState({
                 posts: res.data
-
               })
             })
             .catch(err => console.log(err));
