@@ -4,6 +4,7 @@ import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
+import BlueWolfBook from '../components/BlueWolfBook';
 import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer } from '../utils';
 import Config from "../config";
@@ -59,6 +60,7 @@ class CarRental extends React.Component {
             </div>
             <DestinationSidebar />
           </PageWrapper>
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />

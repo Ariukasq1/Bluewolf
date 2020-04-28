@@ -10,6 +10,8 @@ import LI from "../UI/List/Item";
 import SlickSlider from "../UI/Slick";
 import Config from "../config";
 import WPAPI from 'wpapi';
+import BrandLogo from '../components/BrandLogo';
+import BlueWolfBook from '../components/BlueWolfBook';
 import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer, getData } from "../utils";
 
@@ -81,6 +83,8 @@ export default class extends React.Component {
 
             <AccomoSidebar />
           </PageWrapper>
+          <BrandLogo />
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />

@@ -1,12 +1,9 @@
 import React from 'react';
 import Sidebar from "../Sidebar";
 import SidebarItem from "../Sidebar/SidebarItem";
-import FeaturedBlog from "../FeaturedBlog";
 import Newsletter from "../Newsletter";
-import { prefixer, getData } from '../../utils';
 import Config from "../../config";
 import axios from 'axios';
-import moment from "moment";
 
 class SidebarList extends React.Component {
   constructor(props) {
@@ -18,7 +15,7 @@ class SidebarList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=blog`)
+    axios.get(`${Config().apiUrl}/categories?slug=blog`)
       .then(res => {
         const categories = res.data;
         const perPage = this.props.perPage || 6;
@@ -58,7 +55,6 @@ class SidebarList extends React.Component {
         <SidebarItem classes={'single-sidebar-item-wrap'}>
           <Newsletter />
         </SidebarItem>
-
       </Sidebar >
     );
   };

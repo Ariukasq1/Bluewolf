@@ -8,6 +8,7 @@ import SidebarItem from "../components/Sidebar/SidebarItem";
 import List from "../UI/List";
 import LI from "../UI/List/Item";
 import { prefixer } from '../utils';
+import BlueWolfBook from '../components/BlueWolfBook';
 import { defaultCoverImage } from "../components/layouts/constants";
 import Config from "../config";
 import WPAPI from 'wpapi';
@@ -69,6 +70,7 @@ class WhatToPack extends React.Component {
               </SidebarItem>
             </div>
           </PageWrapper>
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />

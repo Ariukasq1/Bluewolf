@@ -44,22 +44,6 @@ export default function DestinationSidebar(props) {
               </h5>
             </div>
           </div>
-          <div className="destination-item">
-            <figure className="link-pic">
-              <Link href={`${prefixer('/tour-category/russian-altai')}`}>
-                <a>
-                  <img src={prefixer('/images/KhanTengri.jpg')} alt='Mongolia' />
-                </a>
-              </Link>
-            </figure>
-            <div className="tours-info">
-              <h5>
-                <Link href={`${prefixer('/tour-category/russian-altai')}`} >
-                  <a>Russian Altai</a>
-                </Link>
-              </h5>
-            </div>
-          </div>
         </List>
       </div>
     </>

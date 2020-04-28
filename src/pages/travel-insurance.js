@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import BrandLogo from "../components/BrandLogo";
 import BlueWolfBook from "../components/BlueWolfBook";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
@@ -60,7 +59,6 @@ class WhatToPack extends React.Component {
               </div>
             </div>
           </PageWrapper>
-          <BrandLogo />
           <BlueWolfBook classes="sp-top" />
           <CallToAction />
         </Layout >

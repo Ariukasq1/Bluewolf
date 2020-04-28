@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import SlickSlider from "../UI/Slick";
 import Config from "../config";
 import WPAPI from 'wpapi';
+import BlueWolfBook from '../components/BlueWolfBook';
 import { defaultCoverImage } from "../components/layouts/constants";
 import { prefixer, getData } from "../utils";
 import RentCarSidebar from '../components/RentCarSidebar';
@@ -153,6 +154,7 @@ export default class extends React.Component {
             </div>
             <RentCarSidebar />
           </PageWrapper>
+          <BlueWolfBook />
           <CallToAction />
         </Layout >
         <MobileMenu />
