@@ -6,7 +6,7 @@ import axios from 'axios';
 import Config from "../config";
 import { LanguageConsumer } from './LanguageContext';
 
-export default class Festival extends React.Component {
+class Festival extends React.Component {
   constructor(props) {
     super(props);
 
