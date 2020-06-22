@@ -61,7 +61,7 @@ class Slider extends React.Component {
 
       })
       .catch(err => console.log(err));
-  }
+  };
 
   componentDidMount() {
     this.getData()
