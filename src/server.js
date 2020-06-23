@@ -1,6 +1,5 @@
 const express = require('express');
 const next = require('next');
-const cors = require('cors');
 
 // Import middleware.
 const routes = require('./routes');
@@ -17,7 +16,7 @@ app.prepare()
     const server = express();
 
     // Use our handler for requests.
-    server.use(cors, handler);
+    server.use(handler);
 
     // Don't remove. Important for the server to work. Default route.
     server.get('*', (req, res) => {
