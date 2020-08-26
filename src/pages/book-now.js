@@ -23,7 +23,7 @@ function BookNow(props) {
           __html: `
           window.erxesSettings = {
             forms: [{
-              brand_id: "Nsc5xA",
+              brand_id: "7PXBCt",
               form_id: "${form_id}",
             }],
           };
