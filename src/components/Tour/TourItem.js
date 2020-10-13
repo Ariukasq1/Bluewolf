@@ -31,7 +31,7 @@ function TourItem(props) {
         <div className="service-content">
           <div className="service-content-inner">
             <h5>
-              <Link href={prefixer(`/tour-more/${props.slug}`)}>
+              <Link href={prefixer(`/tour-more/${props.id}`)}>
                 <a className="stretched-link">
                   <div
                     dangerouslySetInnerHTML={{

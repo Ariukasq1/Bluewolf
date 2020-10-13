@@ -130,10 +130,9 @@ export default class extends React.Component {
                       <div className='price'>
                         <span>{price ? <p><strong>From</strong> {price}</p> : ''}</span>
                       </div>
-                      <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
-                        <a className='btn btn-brand'><i className="fa fa-star"></i> Book now
+                      <a className='btn btn-brand' href={'https://payment.bluewolftravel.com/plugins/bwp/payment/?form_id=' + post.acf.erxes_form_id + '&obj_id='+ post.slug}>
+                        <i className="fa fa-star"></i> Book now
                        </a>
-                      </Link>
                       <List classes='features li-top'>
                         <LI>
                           <i className='fa fa-tripadvisor'></i> Trip Advisor
