@@ -51,7 +51,8 @@ class FlightContent extends React.Component {
                       <Link href={prefixer('/posts/' + post.slug)}>
                         <a>
                           <h6 className="plan-name">
-                            {post.acf.flight_number}</h6>
+                            {post.slug}
+                            </h6>
                         </a>
                       </Link>
                       <div className="plan-main">

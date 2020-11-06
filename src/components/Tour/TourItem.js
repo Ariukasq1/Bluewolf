@@ -7,7 +7,7 @@ import Link from "next/link";
 function TourItem(props) {
 
   return (
-    <div key={props.key} className="col-md-6 col-lg-4">
+    <div key={props.price} className="col-md-6 col-lg-4">
       <div className="service-item">
         <figure className="service-thumb">
           {props.discount ? <span className="discount">{props.discount} </span> : ''}
@@ -31,7 +31,7 @@ function TourItem(props) {
         <div className="service-content">
           <div className="service-content-inner">
             <h5>
-              <Link href={prefixer(`/tour-more/${props.id}`)}>
+              <Link href={prefixer(`/tour-more/${props.slug}`)}>
                 <a className="stretched-link">
                   <div
                     dangerouslySetInnerHTML={{

@@ -21,8 +21,9 @@ export default function Contact() {
           var script = document.createElement('script');
           script.src = "https://bluewolf.app.erxes.io/widgets/build/formWidget.bundle.js";
           script.async = true;
-        
+          console.log("com2",script)
           var entry = document.getElementsByTagName('script')[0];
+          console.log("com1",entry);
           entry.parentNode.insertBefore(script, entry);
         })();` }} />
       </Head>

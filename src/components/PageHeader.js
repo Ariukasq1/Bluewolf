@@ -9,7 +9,7 @@ const PageHeader = ({ bgImg, title, content }) => {
             <div className="page-header-content-inner">
               <div className="page-header-content">
                 <h2>{title}</h2>
-                <p>{content}</p>
+                {/* <p>{content}</p> */}
               </div>
             </div>
           </div>

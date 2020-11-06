@@ -35,7 +35,6 @@ class Flight extends React.Component {
 
   render() {
     const { posts } = this.props;
-
     return (
       <>
         <Layout>
@@ -63,7 +62,8 @@ class Flight extends React.Component {
                       <div className="flight-plan-item">
                         <div className="flight-plan-header">
                           <h6 className="plan-name">
-                            {post.acf.flight_number}</h6>
+                            {post.title.rendered}
+                            </h6>
                           <div className="plan-main">
                             <span className="img">
                               {post.acf.logo && <img src={post.acf.logo} alt={post.title} />}

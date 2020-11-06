@@ -7,8 +7,8 @@ import axios from 'axios';
 import Config from "../config";
 
 const settings = {
-  slidesToShow: 2,
-  slidesToScroll: 2,
+  slidesToShow: 1,
+  slidesToScroll: 3,
   arrows: false,
   autoplay: false,
   dots: true,
@@ -40,7 +40,8 @@ class Destination extends React.Component {
     super(props);
 
     this.state = {
-      posts: []
+      posts: [],
+      setting:[],
     };
   }
 
@@ -53,7 +54,15 @@ class Destination extends React.Component {
           axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => this.setState({
               posts: res.data
-            }))
+            }
+          ))
+          .then(()=>{
+
+            if(this.state.posts.length<3){
+              settings.slidesToShow=this.state.posts.length;
+            }
+            this.setState({setting:settings})
+          })
             .catch(err => console.log(err));
         }
       })
@@ -74,13 +83,13 @@ class Destination extends React.Component {
               />
             </div>
             <div className="col-lg-8">
-              <SlickSlider settings={settings}>
+              <SlickSlider settings={this.state.setting}>
                 {posts.map(post => (
                   <div key={post.slug} className="destination-item">
                     <figure className="tours-pic">
                       <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
                         <a>
-                          <img src={post.acf.slider_image} alt={post.title.rendered} />
+                          <img  src={post.acf.slider_image} alt={post.title.rendered}  />
                         </a>
                       </Link>
                     </figure>
