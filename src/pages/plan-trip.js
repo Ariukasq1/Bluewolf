@@ -5,10 +5,10 @@ import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
-import { defaultCoverImage } from "../components/layouts/constants";
+import {defaultCoverImage} from "../components/layouts/constants";
 import List from '../UI/List';
 import Link from 'next/link';
-import { prefixer } from '../utils';
+import {prefixer} from '../utils';
 import Head from 'next/head';
 
 export default function PlanTrip() {
@@ -18,21 +18,21 @@ export default function PlanTrip() {
       <Head>
         <script dangerouslySetInnerHTML={{
           __html: `
-            window.erxesSettings = {
-              forms: [{
-                brand_id: "Nsc5xA",
-                form_id: "ouGSda",
-              }],
-            };
-            
-          (function() {
-            var script = document.createElement('script');
-            script.src = "https://bluewolf.app.erxes.io/widgets/build/formWidget.bundle.js";
-            script.async = true;
+          window.erxesSettings = {
+            forms: [{
+              brand_id: "7PXBCt",
+              form_id: "ouGSda",
+            }],
+          };
           
-            var entry = document.getElementsByTagName('script')[0];
-            entry.parentNode.insertBefore(script, entry);
-          })();` }} />
+        (function() {
+          var script = document.createElement('script');
+          script.src = "https://bluewolf.app.erxes.io/widgets/build/formWidget.bundle.js";
+          script.async = true;
+        
+          var entry = document.getElementsByTagName('script')[0];
+          entry.parentNode.insertBefore(script, entry);
+        })();` }} />
       </Head>
       <Layout>
         <PageHeader
@@ -43,7 +43,7 @@ export default function PlanTrip() {
         <PageWrapper classes="sm-top service-details-wrapper">
           <div className='col-lg-9'>
             <div className="service-details-content">
-              <div data-erxes-embed='ouGSda' style={{ width: '840px', height: '2040px' }}>
+              <div data-erxes-embed='ouGSda' style={{width: '840px',height: '2040px'}}>
               </div>
             </div>
           </div>

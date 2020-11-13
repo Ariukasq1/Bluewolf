@@ -12,7 +12,7 @@ export default function Contact() {
           __html: `
           window.erxesSettings = {
             forms: [{
-              brand_id: "Nsc5xA",
+              brand_id: "7PXBCt",
               form_id: "jQ9v7B",
             }],
           };
@@ -21,9 +21,8 @@ export default function Contact() {
           var script = document.createElement('script');
           script.src = "https://bluewolf.app.erxes.io/widgets/build/formWidget.bundle.js";
           script.async = true;
-          console.log("com2",script)
+        
           var entry = document.getElementsByTagName('script')[0];
-          console.log("com1",entry);
           entry.parentNode.insertBefore(script, entry);
         })();` }} />
       </Head>
@@ -35,7 +34,7 @@ export default function Contact() {
                 <div className="col-lg-8">
                   <div className="contact-form-area contact-method">
                     <h3>Blue Wolf Email Send</h3>
-                    <div data-erxes-embed='jQ9v7B' style={{ width: '500px', height: '300px' }}>
+                    <div data-erxes-embed='jQ9v7B' style={{width: '500px',height: '300px'}}>
                     </div>
                   </div>
                 </div>

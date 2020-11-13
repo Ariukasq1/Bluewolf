@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React,{Fragment} from 'react';
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
 import MobileMenu from "../components/MobileMenu";
@@ -8,11 +8,11 @@ import SlickSlider from "../UI/Slick";
 import Config from "../config";
 import WPAPI from 'wpapi';
 import BlueWolfBook from '../components/BlueWolfBook';
-import { defaultCoverImage } from "../components/layouts/constants";
-import { prefixer, getData } from "../utils";
+import {defaultCoverImage} from "../components/layouts/constants";
+import {prefixer,getData} from "../utils";
 import RentCarSidebar from '../components/RentCarSidebar';
 
-const wp = new WPAPI({ endpoint: Config().apiUrl });
+const wp = new WPAPI({endpoint: Config().apiUrl});
 
 export default class extends React.Component {
   static async getInitialProps(context) {
@@ -27,24 +27,24 @@ export default class extends React.Component {
         return data[0];
       });
 
-    return { post };
+    return {post};
   }
 
   render() {
-    const { post } = this.props;
+    const {post} = this.props;
 
-    if (!post.title) {
+    if(!post.title) {
       return <Error statusCode={404} />;
     }
 
-    const { content, cover_image, max_passenger, car_type, car_door, top_speed, price, cash, gear_box, wheel_position, air_condition, car_engine } = post.acf;
+    const {content,cover_image,max_passenger,car_type,car_door,top_speed,price,cash,gear_box,wheel_position,air_condition,car_engine} = post.acf;
 
     return (
       <Fragment>
         <Layout>
           <PageHeader
             bgImg={cover_image ? cover_image : prefixer('/images' + defaultCoverImage)}
-            title={<div dangerouslySetInnerHTML={{ __html: post.title.rendered }} />}
+            title={<div dangerouslySetInnerHTML={{__html: post.title.rendered}} />}
             content={content ? content : ''}
           />
 
@@ -57,7 +57,7 @@ export default class extends React.Component {
                     arrows: true,
                     dots: true
                   }}>
-                    <img src={getData(post._embedded, 'image')} />
+                    <img src={getData(post._embedded,'image')} />
                   </SlickSlider>
                 </div>
                 <div className="car-rental-more mt-50 mt-sm-35">

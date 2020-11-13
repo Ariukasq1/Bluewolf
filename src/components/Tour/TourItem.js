@@ -1,11 +1,10 @@
 import React from 'react';
 import List from '../../UI/List';
 import LI from '../../UI/List/Item';
-import { prefixer } from '../../utils';
+import {prefixer} from '../../utils';
 import Link from "next/link";
 
 function TourItem(props) {
-
   return (
     <div key={props.price} className="col-md-6 col-lg-4">
       <div className="service-item">

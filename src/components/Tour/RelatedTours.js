@@ -3,7 +3,7 @@ import SectionTitle from "../../UI/SectionTitle";
 import Config from "../../config";
 import axios from 'axios';
 import TourItem from './TourItem';
-import { getData } from '../../utils';
+import {getData} from '../../utils';
 
 export default class RelatedTours extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export default class RelatedTours extends React.Component {
         const categories = res.data;
         const perPage = this.props.perPage || 6;
 
-        if (categories && categories.length > 0) {
+        if(categories && categories.length > 0) {
           axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}&per_page=${perPage}`)
             .then(res => this.setState({
               posts: res.data
@@ -32,8 +32,7 @@ export default class RelatedTours extends React.Component {
   };
 
   render() {
-    const { posts } = this.state;
-
+    const {posts} = this.state;
     return (
       <div className="related-service-area sm-top-wt">
         <div className="container">
@@ -51,13 +50,14 @@ export default class RelatedTours extends React.Component {
                 <TourItem
                   key={post.slug}
                   id={post.slug}
+                  slug={post.slug}
                   title={post.title.rendered}
                   discount={post.acf.discount}
                   price={post.acf.price}
                   theme={post.acf.theme}
                   duration={post.acf.duration}
                   groupSize={post.acf.group_size}
-                  thumb={getData(post._embedded, 'image')}
+                  thumb={getData(post._embedded,'image')}
                 />
               ))
             }

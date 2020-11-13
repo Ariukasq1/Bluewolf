@@ -9,7 +9,7 @@ function RentCarSidebar() {
           __html: `
           window.erxesSettings = {
             forms: [{
-              brand_id: "Nsc5xA",
+              brand_id: "7PXBCt",
               form_id: "pPJbq8",
             }],
           };
@@ -26,7 +26,7 @@ function RentCarSidebar() {
       </Head>
       <div className='col-lg-4'>
         <div className="service-details-content">
-          <div data-erxes-embed='pPJbq8' style={{ width: '330px', height: '720px' }}></div>
+          <div data-erxes-embed='pPJbq8' style={{width: '330px',height: '720px'}}></div>
         </div>
       </div>
     </>
