@@ -3067,6 +3067,44 @@ only screen and (min-width: 992px) and (max-width: 1199.98px) {
   color: #e74c3c;
 }
 
+.tour-details-top .days {
+  padding: 20px 0;
+}
+
+.tour-details-top #collapse-main>.collapse-item {
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.tour-details-top #collapse-main>.collapse-item .arrow {
+  transition: .3s transform ease-in-out;
+}
+
+.tour-details-top #collapse-main>.collapse-item[aria-expanded="true"] .arrow {
+  transform: rotate(90deg);
+}
+
+.tour-details-top #collapse-main>.collapse-item:hover,
+.tour-details-top #collapse-main>.collapse-item[aria-expanded="true"] {
+  color: #0D3069;
+}
+
+.tour-details-top #collapse-main .collapse-item .collapse-name {
+  width: 100%;
+  display: flex;
+}
+
+.tour-details-top #collapse-main .collapse-item .collapse-name .day {
+  width: 100%;
+  float: left;
+}
+
+.tour-details-top #collapse-main .collapse-item #collapse {
+  padding: 16px 0px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 16px;
+}
+
 .tour-details-top .contact-info p {
   position: relative;
   text-align: left;
@@ -3759,13 +3797,17 @@ only screen and (min-width: 992px) and (max-width: 1199.98px) {
 }
 
 .slider-area .slick-arrow {
-  color: #222222;
+  color: rgba(255, 255, 255, 0.6);
   position: absolute;
   top: 50%;
   left: 50px;
   transform: translateY(-50%);
   font-size: 70px;
   z-index: 9;
+}
+
+.slider-area .slick-arrow:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -3968,6 +4010,7 @@ only screen and (min-width: 992px) and (max-width: 1199.98px) {
 .service-item .service-thumb img {
   width: 100%;
   height: 300px;
+  object-fit: cover;
 }
 
 .service-item .service-thumb h4 {

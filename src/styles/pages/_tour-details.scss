@@ -3,9 +3,9 @@
 ===========================================*/
 .post-content-wrapper {
   .post-item {
-    .post-thumb{
+    .post-thumb {
 
-      img{
+      img {
         object-fit: cover;
         height: 300px;
         width: 100%;
@@ -16,9 +16,9 @@
         background-color: #0D3069;
         padding: 8px 15px 8px 12px;
         margin-top: 5px;
-        z-index:2;
+        z-index: 2;
         color: #fff;
-      } 
+      }
     }
 
     .post-content {
@@ -31,18 +31,18 @@
         margin-bottom: 10px;
         font-weight: 500;
         color: #666;
-  
+
         &:last-child {
           margin-bottom: 0;
         }
-        
+
         &:before {
           content: '\f00c';
           font-family: $fa-icon;
           font-size: 11px;
           margin-right: 9px;
           color: #2fbf1e;
-        }   
+        }
       }
     }
   }
@@ -52,6 +52,7 @@
       .post-content {
         padding-top: 25px;
         padding-bottom: 20px;
+
         @media #{$xl-device, $md-device, $lg-device} {
           padding-left: 0;
         }
@@ -63,18 +64,19 @@
 .mem-achieve-item {
   margin-top: 50px;
 
-  .skill-bar-wrap, .history-content-wrap {
+  .skill-bar-wrap,
+  .history-content-wrap {
     @media #{$xl-device} {
       max-width: 75%;
     }
   }
 
   .skill-list {
-  text-align: justify;
-  padding-left: 20px;
-  font-size: 16px;
-  color: #203047;
-  
+    text-align: justify;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #203047;
+
     li {
       margin-bottom: 10px;
       font-weight: 500;
@@ -82,13 +84,13 @@
       &:last-child {
         margin-bottom: 0;
       }
-      
+
       &:before {
         content: '\f1db';
         font-family: $fa-icon;
         font-size: 14px;
         margin-right: 5px;
-      }   
+      }
     }
   }
 
@@ -124,15 +126,15 @@
 .tour-details-top {
   display: flex;
   font-size: 16px;
-	justify-content: space-between;
+  justify-content: space-between;
   position: relative;
-  
+
   .tour-desc {
     h2 {
       @include font-size(32px);
       margin-bottom: 8px;
     }
-  
+
     h5 {
       opacity: 0.8;
       font-size: 16px;
@@ -140,16 +142,16 @@
       font-weight: 500;
       margin-bottom: 25px;
     }
-  
+
     .intro-list {
       li {
         margin-bottom: 10px;
         font-weight: 500;
-  
+
         &:last-child {
           margin-bottom: 0;
         }
-        
+
         &:before {
           content: '\f00c';
           font-family: $fa-icon;
@@ -158,30 +160,43 @@
         }
       }
     }
-  
+
     .not-include-list {
       li {
         margin-bottom: 10px;
         font-weight: 500;
-  
+
         &:last-child {
           margin-bottom: 0;
         }
-        
+
         &:before {
           content: '\f00d';
           font-family: $fa-icon;
           margin-right: 9px;
           color: $red;
         }
-  
-        
+
+
       }
     }
-  }  
+
+    .days {
+      padding: 20px 0;
+    }
+
+    .collapse {
+      .collapse-item {
+        margin: 8px 0;
+        cursor: pointer;
+
+        &:hover {}
+      }
+    }
+  }
 
   .contact-info {
-    p { 
+    p {
       position: relative;
       text-align: left;
 
@@ -215,34 +230,35 @@
     }
   }
 
-  .sticky-content { 
-    position: -webkit-sticky; /* Safari */
+  .sticky-content {
+    position: -webkit-sticky;
+    /* Safari */
     position: sticky;
     top: 125px;
   }
 }
 
 figure.wp-block-table {
-	background-color: #FFFFFF;
+  background-color: #FFFFFF;
   width: 100%;
-	text-align: left;
-	border-collapse: collapse;
-  
+  text-align: left;
+  border-collapse: collapse;
+
   td {
     padding: 9px 9px;
     text-align: justify;
     color: #203047;
-	}
-  
+  }
+
   th {
-		border: 0px solid #AAAAAA;
-		padding: 9px 9px;
-	}
-  
+    border: 0px solid #AAAAAA;
+    padding: 9px 9px;
+  }
+
   tbody {
-		td {
+    td {
       font-size: 16px;
-      
+
       &:first-child {
         width: 100px;
         text-align: start;
@@ -250,8 +266,6 @@ figure.wp-block-table {
         text-transform: uppercase;
         color: #0D3069;
       }
-		}
-	}
+    }
+  }
 }
-
-

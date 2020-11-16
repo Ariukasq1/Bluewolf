@@ -1327,7 +1327,8 @@ blockquote, .blockquote {
 .mem-achieve-item {
   margin-top: 50px; }
   @media only screen and (min-width: 1200px) {
-    .mem-achieve-item .skill-bar-wrap, .mem-achieve-item .history-content-wrap {
+    .mem-achieve-item .skill-bar-wrap,
+    .mem-achieve-item .history-content-wrap {
       max-width: 75%; } }
   .mem-achieve-item .skill-list {
     text-align: justify;
@@ -1397,6 +1398,11 @@ blockquote, .blockquote {
       font-family: "FontAwesome";
       margin-right: 9px;
       color: #e74c3c; }
+  .tour-details-top .tour-desc .days {
+    padding: 20px 0; }
+  .tour-details-top .tour-desc .collapse .collapse-item {
+    margin: 8px 0;
+    cursor: pointer; }
   .tour-details-top .contact-info p {
     position: relative;
     text-align: left; }
