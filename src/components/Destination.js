@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
-import { prefixer } from '../utils';
+import {prefixer} from '../utils';
 import Link from "next/link";
 import axios from 'axios';
 import Config from "../config";
@@ -41,7 +41,7 @@ class Destination extends React.Component {
 
     this.state = {
       posts: [],
-      setting:[],
+      setting: [],
     };
   }
 
@@ -50,19 +50,19 @@ class Destination extends React.Component {
       .then(res => {
         const categories = res.data;
 
-        if (categories && categories.length > 0) {
+        if(categories && categories.length > 0) {
           axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
             .then(res => this.setState({
               posts: res.data
             }
-          ))
-          .then(()=>{
+            ))
+            .then(() => {
 
-            if(this.state.posts.length<3){
-              settings.slidesToShow=this.state.posts.length;
-            }
-            this.setState({setting:settings})
-          })
+              if(this.state.posts.length < 3) {
+                settings.slidesToShow = this.state.posts.length;
+              }
+              this.setState({setting: settings})
+            })
             .catch(err => console.log(err));
         }
       })
@@ -70,10 +70,10 @@ class Destination extends React.Component {
   };
 
   render = () => {
-    const { posts } = this.state;
+    const {posts} = this.state;
 
     return (
-      <div className="tour-area-wrapper bg-img sp-y ul-top" style={{ backgroundImage: `url(${prefixer('/images/blue.jpg')})` }}>
+      <div className="tour-area-wrapper bg-img sp-y" style={{backgroundImage: `url(${prefixer('/images/blue.jpg')})`}}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-4">
@@ -89,7 +89,7 @@ class Destination extends React.Component {
                     <figure className="tours-pic">
                       <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
                         <a>
-                          <img  src={post.acf.slider_image} alt={post.title.rendered}  />
+                          <img src={post.acf.slider_image} alt={post.title.rendered} />
                         </a>
                       </Link>
                     </figure>

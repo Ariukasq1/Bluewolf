@@ -1357,6 +1357,16 @@ only screen and (max-width: 767.98px) {
   }
 }
 
+.calendar-table thead {
+  background-color: #0D3069;
+  color: #fff;
+}
+
+.calendar-table tbody td,
+.calendar-table a {
+  color: #656363;
+}
+
 /*----------------------
 Button Style
 -----------------------*/
@@ -1614,7 +1624,7 @@ blockquote-title,
 }
 
 .main-menu>li {
-  margin-right: 30px;
+  margin-right: 24px;
   position: relative;
 }
 
