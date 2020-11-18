@@ -41,6 +41,7 @@ function BrandLogo(props) {
             <SlickSlider settings={settings}>
               {
                 BrandLogos.map(logo => (
+                  
                   <LogoItem key={logo.id} logoSrc={logo.logoSrc} URL={logo.URL} />
                 ))
               }
