@@ -7,27 +7,16 @@ import axios from 'axios';
 import Config from "../config";
 
 const settings = {
-  slidesToShow: 1,
-  slidesToScroll: 3,
+  slidesToShow: 2,
+  slidesToScroll: 2,
   arrows: false,
-  autoplay: false,
+  autoplay: true,
+  speed: 500,
   dots: true,
   className: "tour-content-wrap slick-dots--light mtn-md-5",
   responsive: [
     {
-      breakpoint: 1550,
-      settings: {
-        slidesToShow: 3,
-      }
-    },
-    {
-      breakpoint: 700,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 550,
+      breakpoint: 576,
       settings: {
         slidesToShow: 1,
       }

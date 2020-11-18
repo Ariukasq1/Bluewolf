@@ -34,7 +34,10 @@ function BrandLogo(props) {
     <div className="brand-logo-area sm-top">
       <div className="container">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 text-center">
+            <div className="section-title">
+              <h2>Make a payment</h2>
+            </div>
             <SlickSlider settings={settings}>
               {
                 BrandLogos.map(logo => (

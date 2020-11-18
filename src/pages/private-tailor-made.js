@@ -47,6 +47,7 @@ class PrivateTailorMade extends React.Component {
           />
           <PageWrapper classes="sm-top service-details-wrapper">
             <div className='col-lg-12'>
+              <h2>{page.title.rendered}</h2>
               <div className="service-details-content">
                 <div className="post-content">
                   <div

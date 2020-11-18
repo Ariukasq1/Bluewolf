@@ -14,18 +14,26 @@ import Layout from '../components/Layout';
 const wp = new WPAPI({endpoint: Config().apiUrl});
 
 class Category extends React.Component {
-  static async getInitialProps(context) {
+  static async getInitialProps() {
+    let apiMethod = wp.pages();
 
     const posts = await wp
       .posts()
       .categories(14)
       .embed();
 
-    return {posts};
+    const page = await apiMethod
+      .slug('trip-calendar')
+      .embed()
+      .then(data => {
+        return data[0];
+      });
+
+    return {posts,page};
   }
 
   renderContent() {
-    const {posts} = this.props;
+    const {posts,page} = this.props;
 
     if(posts.length === 0) {
       return (
@@ -38,6 +46,7 @@ class Category extends React.Component {
 
     return (
       <div className='post-content-wrapper false'>
+        <div className="section-title"><h2>{page.title.rendered}</h2></div>
         <table className="table table-striped calendar-table table-borderless">
           <thead>
             <tr>
@@ -89,6 +98,7 @@ class Category extends React.Component {
           />
           <PageWrapper classes="post-page-content-area sp-y">
             <div className="col-lg-12 null">
+
               {this.renderContent()}
             </div>
           </PageWrapper>
