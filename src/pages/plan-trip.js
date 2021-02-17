@@ -20,7 +20,7 @@ export default function PlanTrip() {
           __html: `
           window.erxesSettings = {
             forms: [{
-              brand_id: "7PXBCt",
+              brand_id: "JPshak",
               form_id: "ouGSda",
             }],
           };

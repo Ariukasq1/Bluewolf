@@ -9,7 +9,7 @@ function RentCarSidebar() {
           __html: `
           window.erxesSettings = {
             forms: [{
-              brand_id: "7PXBCt",
+              brand_id: "JPshak",
               form_id: "pPJbq8",
             }],
           };

@@ -1,18 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
-import { withRouter } from 'next/router';
+import {withRouter} from 'next/router';
 import Layout from "../components/Layout";
 import CallToAction from "../components/CallToAction";
 import MobileMenu from "../components/MobileMenu";
 import PageHeader from "../components/PageHeader";
 import PageWrapper from "../components/PageWrapper";
-import { defaultCoverImage } from "../components/layouts/constants";
-import { prefixer } from '../utils';
+import {defaultCoverImage} from "../components/layouts/constants";
+import {prefixer} from '../utils';
 
 function BookNow(props) {
-  const { form_id, obj_id } = props.router.query;
+  const {form_id,obj_id} = props.router.query;
 
-  if (!form_id) {
+  if(!form_id) {
     return null;
   }
 
@@ -23,7 +23,7 @@ function BookNow(props) {
           __html: `
           window.erxesSettings = {
             forms: [{
-              brand_id: "7PXBCt",
+              brand_id: "JPshak",
               form_id: "${form_id}",
             }],
           };
@@ -45,7 +45,7 @@ function BookNow(props) {
         />
         <PageWrapper classes="sm-top service-details-wrapper">
           <div className="service-details-content">
-            <div data-erxes-embed={form_id} style={{ width: '900px', height: '720px' }}></div>
+            <div data-erxes-embed={form_id} style={{width: '900px',height: '720px'}}></div>
           </div>
         </PageWrapper>
         <CallToAction />
