@@ -19,7 +19,7 @@ const wp = new WPAPI({ endpoint: Config().apiUrl });
 class Category extends React.Component {
   static async getInitialProps(context) {
     const { slug, ids } = context.query;
-
+    const subCats = await wp.categories().parent(14).perPage(40).embed();
     const categories = await wp
       .categories()
       .slug(slug)
@@ -40,15 +40,14 @@ class Category extends React.Component {
         });
       }
 
-      return { categories, posts };
+      return { categories, posts, subCats };
     }
 
-    return { categories };
+    return { categories, subCats };
   }
 
   renderContent() {
     const { posts } = this.props;
-
     if (posts.length === 0) {
       return (
         <div className="col-lg-9 null">
@@ -123,7 +122,7 @@ class Category extends React.Component {
   }
 
   render() {
-    const { categories } = this.props;
+    const { categories, subCats } = this.props;
 
     if (categories.length === 0) return <Error statusCode={404} />;
 
@@ -140,7 +139,7 @@ class Category extends React.Component {
           <PageWrapper classes="post-page-content-area sp-y">
             {this.renderContent()}
 
-            <TourSidebar />
+            <TourSidebar subCats={subCats} />
           </PageWrapper>
           <BrandLogo />
           <BlueWolfBook />

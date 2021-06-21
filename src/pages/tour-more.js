@@ -8,20 +8,20 @@ import SectionTitle from "../UI/SectionTitle";
 import BrandLogo from '../components/BrandLogo';
 import BlueWolfBook from '../components/BlueWolfBook';
 import Disqus from "disqus-react"
-import {defaultCoverImage} from "../components/layouts/constants";
+import { defaultCoverImage } from "../components/layouts/constants";
 import Share from '../components/Share';
 import List from "../UI/List";
 import LI from "../UI/List/Item";
 import Link from "next/link";
 import Config from "../config";
-import {prefixer} from '../utils';
+import { prefixer } from '../utils';
 import WPAPI from 'wpapi';
 import RelatedTours from '../components/Tour/RelatedTours';
 import DOMParser from 'dom-parser'
 import Collapse from 'react-bootstrap/Collapse'
 
 
-const wp = new WPAPI({endpoint: Config().apiUrl});
+const wp = new WPAPI({ endpoint: Config().apiUrl });
 const arrow_down = "/images/down-arrow.svg"
 export default class extends React.Component {
 
@@ -46,7 +46,7 @@ export default class extends React.Component {
       .then(data => {
         return data[0];
       });
-    return {post};
+    return { post };
   }
 
 
@@ -62,13 +62,13 @@ export default class extends React.Component {
         gt: ">"
       };
       return function (s) {
-        return s.replace(translate_re,function (match,entity) {
+        return s.replace(translate_re, function (match, entity) {
           return translate[entity];
         });
       };
     })();
 
-    let cleanText = text.replace(/^\xa0*([^\xa0]*)\xa0*$/g,"");
+    let cleanText = text.replace(/^\xa0*([^\xa0]*)\xa0*$/g, "");
     cleanText = replaceHtmlEntites(text);
     return cleanText;
   }
@@ -81,14 +81,13 @@ export default class extends React.Component {
       "text/html"
     );
 
-
     ret = doc.getElementsByTagName("tr");
-    for(let i = 0; i < ret.length; i++) {
-      let event = {id: 0,title: '',desc: ''};
+    for (let i = 0; i < ret.length; i++) {
+      let event = { id: 0, title: '', desc: '' };
       event.id = i;
-      event.title = ret[i].childNodes[1].childNodes[0].childNodes[0].text.replace('&nbsp;','');
-      ret[i].childNodes[1].childNodes.map(el => {
-        if(typeof (el.text) != "undefined") {event.desc = el.text;}
+      event.title = ret[i].childNodes[1].childNodes[0].text.replace('&nbsp;', '');
+      ret[i].childNodes[3].childNodes.map(el => {
+        if (typeof (el.text) != "undefined") { event.desc = el.text; }
       })
 
       event.title = this.CleanText(event.title);
@@ -100,29 +99,29 @@ export default class extends React.Component {
 
   changeValue(index) {
 
-    if(index === undefined) {
+    if (index === undefined) {
       return;
     }
     let values = [...this.state.display];
     values[index] = !this.state.display[index];
-    this.setState({display: values});
+    this.setState({ display: values });
   }
 
 
 
   render() {
 
-    const {post} = this.props;
+    const { post } = this.props;
     // if (!post.title) {
     //   return <Error statusCode={404} />;
     // }
     let url = '';
 
-    if(process.browser) {
+    if (process.browser) {
       url = window.location.href
     }
 
-    const {content,cover_image,price,theme,duration,group_size,intro_text,why_choose_this_tour} = post.acf;
+    const { content, cover_image, price, theme, duration, group_size, intro_text, why_choose_this_tour } = post.acf;
 
     const disqusShortname = "bluewolftravel";
     const disqusConfig = {
@@ -146,9 +145,9 @@ export default class extends React.Component {
               <div className="tour-details-top">
                 <div className="col-md-8 ml-auto">
                   <div className="tour-desc">
-                    <h2><p dangerouslySetInnerHTML={{__html: post.title.rendered}} /></h2>
+                    <h2><p dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></h2>
                     <div className="contact-info mt-30">
-                      {theme ? <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{__html: theme}} /></p> : ''}
+                      {theme ? <p><strong>Theme</strong> <span dangerouslySetInnerHTML={{ __html: theme }} /></p> : ''}
                       <hr />
                       {price ? <p><strong>From</strong> <span>{price}</span></p> : ''}
                       <hr />
@@ -159,25 +158,25 @@ export default class extends React.Component {
                       <hr />
                       <p><strong>Intro text</strong></p>
                       <List classes="intro-list">
-                        <div dangerouslySetInnerHTML={{__html: intro_text}} />
+                        <div dangerouslySetInnerHTML={{ __html: intro_text }} />
                       </List>
                       <hr />
                       <p><strong>Why choose this tour</strong>
                       </p>
                       <List classes="intro-list">
-                        <div dangerouslySetInnerHTML={{__html: why_choose_this_tour}} />
+                        <div dangerouslySetInnerHTML={{ __html: why_choose_this_tour }} />
                       </List>
                       <hr />
                       <p><strong>Services included</strong>
                       </p>
                       <List classes="intro-list">
-                        <div dangerouslySetInnerHTML={{__html: post.acf.price_included}} />
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.price_included }} />
                       </List>
                       <hr />
                       <p><strong>Services not included</strong>
                       </p>
                       <List classes="not-include-list">
-                        <div dangerouslySetInnerHTML={{__html: post.acf.not_include}} />
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.not_include }} />
                       </List>
                       <div className="col-xl-6 m-auto text-center">
                         <div className="tour-education mem-achieve-item">
@@ -197,12 +196,12 @@ export default class extends React.Component {
                             {this.state.data.map(item => (
                               <div key={item.id}
                                 className="collapse-item"
-                                onClick={() => {this.changeValue(item.id)}}
+                                onClick={() => { this.changeValue(item.id) }}
                                 aria-controls="collapse"
                                 aria-expanded={this.state.display[item.id]}
                               >
                                 <div className="collapse-name">
-                                  <div className="day"><b>Day {item.id + 1}</b>.{item.title}</div>
+                                  <div className="day"><b>{item.title}</b></div>
                                   <div className="arrow">
                                     <img src={arrow_down} />
                                   </div>
@@ -269,7 +268,7 @@ export default class extends React.Component {
                   <div className="col-12">
                     <div className="skill-experience-area mem-achieve-item">
                       <List classes="skill-list">
-                        <div dangerouslySetInnerHTML={{__html: post.acf.good_to_know}} />
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.good_to_know }} />
                       </List>
                     </div>
                   </div>

@@ -50,27 +50,36 @@ class TourFilter extends React.Component {
     });
   }
 
+  renderList() {
+    const { categories } = this.state;
+    if (!categories || categories.length === 0) {
+      return null
+    }
+    return (
+      <List classes={'sidebar-list'}>
+        {
+          categories.map(category => (
+            <li key={category.id}>
+              <input onChange={this.onChange} checked={ids.indexOf(category.id) !== -1} type="checkbox" id={category.id} />
+              <label htmlFor={category._id}>
+                {category.name}
+              </label>
+            </li>
+          ))
+        }
+      </List>
+    )
+  }
+
   render() {
     const { categories, isLoaded } = this.state;
     const { router, category } = this.props;
     const ids = router.query.ids || '';
-
     if (isLoaded) {
       return (
         <>
           <SidebarItem title={category.name} classes={'single-sidebar-item-wrap'}>
-            <List classes={'sidebar-list'}>
-              {
-                categories.map(category => (
-                  <li key={category.id}>
-                    <input onChange={this.onChange} checked={ids.indexOf(category.id) !== -1} type="checkbox" id={category.id} />
-                    <label htmlFor={category._id}>
-                      {category.name}
-                    </label>
-                  </li>
-                ))
-              }
-            </List>
+            {/* {categories && this.renderList()} */}
           </SidebarItem>
         </ >
       );

@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionTitle from "../UI/SectionTitle";
 import SlickSlider from "../UI/Slick";
-import {prefixer} from '../utils';
+import { prefixer } from '../utils';
 import Link from "next/link";
 import axios from 'axios';
 import Config from "../config";
@@ -29,40 +29,26 @@ class Destination extends React.Component {
     super(props);
 
     this.state = {
-      posts: [],
       setting: [],
     };
   }
 
   componentDidMount() {
-    axios.get(`${Config().apiUrl}/wp/v2/categories?slug=sliders`)
-      .then(res => {
-        const categories = res.data;
-
-        if(categories && categories.length > 0) {
-          axios.get(`${Config().apiUrl}/wp/v2/posts?_embed&categories=${categories[0].id}`)
-            .then(res => this.setState({
-              posts: res.data
-            }
-            ))
-            .then(() => {
-
-              if(this.state.posts.length < 3) {
-                settings.slidesToShow = this.state.posts.length;
-              }
-              this.setState({setting: settings})
-            })
-            .catch(err => console.log(err));
-        }
-      })
-      .catch(err => console.log(err));
+    if (this.props.sliders.length < 3) {
+      settings.slidesToShow = this.posts.sliders.length;
+    }
+    this.setState({ setting: settings })
   };
 
   render = () => {
-    const {posts} = this.state;
+    const { sliders } = this.props;
+
+    if (!sliders) {
+      return null
+    }
 
     return (
-      <div className="tour-area-wrapper bg-img sp-y" style={{backgroundImage: `url(${prefixer('/images/blue.jpg')})`}}>
+      <div className="tour-area-wrapper bg-img sp-y" style={{ backgroundImage: `url(${prefixer('/images/blue.jpg')})` }}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-4">
@@ -73,7 +59,7 @@ class Destination extends React.Component {
             </div>
             <div className="col-lg-8">
               <SlickSlider settings={this.state.setting}>
-                {posts.map(post => (
+                {sliders.map(post => (
                   <div key={post.slug} className="destination-item">
                     <figure className="tours-pic">
                       <Link href={`${prefixer('/tour-category/' + post.slug)}`}>
