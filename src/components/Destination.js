@@ -34,7 +34,7 @@ class Destination extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.sliders.length < 3) {
+    if (this.props.sliders && this.props.sliders.length < 3) {
       settings.slidesToShow = this.posts.sliders.length;
     }
     this.setState({ setting: settings })

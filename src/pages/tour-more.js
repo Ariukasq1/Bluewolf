@@ -73,7 +73,34 @@ export default class extends React.Component {
     return cleanText;
   }
 
+  renderItinerary(ret, i) {
+    let event = { id: 0, title: '', desc: '' };
+    event.id = i;
+    let counter = 0;
 
+    ret[i].childNodes.map(el => {
+      if (el.nodeType == 1) {
+        if (counter == 0) {
+          el.childNodes.map(el => {
+            if (typeof (el.text) != "undefined") { event.title = event.title + el.text + ' '; }
+          })
+        }
+        if (counter > 0) {
+          el.childNodes.map(el => {
+            if (typeof (el.text) != "undefined") { event.desc = event.desc + el.text + '</br>'; }
+          });
+        }
+        counter++;
+      }
+    });
+
+    counter = 0;
+
+    event.title = this.CleanText(event.title);
+    event.desc = this.CleanText(event.desc);
+    this.state.display[i] = false;
+    this.state.data[i] = event;
+  }
   htmCode(input) {
     var ret;
     var doc = new DOMParser().parseFromString(
@@ -82,18 +109,9 @@ export default class extends React.Component {
     );
 
     ret = doc.getElementsByTagName("tr");
-    for (let i = 0; i < ret.length; i++) {
-      let event = { id: 0, title: '', desc: '' };
-      event.id = i;
-      event.title = ret[i].childNodes[1].childNodes[0].text.replace('&nbsp;', '');
-      ret[i].childNodes[3].childNodes.map(el => {
-        if (typeof (el.text) != "undefined") { event.desc = el.text; }
-      })
 
-      event.title = this.CleanText(event.title);
-      event.desc = this.CleanText(event.desc);
-      this.state.display[i] = false;
-      this.state.data[i] = event;
+    for (let i = 0; i < ret.length; i++) {
+      this.renderItinerary(ret, i)
     }
   }
 
@@ -209,7 +227,7 @@ export default class extends React.Component {
 
                                 <Collapse in={this.state.display[item.id]}>
                                   <div id="collapse">
-                                    {item.desc}
+                                    <div dangerouslySetInnerHTML={{ __html: item.desc }} />
                                   </div>
                                 </Collapse>
                               </div>
