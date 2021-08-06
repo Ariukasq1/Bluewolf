@@ -92,7 +92,7 @@ class TourFilter extends React.Component {
       return (
         <>
           <SidebarItem title={category.name} classes={'single-sidebar-item-wrap'}>
-            {/* {categories && this.renderList()} */}
+            {categories && this.renderList()}
           </SidebarItem>
         </ >
       );
