@@ -87,13 +87,13 @@ class TourFilter extends React.Component {
     const { categories, isLoaded } = this.state;
     const { router, category } = this.props;
     const ids = router.query.ids || '';
-    // console.log(ids, "ids");
+    // console.log(router, "router"); 
     // console.log(this.state.categories, "catt");
     if (isLoaded) {
       return (
         <>
           <SidebarItem title={category.name} classes={'single-sidebar-item-wrap'}>
-            {categories && this.renderList()}
+            {/* {categories && this.renderList()} */}
           </SidebarItem>
         </ >
       );
