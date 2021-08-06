@@ -72,7 +72,7 @@ class TourFilter extends React.Component {
         {
           categories.map(category => (
             <li key={category.id}>
-              <input onChange={this.onChange} checked={ids ? false : ids.indexOf(category.id) !== -1} type="checkbox" id={category.id} />
+              <input onChange={this.onChange} checked={ids ? ids.indexOf(category.id) !== -1 : false} type="checkbox" id={category.id} />
               <label htmlFor={category._id}>
                 {category.name}
               </label>
@@ -93,7 +93,7 @@ class TourFilter extends React.Component {
       return (
         <>
           <SidebarItem title={category.name} classes={'single-sidebar-item-wrap'}>
-            {/* {categories && this.renderList()} */}
+            {categories && this.renderList()}
           </SidebarItem>
         </ >
       );
