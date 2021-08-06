@@ -5,6 +5,11 @@ import axios from 'axios';
 import Loader from "../Loader";
 import { withRouter } from 'next/router';
 import Config from "../../config";
+import WPAPI from 'wpapi';
+
+const wp = new WPAPI({
+  endpoint: Config().apiUrl,
+});
 
 class TourFilter extends React.Component {
   constructor(props) {
@@ -18,12 +23,18 @@ class TourFilter extends React.Component {
 
   componentDidMount() {
     const { category } = this.props;
-
-    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=${category.id}`)
-      .then(res => this.setState({
-        categories: res.data,
-        isLoaded: true
-      }))
+    // console.log(category, "tourFilter");
+    // console.log(category.id, "TourFilterID");
+    // wp.categories().parent(category.id).embed().then(res => console.log(res)).catch(err => console.log(err, "tourFilter"));
+    // console.log(cat, "tourFilter");
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=` + category.id)
+      .then(res => {
+        console.log(res.data, "tourFilter");
+        this.setState({
+          categories: res.data,
+          isLoaded: true
+        })
+      })
       .catch(err => console.log(err));
   };
 
@@ -55,6 +66,7 @@ class TourFilter extends React.Component {
     if (!categories || categories.length === 0) {
       return null
     }
+    // console.log(categories, "tourFilter");
     return (
       <List classes={'sidebar-list'}>
         {
@@ -75,6 +87,7 @@ class TourFilter extends React.Component {
     const { categories, isLoaded } = this.state;
     const { router, category } = this.props;
     const ids = router.query.ids || '';
+    // console.log(this.state.categories, "catt");
     if (isLoaded) {
       return (
         <>

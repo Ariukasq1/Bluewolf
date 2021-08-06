@@ -14,7 +14,7 @@ import List from "../UI/List";
 import LI from "../UI/List/Item";
 import Link from "next/link";
 import Config from "../config";
-import { prefixer } from '../utils';
+import { prefixer, regex } from '../utils';
 import WPAPI from 'wpapi';
 import RelatedTours from '../components/Tour/RelatedTours';
 import DOMParser from 'dom-parser'
@@ -31,6 +31,7 @@ export default class extends React.Component {
       data: [],
       display: [],
       display_main: true,
+      retImgs: []
     };
 
   }
@@ -74,23 +75,34 @@ export default class extends React.Component {
   }
 
   renderItinerary(ret, i) {
-    let event = { id: 0, title: '', desc: '' };
+    let event = { id: 0, title: '', desc: '', img: '' };
     event.id = i;
     let counter = 0;
-
     ret[i].childNodes.map(el => {
       if (el.nodeType == 1) {
         if (counter == 0) {
-          el.childNodes.map(el => {
-            if (typeof (el.text) != "undefined") { event.title = event.title + el.text + ' '; }
+          el.childNodes.map(elm => {
+            if (typeof (elm.text) !== "undefined") { event.title = event.title + elm.text + ' '; }
           })
         }
         if (counter > 0) {
-          el.childNodes.map(el => {
-            if (typeof (el.text) != "undefined") { event.desc = event.desc + el.text + '</br>'; }
+          el.childNodes.map(elm => {
+            if (typeof (elm.text) !== "undefined") { event.desc = event.desc + elm.text + '</br>'; }
           });
         }
         counter++;
+      }
+      //zurgiig ni ylgaj baina.
+      if (el.childNodes) {
+        el.childNodes.map((elm, i) => {
+          if (elm.nodeName === "img") {
+            elm.attributes.map(im => {
+              if (im.name === "src") {
+                event.img = im.value;
+              }
+            })
+          }
+        })
       }
     });
 
@@ -103,13 +115,22 @@ export default class extends React.Component {
   }
   htmCode(input) {
     var ret;
+    let retImg;
     var doc = new DOMParser().parseFromString(
       input,
       "text/html"
     );
 
     ret = doc.getElementsByTagName("tr");
-
+    retImg = doc.getElementsByTagName("img");
+    for (let j = 0; j < retImg.length; j++) {
+      retImg[j].attributes.map(el => {
+        if (el.name === "src") {
+          this.state.retImgs[j] = el.value;
+        }
+      })
+    }
+    // console.log(this.state.retImgs, "Imgss");
     for (let i = 0; i < ret.length; i++) {
       this.renderItinerary(ret, i)
     }
@@ -133,6 +154,7 @@ export default class extends React.Component {
     // if (!post.title) {
     //   return <Error statusCode={404} />;
     // }
+    // console.log(post.acf, "tourTour");
     let url = '';
 
     if (process.browser) {
@@ -211,7 +233,7 @@ export default class extends React.Component {
                         ><b onClick={() => {this.setState({display_main: !this.state.display_main})}}>Show all</b><img style={{marginLeft: "10px"}} src="/images/down-arrow.svg" /> </div> */}
                         <Collapse in={this.state.display_main}>
                           <div id="collapse-main">
-                            {this.state.data.map(item => (
+                            {this.state.data.map((item, i) => (
                               <div key={item.id}
                                 className="collapse-item"
                                 onClick={() => { this.changeValue(item.id) }}
@@ -219,7 +241,7 @@ export default class extends React.Component {
                                 aria-expanded={this.state.display[item.id]}
                               >
                                 <div className="collapse-name">
-                                  <div className="day"><b>{item.title}</b></div>
+                                  <div className="day"><b>{regex(item.title)}</b></div>
                                   <div className="arrow">
                                     <img src={arrow_down} />
                                   </div>
@@ -227,6 +249,7 @@ export default class extends React.Component {
 
                                 <Collapse in={this.state.display[item.id]}>
                                   <div id="collapse">
+                                    {item.img ? <img src={item.img} /> : null}
                                     <div dangerouslySetInnerHTML={{ __html: item.desc }} />
                                   </div>
                                 </Collapse>
@@ -256,7 +279,7 @@ export default class extends React.Component {
                       </div>
                       <a className='btn btn-brand' href={'https://payment.bluewolftravel.com/plugins/bwp/payment/?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug}>
                         <i className="fa fa-star"></i> Book now
-                       </a>
+                      </a>
                       <List classes='features li-top'>
                         <LI>
                           <i className='fa fa-tripadvisor'></i> Trip Advisor
@@ -274,6 +297,23 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className="tour-details-middle ul-top">
+                <div className="row mtn-30">
+                  <div className="col-xl-6 m-auto text-center">
+                    <div className="tour-education mem-achieve-item">
+                      <SectionTitle
+                        heading={'DESCRIPTION'}
+                      />
+                    </div>
+                    <hr />
+                  </div>
+                  <div className="col-12">
+                    <div className="skill-experience-area mem-achieve-item">
+                      <List classes="skill-list">
+                        <div dangerouslySetInnerHTML={{ __html: post.acf.description }} />
+                      </List>
+                    </div>
+                  </div>
+                </div>
                 <div className="row mtn-30">
                   <div className="col-xl-6 m-auto text-center">
                     <div className="tour-education mem-achieve-item">
@@ -296,10 +336,13 @@ export default class extends React.Component {
                 <div className="row mtn-30">
                   <div className="col-12">
                     <div className="col-xl-6 m-auto text-center">
-                      <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
+                      {/* <Link href={prefixer('/book-now?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug)}>
                         <a className='btn btn-brand'><i className="fa fa-star"></i> Book now
-                       </a>
-                      </Link>
+                        </a>
+                      </Link> */}
+                      <a className='btn btn-brand' href={'https://payment.bluewolftravel.com/plugins/bwp/payment/?form_id=' + post.acf.erxes_form_id + '&obj_id=' + post.slug}>
+                        <i className="fa fa-star"></i> Book now
+                      </a>
                     </div>
                   </div>
                 </div>

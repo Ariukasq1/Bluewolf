@@ -13,7 +13,7 @@ import BrandLogo from '../components/BrandLogo';
 import BlueWolfBook from '../components/BlueWolfBook';
 import TourSidebar from '../components/Tour/TourSidebar';
 import Layout from '../components/Layout';
-
+import axios from "axios"
 const wp = new WPAPI({ endpoint: Config().apiUrl });
 
 class Category extends React.Component {
@@ -32,6 +32,14 @@ class Category extends React.Component {
         .categories(categories[0].id)
         .embed();
 
+      let subSub = await subCats.map(el => (wp.categories().parent(el.id).embed()))
+      // if (subCats) {
+      //   let subSub = subCats.map(el => {
+      //     let s = wp.categories().parent(el.id).embed();
+      //     console.log(s);
+      //     return s;
+      //   })
+      // }
       if (ids) {
         const categoryIds = ids.split(',').map(id => parseInt(id, 10));
 
@@ -40,12 +48,37 @@ class Category extends React.Component {
         });
       }
 
-      return { categories, posts, subCats };
+      return { categories, posts, subCats, subSub };
     }
 
     return { categories, subCats };
   }
+  componentDidMount() {
+    const { subCats } = this.props;
 
+    axios.get(`${Config().apiUrl}/wp/v2/categories?parent=16`)
+      .then(res => {
+        console.log(res.data, "tourFilter16-tourcat");
+        // let dd = JSON.parse(res.data);
+        // console.log(dd, "tourFilterData-tourCat");
+        this.setState({
+          categories: res.data,
+          isLoaded: true
+        })
+      })
+      .catch(err => console.log(err));
+    // console.log(subCats, "tour-cat-mount");
+    // let sss = subCats.map(async el => {
+    //   try {
+    //     // console.log(el.id);
+    //     const res = await wp.categories().id(el.id).embed();
+    //     console.log(res, 'toru');
+    //     return res;
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // })
+  }
   renderContent() {
     const { posts } = this.props;
     if (posts.length === 0) {
@@ -122,12 +155,12 @@ class Category extends React.Component {
   }
 
   render() {
-    const { categories, subCats } = this.props;
+    const { categories, subCats, subSub } = this.props;
 
     if (categories.length === 0) return <Error statusCode={404} />;
 
     const title = categories[0].title;
-
+    console.log(subSub, "tour-category");
     return (
       <>
         <Layout title={title}>

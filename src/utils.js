@@ -29,3 +29,13 @@ export const prefixer = (url) => {
 
 	return `${url}`;
 }
+
+export const regex = (content) => {
+	if (!content) {
+		return null;
+	}
+
+	return content
+		.toString()
+		.replace(/&amp;#8221;|&#8221;|&amp;#8220;|&#8220;/gi, '"').replace(/&amp;#8217;|&#8217;/gi, "'");
+};
