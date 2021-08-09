@@ -6,6 +6,7 @@ import Loader from "../Loader";
 import { withRouter } from 'next/router';
 import Config from "../../config";
 import WPAPI from 'wpapi';
+import { Form } from "react-bootstrap"
 
 const wp = new WPAPI({
   endpoint: Config().apiUrl,
@@ -61,39 +62,50 @@ class TourFilter extends React.Component {
     });
   }
 
-  renderList() {
-    const { categories } = this.state;
-    if (!categories || categories.length === 0) {
-      return null
-    }
-    // console.log(categories, "tourFilter");
+  // renderList() {
+  //   const { categories } = this.state;
+  //   if (!categories || categories.length === 0) {
+  //     return null
+  //   }
+  //   // console.log(categories, "tourFilter");
+  //   return (
+  //     <List classes={'sidebar-list'}>
+  //       {
+  //         categories.map(category => (
+  //           <li key={category.id}>
+  //             <input onChange={this.onChange} checked={ids ? ids.indexOf(category.id) !== -1 : false} type="checkbox" id={category.id} />
+  //             <label htmlFor={category._id}>
+  //               {category.name}
+  //             </label>
+  //           </li>
+  //         ))
+  //       }
+  //     </List>
+  //   )
+  // }
+
+  renderList(options) {
+
     return (
-      <List classes={'sidebar-list'}>
-        {
-          categories.map(category => (
-            <li key={category.id}>
-              <input onChange={this.onChange} checked={ids ? ids.indexOf(category.id) !== -1 : false} type="checkbox" id={category.id} />
-              <label htmlFor={category._id}>
-                {category.name}
-              </label>
-            </li>
-          ))
-        }
-      </List>
+      <select className="form-select" >
+        <option defaultValue="all" >All</option>
+        {options.map((el, i) => <option key={i}>{el.name}</option>)}
+      </select>
     )
   }
-
   render() {
     const { categories, isLoaded } = this.state;
-    const { router, category } = this.props;
+    const { router, category, sub } = this.props;
     const ids = router.query.ids || '';
     // console.log(router, "router"); 
     // console.log(this.state.categories, "catt");
+    console.log(sub, "hho");
     if (isLoaded) {
       return (
         <>
           <SidebarItem title={category.name} classes={'single-sidebar-item-wrap'}>
             {/* {categories && this.renderList()} */}
+            {sub && this.renderList(sub)}
           </SidebarItem>
         </ >
       );

@@ -20,7 +20,6 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
-
-    return <Component {...pageProps} />;
+    return <Component {...pageProps} />
   }
 }

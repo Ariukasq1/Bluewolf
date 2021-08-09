@@ -1,0 +1,425 @@
+[
+    {
+        "id": 21,
+        "count": 3,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/4x4-adventures-self-drive/",
+        "name": "4×4 Adventures &amp; Self Drive",
+        "slug": "4x4-adventures-self-drive",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/21"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=21"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 22,
+        "count": 10,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/family-suitable/",
+        "name": "Family suitable",
+        "slug": "family-suitable",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/22"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=22"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 23,
+        "count": 7,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/golden-eagles-festival-tours/",
+        "name": "Golden Eagles &amp; Festival tours",
+        "slug": "golden-eagles-festival-tours",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/23"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=23"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 24,
+        "count": 29,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/halal-tour/",
+        "name": "Halal tour",
+        "slug": "halal-tour",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/24"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=24"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 25,
+        "count": 26,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/horse-riding/",
+        "name": "Horse riding",
+        "slug": "horse-riding",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/25"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=25"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 26,
+        "count": 2,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/on-sale/",
+        "name": "On Sale",
+        "slug": "on-sale",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/26"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=26"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 27,
+        "count": 25,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/photo-filming/",
+        "name": "Photo/filming",
+        "slug": "photo-filming",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/27"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=27"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 28,
+        "count": 10,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/trekking-hiking-exploration/",
+        "name": "Trekking/Hiking Exploration",
+        "slug": "trekking-hiking-exploration",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/28"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=28"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 29,
+        "count": 5,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/theme/winter-tours-migration/",
+        "name": "Winter tours &amp; Migration",
+        "slug": "winter-tours-migration",
+        "taxonomy": "category",
+        "parent": 16,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/29"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/16"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=29"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    }
+]

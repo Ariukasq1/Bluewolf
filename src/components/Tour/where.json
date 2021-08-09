@@ -1,0 +1,284 @@
+[
+    {
+        "id": 30,
+        "count": 1,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/where/central/",
+        "name": "Central",
+        "slug": "central",
+        "taxonomy": "category",
+        "parent": 17,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/30"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/17"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=30"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 31,
+        "count": 0,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/where/eastern/",
+        "name": "Eastern",
+        "slug": "eastern",
+        "taxonomy": "category",
+        "parent": 17,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/31"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/17"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=31"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 32,
+        "count": 3,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/where/northern/",
+        "name": "Northern",
+        "slug": "northern",
+        "taxonomy": "category",
+        "parent": 17,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/32"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/17"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=32"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 33,
+        "count": 4,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/where/southern/",
+        "name": "Southern",
+        "slug": "southern",
+        "taxonomy": "category",
+        "parent": 17,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/33"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/17"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=33"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 34,
+        "count": 17,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/where/western/",
+        "name": "Western",
+        "slug": "western",
+        "taxonomy": "category",
+        "parent": 17,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/34"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/17"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=34"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 35,
+        "count": 0,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/where/who-we-are/",
+        "name": "Who we are",
+        "slug": "who-we-are",
+        "taxonomy": "category",
+        "parent": 17,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/35"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/17"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=35"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    }
+]

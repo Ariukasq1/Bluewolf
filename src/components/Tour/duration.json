@@ -1,0 +1,143 @@
+[
+    {
+        "id": 40,
+        "count": 7,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/duration/4-8-days/",
+        "name": "4-8 days",
+        "slug": "4-8-days",
+        "taxonomy": "category",
+        "parent": 38,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/40"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/38"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=40"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 41,
+        "count": 22,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/duration/more-than-8-days/",
+        "name": "More than 8 days",
+        "slug": "more-than-8-days",
+        "taxonomy": "category",
+        "parent": 38,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/41"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/38"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=41"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 39,
+        "count": 0,
+        "description": "",
+        "link": "https://bluewolftravel.com/wp/en/category/tours/duration/quick-escapes1-3-days/",
+        "name": "Quick Escapes(1-3 days)",
+        "slug": "quick-escapes1-3-days",
+        "taxonomy": "category",
+        "parent": 38,
+        "meta": [],
+        "acf": [],
+        "_links": {
+            "self": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/39"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/taxonomies/category"
+                }
+            ],
+            "up": [
+                {
+                    "embeddable": true,
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/categories/38"
+                }
+            ],
+            "wp:post_type": [
+                {
+                    "href": "https://bluewolftravel.com/wp/en/wp-json/wp/v2/posts?categories=39"
+                }
+            ],
+            "curies": [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    }
+]
