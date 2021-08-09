@@ -8,6 +8,7 @@ import where from "./Tour/where.json"
 import SidebarItem from "./Sidebar/SidebarItem";
 import axios from "axios";
 import Config from "../config"
+import { Form } from "react-bootstrap"
 
 export default class TourCategory extends React.Component {
 
@@ -27,7 +28,6 @@ export default class TourCategory extends React.Component {
     componentDidMount() {
         this.setState({ posts: this.props.posts });
         this.setState({ allPosts: this.props.posts });
-        console.log(this.props.subCategories);
         this.props.subCategories.map(category => {
             axios.get(`${Config().apiUrl}/wp/v2/categories?parent=` + category.id)
                 .then(res => {
@@ -44,7 +44,7 @@ export default class TourCategory extends React.Component {
         })
     }
     tourFilter(category, optionIndex) {
-        let options = optionIndex === 0 ? duration : optionIndex === 1 ? theme : where;
+        // let options = optionIndex === 0 ? duration : optionIndex === 1 ? theme : where;
         let datas = optionIndex === 0 ? this.state.durationCategories : optionIndex === 1 ? this.state.themeCategories : this.state.whereCategories;
         return (
             <SidebarItem key={optionIndex} title={category.name} classes={'single-sidebar-item-wrap'}>
@@ -53,7 +53,6 @@ export default class TourCategory extends React.Component {
         )
     }
     renderList(options, ind) {
-        console.log(options, ind);
         return (
             <select className="form-select" onChange={ind === 0 ? (event) => this.handleDuration(event) : ind === 1 ? (event) => this.handleTheme(event) : (event) => this.handleWhere(event)} >
                 <option defaultValue="all" >all</option>

@@ -5192,6 +5192,14 @@ label {
 .collapse{
   text-align: justify;
 }
+select.form-select{
+  padding: 10px;
+  opacity: 0.6;
+  text-transform: capitalize;
+}
+select.form-select option{
+  padding: 5px;
+}
 /*
 Google Fonts
 */
