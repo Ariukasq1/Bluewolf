@@ -20,9 +20,9 @@ export default class TourCategory extends React.Component {
         duration: 'all',
         theme: 'all',
         where: 'all',
-        durationCategories: [],
-        themeCategories: [],
-        whereCategories: []
+        durationCategories: null,
+        themeCategories: null,
+        whereCategories: null
     }
     componentDidMount() {
         this.setState({ posts: this.props.posts });
@@ -45,26 +45,21 @@ export default class TourCategory extends React.Component {
     }
     tourFilter(category, optionIndex) {
         let options = optionIndex === 0 ? duration : optionIndex === 1 ? theme : where;
-        // let datas = optionIndex === 0 ? this.state.durationCategories : optionIndex === 1 ? this.state.themeCategories : this.state.whereCategories;
-        // console.log(datas, "subs" + optionIndex);
+        let datas = optionIndex === 0 ? this.state.durationCategories : optionIndex === 1 ? this.state.themeCategories : this.state.whereCategories;
         return (
             <SidebarItem key={optionIndex} title={category.name} classes={'single-sidebar-item-wrap'}>
-                {this.renderList(options, optionIndex)}
+                {datas && this.renderList(datas, optionIndex)}
             </SidebarItem>
         )
     }
     renderList(options, ind) {
-        if (!(this.state.durationCategories && this.state.themeCategories && this.state.whereCategories)) return null;
-        let datas = ind === 0 ? this.state.durationCategories : ind === 1 ? this.state.themeCategories : this.state.whereCategories;
-        // if (datas !== []) {
-        console.log(datas, ind);
+        console.log(options, ind);
         return (
             <select className="form-select" onChange={ind === 0 ? (event) => this.handleDuration(event) : ind === 1 ? (event) => this.handleTheme(event) : (event) => this.handleWhere(event)} >
                 <option defaultValue="all" >all</option>
                 {options.map((el, i) => <option value={el.id} key={i}>{el.name}</option>)}
             </select>
         )
-        // }
     }
     async handleDuration(event) {
         await this.setState({ duration: event.target.value });
